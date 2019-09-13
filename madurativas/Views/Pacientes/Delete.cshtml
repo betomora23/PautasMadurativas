@@ -1,0 +1,60 @@
+﻿@model madurativas.db.Paciente
+
+
+    <h3 style="margin-top: 6%;">¿Esta seguro que desea eliminar este paciente?</h3>
+    <div>
+        <h4>Paciente</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nombre)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.apellidos)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.apellidos)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.fechaNacimiento)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.fechaNacimiento)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.EC_antesNacimiento)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.EC_antesNacimiento)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.inactivo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.inactivo)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn cancelButton" /> |
+                @Html.ActionLink("Volver a la Lista", "Index")
+            </div>
+        }
+    </div>
+

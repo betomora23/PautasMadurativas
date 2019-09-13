@@ -1,0 +1,128 @@
+﻿@using System.Collections
+@using madurativas.db
+@model Paciente
+<div class="modal-content">
+
+    @{        
+        var db = new madurativasEntities();
+        var socials = db.hitos_area_social.OrderBy(s => s.hito_social_id);
+        var _Caledad = DateTime.Now.Subtract(Model.fechaNacimiento);
+        var Valor = 0.0;
+        decimal _edadAMostrar = 0;
+        decimal _edad = 0;
+        decimal _edadCorregida = 0;
+        decimal _edadCorregidaCalculo = 0;
+        if (Model.EC_antesNacimiento != 0 && Model.EC_antesNacimiento != null)
+        {
+            Valor = Math.Round(((40 - (Int32)Model.EC_antesNacimiento) / 4.5 / 12), 2);
+        }
+
+        if (Model.EC_antesNacimiento <= 37 && Model.EC_antesNacimiento > 0 && _Caledad.Days < 730)
+        {
+            _edadAMostrar = Convert.ToDecimal((_Caledad.TotalDays / 365.25).ToString("F1"));
+            _edad = Convert.ToDecimal((_Caledad.TotalDays / 365.25).ToString("F2"));
+            _edadCorregidaCalculo = Convert.ToDecimal((_edad - (decimal)Valor).ToString("F2"));
+            _edadCorregida = Convert.ToDecimal((_edad - (decimal)Valor).ToString().Substring(0, ((_edad - (decimal)Valor).ToString()).Length-1));
+        }
+        else
+        {
+            _edadAMostrar = Convert.ToDecimal((_Caledad.TotalDays / 365.25).ToString("F1"));
+            _edad = Convert.ToDecimal((_Caledad.TotalDays / 365.25).ToString("F2"));
+        }
+
+        string Resultado(decimal min, decimal max)
+        {
+            if (_edadCorregidaCalculo != 0 && _Caledad.Days < 730)
+            {
+                if (_edadCorregidaCalculo <= min) { return "Aún no se debería presentar"; }
+                return _edadCorregidaCalculo >= max ? "Debería estar presente" : "Puede o no cumplir";
+            }
+            else
+            {
+                if (_edad <= min) { return "Aún no se debería presentar"; }
+                return _edad >= max ? "Debería estar presente" : "Puede o no cumplir";
+            }
+        }
+
+        string BackgroundColor(decimal min, decimal max)
+        {
+            if (_edadCorregidaCalculo != 0 && _Caledad.Days < 730)
+            {
+                return (_edadCorregidaCalculo <= min) ? "white" : _edadCorregidaCalculo >= max ? "#ED2F39" : "#A9D08E";
+            }
+            else
+            {
+                return (_edad <= min) ? "white" : _edad >= max ? "#ED2F39" : "#A9D08E";
+            }
+        }
+
+        string Color(decimal min, decimal max)
+        {
+            if (_edadCorregidaCalculo != 0 && _Caledad.Days < 730)
+            {
+                return (_edadCorregidaCalculo <= min) ? "Black" : _edadCorregidaCalculo >= max ? "White" : "Black";
+            }
+            else
+            {
+                return (_edad <= min) ? "Black" : _edad >= max ? "White" : "Black";
+            }
+
+        }
+
+        }
+    <div class="modal-header">
+        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+        <table class="col-md-12">
+            <tr>
+                <td class="col-md-6">
+                    <h3 class="modal-title">Area personal - social</h3>
+                    <h5><strong>Paciente:</strong> @Model.FullName</h5>
+                    <h5><strong>Edad Cronologica:</strong> @_edadAMostrar años.</h5>
+                    @if (_edadCorregida != 0 && _Caledad.Days < 730)
+                    {<h5><strong>Edad Corregida:</strong> @_edadCorregida años.</h5>}
+                </td>
+                <td class="col-md-6">
+                    <button style="color:white; margin-right: 5%;" type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 style="color: white; float: right;"><strong>No es una prueba diagnóstica</strong></h4>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="modal-body" id="bodyPersonalSocial">
+
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Area personal - social</th>
+                    <th>Min*</th>
+                    <th>Max**</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in socials)
+                {
+                    <tr>
+                        <td>@item.descripcion</td>
+                        <td>@item.min</td>
+                        <td>@item.max</td>
+                        <td style="background:@BackgroundColor(@item.min, @item.max); color:@Color(@item.min, @item.max);">@Resultado(item.min, item.max)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <hr />
+        <p> *Mínimo: IC 95 inferior para el Percentilo 25 o 50 publicado</p>
+        <p>**Máximo: IC 95 superior para el Percentilo 90 publicado</p>
+    </div>
+
+    @*<div class="modal-footer">
+        <div class="form-group">
+            <div class=" col-md-12">
+                <button id="btnPersonalSocial" type="submit" class="col-md-2 cancelButton" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>*@
+</div>
+

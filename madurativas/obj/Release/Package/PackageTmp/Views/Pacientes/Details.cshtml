@@ -1,0 +1,105 @@
+﻿@model madurativas.db.Paciente
+
+<div>
+    <h4  style="margin-top: 3%;">Paciente</h4>
+    <hr />
+<div class="col-md-6">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EC_antesNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EC_antesNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.inactivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inactivo)
+        </dd>
+
+    </dl>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Estudios Realizados</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Estudio ID")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Fecha Estudio")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Digitado Por")
+                        </th>
+                    
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in (IEnumerable<madurativas.db.estudio>)@ViewBag.Estudios)
+                    {
+                        <tr>
+                            <td>
+                                @*@{
+                                    var _EcgID = (int)item.estudioId;
+                                }*@
+                                @Html.ActionLink(item.estudioId.ToString(), "Edit", "Home", new {id= item.estudioId}, null)
+                                @*@Html.DisplayFor(modelItem => item.estudioId)*@
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.fechaestudio)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.digitado)
+                            </td>
+                            
+
+                            <td>
+                                @*@Html.ActionLink("Edit", "Edit", new { id=item.ecg_id }) |
+                                    @Html.ActionLink("Details", "Details", new { id=item.ecg_id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id=item.ecg_id })*@
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.pacienteId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

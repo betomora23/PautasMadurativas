@@ -1,0 +1,459 @@
+﻿@model madurativas.db.estudio
+@*@model madurativas.db.EstudioCompuesto*@
+
+@{
+    ViewBag.Title = "Estudio";
+}
+
+<style>
+    #linkBiblio{
+        margin-right:15%;
+        margin-top:0%;
+    }
+    .buttonCenter {
+        margin-left: 18%;
+    }
+
+    #apptitle {
+        margin-top: 8%;
+    }
+
+    .alinear {
+        margin-top: 0.6%;
+        margin-bottom: 0%;
+    }
+    .col-xs-9 {
+        margin-left: 0%;
+    }
+
+    .centrar {
+        margin-top: 0%;
+    }
+
+    @@media screen and (max-width: 450px) {
+        #linkBiblio {
+            margin-right: 5%;
+            margin-top: 7%;
+        }
+        #apptitle {
+            margin-top: 25%;
+        }
+        .alinear {
+            margin-top: 0%;
+            margin-bottom: 5%;
+            padding-left:0%;
+        }
+        .col-xs-4{
+            padding-right:0px;
+        }
+        .col-xs-9 {
+            margin-left: 8%;
+        }
+        .centrar {
+            margin-top: 2%;
+        }
+        .buttonCenter {
+            margin-left: 0%;
+        }
+    }
+</style>
+
+@*<link href="~/Content/Site.css" rel="stylesheet" />*@
+<h2 id="apptitle">Supervisión de la salud infantil.</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "FrmEstudio" }))
+{
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Vigilancia de pautas madurativas y diagnóstico oportuno de autismo.</h4>
+        <hr />
+
+        <div class="row">
+            @*Empieza la Row de los datos del paciente*@
+        <div class="col-md-12 col-sm-12">
+            @Html.HiddenFor(model => model.estudioId)
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @*<div class="form-group">*@
+            @Html.LabelFor(model => model.Paciente.nombre, "Paciente:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-2" })
+            <div class="col-md-2 col-xs-9 alinear">
+                @Model.Paciente.FullName
+                @*@Html.DropDownList("pacienteid", (IEnumerable<SelectListItem>)ViewBag.Pacientes, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.pacienteid, "", new { @class = "text-danger" })*@
+                @*@Html.DisplayFor(model => model.Paciente.FullName, new { @class = "form-control" })*@
+            </div>
+            @*</div>*@
+
+            @*<div class="form-group">*@
+            @Html.Label("Fecha Nacimiento:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-6 centrar" })
+            <div class="col-md-2 col-xs-6 alinear">
+                @{
+                    var _fechaNacimiento = Model.Paciente.fechaNacimiento.ToShortDateString();
+                }
+                @_fechaNacimiento
+                @Html.HiddenFor(model => model.Paciente.fechaNacimiento)
+
+                <div>
+                    @Html.Label("Edad Cronologica: ")
+                    @Html.Label("edad", htmlAttributes: new { id = "edad" })
+                </div>
+                <div id="div_edadCorregida" style="display:none">
+                    @Html.Label("Edad Corregida: ")
+                    @Html.Label("edadCorregida", htmlAttributes: new { id = "edadCorregida" })
+                </div>
+            </div>
+            @*</div>*@
+
+            @*<div class="form-group">*@
+            @Html.Label("Fecha Estudio:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-5" })
+            <div class="col-md-2 col-xs-3 alinear">
+                @*@Html.ValueFor(model => model.fechaestudio)*@
+                @{
+                    var _fechaestudio = Model.fechaestudio.ToShortDateString();
+                }
+                @_fechaestudio
+                @Html.HiddenFor(model => model.fechaestudio)
+            </div>
+            @*</div>*@
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.digitado, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.digitado, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>*@
+
+            @*<div class="form-group">
+                    <div class="col-md-offset-4 col-md-9">
+                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                    </div>
+                </div>*@
+        </div>
+    </div>@*Termina la Row*@
+
+    <br />
+
+    <div class="row">
+        @*Empieza Row de los botones*@
+        <div @*style="margin-left:9%"*@ class="col-md-12 col-xs-12 buttonCenter">
+            <div>
+                <div class="col-md-12">
+                    @*<div class="row">*@
+                    <button id="evalRiesgos" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-primary" onclick="HabilitarEvalRiesgos()" @*data-toggle="modal" data-target="#modalEvalRiesgos"*@>Evaluación de Riesgos</button>
+                    @*</div>
+                <br />
+                <div class="row">*@
+                    @*@Html.ActionLink("M-CHAT test de pesquisa de Autismo", "Index", "mChat", new { id = Model.estudioId }, new { @class = "btn btn-primary col-md-3 col-sm-8 col-xs-10", @style = "margin-right:1%; margin-bottom:1%;" })*@
+                    <button id="vigilancia" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-primary" onclick="HabilitarVigilancia()">Vigilancia del Desarrollo</button>
+                    @*</div>
+                <br />*@
+                    @*<div class="row ">*@
+                    <button id="mChat" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-3 col-sm-8 col-xs-12 btn btn-primary" onclick="HabilitarmChat()">M-CHAT test de pesquisa de Autismo</button>
+
+                    @*</div>*@
+                    @*<br />*@
+                    @*<div class="row ">*@
+                    @*<a style="margin-right:1%; margin-bottom:1%; border: none;" data-toggle="modal" data-target="#modalBibliografia">Consultar Bibliografia</a>*@
+
+                    @*</div>*@
+                </div>
+
+                <a id="linkBiblio" style="cursor: pointer; float: right;" data-toggle="modal" data-target="#modalBibliografia">Consultar Bibliografia</a>
+
+            </div>
+
+            @*<br />
+        <hr />*@
+        </div>
+</div> @*Termina la Row*@
+@*<br />*@
+<hr />
+@*<br />*@
+
+<div id="vigilanciaDesarrollo" class="row" style="display:none">
+    <div class="modal-content" id="panelVigilancia" style="border:0px solid transparent">
+        <div class="modal-header" style="border:1px solid #ddd; text-align:center;"><h4>Vigilancia del Desarrollo</h4></div>
+        <div class="panel-body" style="border:1px solid #ddd">
+            <div class="container col-md-12">
+                <div class="row ">
+                    <button type="button" class="col-md-3 btn btn-primary" data-toggle="modal" data-target="#modalPersonalSocial">Area - Personal - Social</button>
+
+                    <button type="button" class="col-md-offset-1 col-md-3 btn btn-primary " data-toggle="modal" data-target="#modalMotricidadFina">Motricidad Fina</button>
+
+                </div>
+                <br />
+                <div class="row ">
+                    <button type="button" class="col-md-3 btn btn-primary" data-toggle="modal" data-target="#modalLenguaje">Lenguaje</button>
+
+                    <button type="button" class="col-md-offset-1 col-md-3 btn btn-primary" data-toggle="modal" data-target="#modalMotricidadGruesa">Motricidad Gruesa</button>
+                </div>
+
+            </div>
+        </div>
+        @*<br />
+            <div class="panel-footer" style="background-color:#CFF0FF; border:0px solid transparent">
+            <p style="color:#8e8e8e">Escalas de cribado para los TD: Existen numerosas escalas de primer nivel para el cribado de los TD (trastornos del desarrollo). Sin embargo, ninguna de ellas tiene el suficiente nivel de sensibilidad y especificidad como para ser recomendada de forma preferente. Deben tenerse en cuenta los hitos del desarrollo. Hay pruebas de que muchos de los niños con resultados positivos en los test se beneficiarán de su derivación a servicios de atención temprana, tengan o no un diagnóstico de TD.*</p>
+            <hr />
+            <p style="color:#8e8e8e">
+                * Galbe Sánchez-Ventura, J. Detección precoz de los trastornos del desarrollo. En Recomendaciones PrevInfad/PAPPS [en línea]. Actualizado marzo de 2017 [consultado 13-07-2018]. Disponible en <a href="http://previnfad.aepap.org/monografia/trastornos-desarrollo">http://previnfad.aepap.org/monografia/trastornos-desarrollo</a>
+            </p>
+            </div>*@
+    </div>
+
+    <br />
+
+    <div style="background-color:#CFF0FF; padding:0.8%;">
+        <p style="color:#8e8e8e">Escalas de cribado para los TD: Existen numerosas escalas de primer nivel para el cribado de los TD (trastornos del desarrollo). Sin embargo, ninguna de ellas tiene el suficiente nivel de sensibilidad y especificidad como para ser recomendada de forma preferente. Deben tenerse en cuenta los hitos del desarrollo. Hay pruebas de que muchos de los niños con resultados positivos en los test se beneficiarán de su derivación a servicios de atención temprana, tengan o no un diagnóstico de TD.*</p>
+        <hr />
+        <p style="color:#8e8e8e">
+            * Galbe Sánchez-Ventura, J. Detección precoz de los trastornos del desarrollo. En Recomendaciones PrevInfad/PAPPS [en línea]. Actualizado marzo de 2017 [consultado 13-07-2018]. Disponible en <a href="http://previnfad.aepap.org/monografia/trastornos-desarrollo">http://previnfad.aepap.org/monografia/trastornos-desarrollo</a>
+        </p>
+    </div>
+
+</div>
+
+</div>
+}
+
+<div id="modalEvalRiesgos" style="display:none">
+    <div>
+        @Html.Partial("PartialView/_evalRiesgos", Model.eval_riesgos)
+    </div>
+</div>
+
+<div id="modalPersonalSocial" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/Vigilancia/_PersonalSocial", Model.Paciente)
+    </div>
+</div>
+
+<div id="modalMotricidadFina" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/Vigilancia/_MotricidadFina", Model.Paciente)
+    </div>
+</div>
+
+<div id="modalLenguaje" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/Vigilancia/_Lenguaje", Model.Paciente)
+    </div>
+</div>
+
+<div id="modalMotricidadGruesa" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/Vigilancia/_MotricidadGruesa", Model.Paciente)
+    </div>
+</div>
+
+<div id="modalBibliografia" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/_bibliografia")
+    </div>
+</div>
+
+<div id="modalmChat" style="display:none">
+    <div>
+        @Html.Partial("PartialView/mChat/_mChat", Model.mchat)
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modalCancel" style="height:20%">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div>
+                    <p style="margin-top:10px">
+                        Usted tiene datos ingresados para otro paciente. Si presiona aceptar, los perderá
+                    </p>
+                    <div>
+                        <button class="cancelButton" id="cancelar" data-dismiss="modal" onclick="rollback()">Cancelar</button>
+                        <button class="greenButton" id="aceptar" onclick="volver()">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+@section scripts{
+
+
+    <script src="~/Scripts/moment.js"></script>
+
+    <script>
+
+        $(document).ready(() => { $('#loading').fadeOut(); })
+
+        var TP = 0;
+        var Donde = 0;
+
+        $(document).ready(() => {
+            TP = $(document).height();
+            Donde = $('.body-content').height();
+        })
+
+        function Acomodar() {
+            if ($(document).width() < 800) {
+                $('html, body').animate({ scrollTop: Donde - 60});
+            } else {
+                $('html, body').animate({ scrollTop: (TP - Donde /*- 100*/) });
+            }
+        }
+
+        $(function () {
+
+            var dob = Date.parse(moment($('#Paciente_fechaNacimiento').val().split(" "), "DD-MM-YYYY").format('YYYY-MM-DD'));
+
+            var today = Date.parse(moment($('#fechaestudio').val().split(" "), "DD-MM-YYYY").format('YYYY-MM-DD'));
+
+            var age = ((today - dob) / (365.25 * 24 * 60 * 60 * 1000)).toFixed(1);
+
+            $('#edad').html(age + ' años');
+
+            /*Calculo de Edad Corregida*/
+            if (localStorage.Paciente_EC_antesNacimiento != 0) {
+            var valor = ((40 - localStorage.Paciente_EC_antesNacimiento) / 4.5 / 12).toFixed(2);
+            var edadCorregida = (age - valor).toFixed(2);
+            if (edadCorregida < 2) {
+            $('#edadCorregida').html(edadCorregida.substr(0, edadCorregida.length - 1) + ' años');
+            $('#div_edadCorregida').show();
+            }
+            }
+
+            var edadInput = document.getElementById("edad").innerHTML;
+            localStorage.setItem("edadPaciente", edadInput)
+
+            var edadCorregidaInput = document.getElementById("edadCorregida").innerHTML;
+            localStorage.setItem("edadCorregidaPaciente", edadCorregidaInput)
+
+        });
+
+        $('#pacienteid').change(function () {
+            $('#modalCancel').modal('show');
+        })
+
+        function rollback() {
+            event.preventDefault();
+            document.getElementById("pacienteid").value = oldValue;
+        }
+
+        function volver() {
+            event.preventDefault();
+
+            var getInput = $('#pacienteid').find(":selected").val();
+            localStorage.setItem("paciente", getInput);
+
+            location.href = '@Url.Action("Index", "Home")'
+        }
+
+        var guardado = document.getElementById("btnEvalRiesgos");
+        guardado.addEventListener("click", () => {
+            if (document.getElementById("modalEvalRiesgos").style.display == "block") {
+                $('#evalRiesgosSuccess').fadeIn();
+            }
+        })
+
+        var guardadomChat = document.getElementById("btnMchat");
+        guardadomChat.addEventListener("click", () => {
+            if (document.getElementById("modalmChat").style.display == "block") {   
+            }
+        })
+
+        function HabilitarVigilancia() {
+            if (document.getElementById("vigilanciaDesarrollo").style.display == "none") {
+                document.getElementById("vigilanciaDesarrollo").style.display = "block";
+                document.getElementById("modalEvalRiesgos").style.display = "none";
+                document.getElementById("modalmChat").style.display = "none";
+                Acomodar()
+            } else if (document.getElementById("vigilanciaDesarrollo").style.display == "block") {
+                document.getElementById("vigilanciaDesarrollo").style.display = "none";
+            }
+        }
+
+        function HabilitarEvalRiesgos() {
+            if (document.getElementById("modalEvalRiesgos").style.display == "none") {
+                document.getElementById("modalEvalRiesgos").style.display = "block";
+                document.getElementById("vigilanciaDesarrollo").style.display = "none";
+                document.getElementById("modalmChat").style.display = "none";
+                Acomodar();
+            } else if (document.getElementById("modalEvalRiesgos").style.display == "block") {
+                document.getElementById("modalEvalRiesgos").style.display = "none";
+            }
+        }
+
+        function HabilitarmChat() {
+            if (document.getElementById("modalmChat").style.display == "none") {
+                document.getElementById("modalmChat").style.display = "block";
+                document.getElementById("vigilanciaDesarrollo").style.display = "none";
+                document.getElementById("modalEvalRiesgos").style.display = "none";
+                Acomodar()
+            } else if (document.getElementById("modalmChat").style.display == "block") {
+                document.getElementById("modalmChat").style.display = "none";
+            }
+        }
+
+    </script>
+
+    <script>
+
+        var $eval_quest1 = $('#problema_gpn');
+        var $eval_quest2 = $('#problema_gestacion_enfermedad');
+        var $eval_quest3 = $('#hospitalizado_postnacimiento');
+        var $eval_quest4 = $('#ictericiasevera');
+        var $eval_quest5 = $('#enfermedadgrave');
+        var $eval_quest6 = $('#deficienciamental');
+        var $eval_quest7 = $('#riesgos_ambientales');
+
+        function EvalCuentaRepuestasNo() {
+            var nfallas = 0;
+
+            if (!$eval_quest1.is(':checked')) nfallas++;
+            if (!$eval_quest2.is(':checked')) nfallas++;
+            if (!$eval_quest3.is(':checked')) nfallas++;
+            if (!$eval_quest4.is(':checked')) nfallas++;
+            if (!$eval_quest5.is(':checked')) nfallas++;
+            if (!$eval_quest6.is(':checked')) nfallas++;
+            if (!$eval_quest7.is(':checked')) nfallas++;
+
+            return nfallas;
+
+        }
+
+
+        $('#btnMchat').click(function (e) {
+            e.preventDefault();
+
+            var form = $('#FrmMChat');
+
+            $.ajax({
+                url: form.attr("action"),
+                method: form.attr("method"),
+                data: form.serialize(),
+                success: function (partialResult) {
+                    $("#mchatContent").html(partialResult);
+                }
+            });
+        });
+
+        $(document).on("click", "#btnReturnMChat", function (e) {
+            e.preventDefault();
+
+            var form = $('#FrmMChatMonitor');
+
+            $.ajax({
+                url: form.attr("action"),
+                method: form.attr("method"),
+                data: form.serialize(),
+                success: function (partialResult) {
+                    $("#mchatContent").empty();
+                    $("#mchatContent").append(partialResult);
+                }
+            });
+
+        });
+    </script>
+}

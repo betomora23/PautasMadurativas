@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "madurativas", "madurativas\madurativas.csproj", "{4C26D285-978C-4544-9A94-6567FE399FBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "madurativas.db", "madurativas.db\madurativas.db.csproj", "{E6945E27-0765-4133-B402-D7207A8F8E6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C26D285-978C-4544-9A94-6567FE399FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C26D285-978C-4544-9A94-6567FE399FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C26D285-978C-4544-9A94-6567FE399FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C26D285-978C-4544-9A94-6567FE399FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6945E27-0765-4133-B402-D7207A8F8E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6945E27-0765-4133-B402-D7207A8F8E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6945E27-0765-4133-B402-D7207A8F8E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6945E27-0765-4133-B402-D7207A8F8E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBB9022D-A814-489C-82F3-A2D28117D406}
+	EndGlobalSection
+EndGlobal

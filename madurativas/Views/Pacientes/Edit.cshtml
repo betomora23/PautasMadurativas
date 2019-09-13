@@ -1,0 +1,66 @@
+﻿@model madurativas.db.Paciente
+
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h3 style="margin-top: 6%;">Editar Paciente</h3>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.pacienteId)
+    
+            <div class="form-group">
+                @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.Label("Apellidos", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.apellidos, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.apellidos, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.Label("Fecha De Nacimiento", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">                    
+                    @Html.EditorFor(model => model.fechaNacimiento, new { htmlAttributes = new { @class = "form-control", @Value = @Model.fechaNacimiento.ToShortDateString() } })
+                    @Html.ValidationMessageFor(model => model.fechaNacimiento, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.Label("EC antes Nacimiento", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EC_antesNacimiento, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "20", @max = "42", @Value = @Model.EC_antesNacimiento  } })
+                    @Html.ValidationMessageFor(model => model.EC_antesNacimiento, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.inactivo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.inactivo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.inactivo, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn cancelButton col-md-1", @style = "margin:0 5px 0 5px;" })
+                    <input type="submit" value="Guardar" class="btn orangeButton col-md-1" style = "margin:0 5px 0 5px;" />
+                </div>
+            </div>
+        </div>
+    }
+    
+    @*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

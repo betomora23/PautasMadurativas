@@ -1,0 +1,437 @@
+﻿@model madurativas.db.mchat
+<div class="modal-content">
+
+    <div class="modal-header">
+        <button style="color:white" type="button" class="close" data-dismiss="modal">&times;</button>
+
+        <table class="col-md-12">
+
+            <tr>
+                <td class="col-md-6">
+
+                    <h4 class="modal-title">
+                        Si Ud. se da vuelta para mirar algo, ¿@Model.estudio.Paciente.nombre gira la cabeza para ver lo que Ud. está mirando?
+                    </h4>
+                </td>
+                <td class="col-md-6">
+                    <h4 style="color: white; float: right;"><strong>No es una prueba diagnóstica</strong></h4>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="modal-body" id="bodyDetailQuest16">
+        <div class="row">
+            <div class="col-md-12">
+                @using (@Html.BeginForm("SaveDetailQuest16", null, FormMethod.Post, new { id = "FrmQuest16" }))
+                {
+                    @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-8">
+                            16. Si Ud. se da vuelta para mirar algo, ¿@Model.estudio.Paciente.nombre gira la cabeza para ver lo que Ud. está mirando?
+                        </label>
+                        <div id="dt16_quest_1" class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label onclick="Selectable(this)" class="btn btn-secondary dt16quest1">
+                                <input type="radio" name="options" id="dt16_quest_1_option1">Si
+                            </label>
+                            <label onclick="Selectable(this)" class="btn btn-secondary Activo dt16quest1">
+                                <input type="radio" name="options" id="dt16_quest_1_option2" checked> &nbsp
+                            </label>
+                            <label onclick="Selectable(this)" class="btn btn-secondary dt16quest1">
+                                <input type="radio" name="options" id="dt16_quest_1_option3">No
+                            </label>
+                        </div>
+                        @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("quest_1", Convert.ToBoolean(Model.mchat_monitor_quest_16.quest1), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.mchat_monitor_quest_16.quest1, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                    </div>
+                    <div id="cuestionario" style="display:none">
+                        <div class="form-group" id="dt16_Observacion" style="display: none;">
+                            <label class="control-label col-md-12">
+                                ¿Qué hace cuando Ud. se da vuelta para mirar algo? (Si el padre/madre no da un ejemplo de PASA o FALLA de los que están debajo, pregunte cada uno individualmente)
+                            </label>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label class="control-label col-md-12" id="dt5_lblEjemploPasa">
+                                @string.Format("{0}… ejemplos de PASA", @Model.estudio.Paciente.nombre.Trim()).Trim()
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-8">
+                                ¿Mira hacia la cosa que Ud. está mirando?
+                            </label>
+                            <div id="dt16_quest_2" class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label onclick="Selectable(this)" class="btn btn-secondary dt16quest2">
+                                    <input type="radio" name="options" id="dt16_quest_2_option1">Si
+                                </label>
+                                <label onclick="Selectable(this)" class="btn btn-secondary Activo dt16quest2">
+                                    <input type="radio" name="options" id="dt16_quest_2_option2" checked> &nbsp
+                                </label>
+                                <label onclick="Selectable(this)" class="btn btn-secondary dt16quest2">
+                                    <input type="radio" name="options" id="dt16_quest_2_option3">No
+                                </label>
+                            </div>
+                            @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("quest_2", Convert.ToBoolean(Model.mchat_monitor_quest_16.quest2), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.mchat_monitor_quest_16.quest2, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-8">
+                                ¿Señala la cosa que Ud. está mirando?
+                            </label>
+                            <div id="dt16_quest_3" class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label onclick="Selectable(this)" class="btn btn-secondary dt16quest3">
+                                    <input type="radio" name="options" id="dt16_quest_3_option1">Si
+                                </label>
+                                <label onclick="Selectable(this)" class="btn btn-secondary Activo dt16quest3">
+                                    <input type="radio" name="options" id="dt16_quest_3_option2" checked> &nbsp
+                                </label>
+                                <label onclick="Selectable(this)" class="btn btn-secondary dt16quest3">
+                                    <input type="radio" name="options" id="dt16_quest_3_option3">No
+                                </label>
+                            </div>
+                            @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("quest_3", Convert.ToBoolean(Model.mchat_monitor_quest_16.quest3), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.mchat_monitor_quest_16.quest3, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-8">
+                                ¿Gira la cabeza para ver lo que Ud. está mirando?
+                            </label>
+                            <div id="dt16_quest_4" class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label onclick="Selectable(this)" class="btn btn-secondary dt16quest4">
+                                    <input type="radio" name="options" id="dt16_quest_4_option1">Si
+                                </label>
+                                <label onclick="Selectable(this)" class="btn btn-secondary Activo dt16quest4">
+                                    <input type="radio" name="options" id="dt16_quest_4_option2" checked> &nbsp
+                                </label>
+                                <label onclick="Selectable(this)" class="btn btn-secondary dt16quest4">
+                                    <input type="radio" name="options" id="dt16_quest_4_option3">No
+                                </label>
+                            </div>
+                            @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("quest_4", Convert.ToBoolean(Model.mchat_monitor_quest_16.quest4), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.mchat_monitor_quest_16.quest4, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label class="control-label col-md-12" id="dt5_lblEjemploPasa">
+                                @string.Format("{0}… ejemplos de FALLA", @Model.estudio.Paciente.nombre.Trim()).Trim()
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-8">
+                                ¿Lo/la ignora?
+                            </label>
+                            <div id="dt16_quest_5" class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label onclick="Selectable(this)" class="btn btn-secondary dt16quest5">
+                                    <input type="radio" name="options" id="dt16_quest_5_option1">Si
+                                </label>
+                                <label onclick="Selectable(this)" class="btn btn-secondary Activo dt16quest5">
+                                    <input type="radio" name="options" id="dt16_quest_5_option2" checked> &nbsp
+                                </label>
+                                <label onclick="Selectable(this)" class="btn btn-secondary dt16quest5">
+                                    <input type="radio" name="options" id="dt16_quest_5_option3">No
+                                </label>
+                            </div>
+                            @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("quest_5", Convert.ToBoolean(Model.mchat_monitor_quest_16.quest5), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.mchat_monitor_quest_16.quest5, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-8">
+                                ¿Lo/la mira a la cara?
+                            </label>
+                            <div id="dt16_quest_6" class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label onclick="Selectable(this)" class="btn btn-secondary dt16quest6">
+                                    <input type="radio" name="options" id="dt16_quest_6_option1">Si
+                                </label>
+                                <label onclick="Selectable(this)" class="btn btn-secondary Activo dt16quest6">
+                                    <input type="radio" name="options" id="dt16_quest_6_option2" checked> &nbsp
+                                </label>
+                                <label onclick="Selectable(this)" class="btn btn-secondary dt16quest6">
+                                    <input type="radio" name="options" id="dt16_quest_6_option3">No
+                                </label>
+                            </div>
+                            @*<div class="col-md-4">
+                                <div class="checkbox">
+                                    @Html.CheckBox("quest_6", Convert.ToBoolean(Model.mchat_monitor_quest_16.quest6), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                                    @Html.ValidationMessageFor(model => model.mchat_monitor_quest_16.quest6, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label class="control-label col-md-8" id="labelResultado">
+
+                        </label>
+                        <div class="col-md-4">
+                            <label class="control-label col-md-8" id="lblResultado">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group" id="divObservacionResultado" style="display:none;">
+                        <label class="control-label col-md-12">
+                            * Para el caso de @Model.estudio.Paciente.nombre el resultado para este aspecto se evalúa en base a lo que hace más frecuentemente (para el caso de de igualdad en el número de respuestas PASA - FALLA se evalúa como FALLA)
+
+                        </label>
+
+                    </div>
+                </div>
+                    }
+                </div>
+            @*<div class="col-md-6">
+                <img class="img-responsive" src="@Url.Content("~/Content/images/quest16.png")" alt="img_quest16" />
+            </div>*@
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <div class="form-group">
+            <div class="col-md-12">
+                <button id="btndtq16Save" @*onclick="location.reload(true);"*@ type="submit" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var $dt16_Resultado = $('#FrmQuest16 #lblResultado');
+    var $dt16_cuestionario = $('#FrmQuest16 #cuestionario');
+
+    var $labelResultado = $('#FrmQuest16 #labelResultado');
+    var $divObservacionResultado = $('#FrmQuest16 #divObservacionResultado');
+
+('@Model.mchat_monitor_quest_16.quest1' == "True") ? $("#dt16_quest_1_option1").prop("checked", true) : ('@Model.mchat_monitor_quest_16.quest1' == "False") ? $("#dt16_quest_1_option3").prop("checked", true) : $("#dt16_quest_1_option2").prop("checked", true);
+    if ($("#dt16_quest_1_option1").is(':checked')) {
+        $("#dt16_quest_1_option1").parent().addClass("Activo");
+        $("#dt16_quest_1_option2").parent().removeClass("Activo");
+        $("#dt16_quest_1_option3").parent().removeClass("Activo");
+        $labelResultado.append("Resultado de la Prueba:");
+        $('#FrmQuest16 #lblResultado').append("Pasa");
+    } else if ($("#dt16_quest_1_option3").is(':checked')) {
+        $("#dt16_quest_1_option1").parent().removeClass("Activo");
+        $("#dt16_quest_1_option2").parent().removeClass("Activo");
+        $("#dt16_quest_1_option3").parent().addClass("Activo");
+        document.getElementById("dt16_Observacion").style.display = "block";
+        $dt16_cuestionario.show();
+    } else if ($("#dt16_quest_1_option2").is(':checked')) {
+        $("#dt16_quest_1_option1").parent().removeClass("Activo");
+        $("#dt16_quest_1_option2").parent().addClass("Activo");
+        $("#dt16_quest_1_option3").parent().removeClass("Activo");
+        document.getElementById("dt16_Observacion").style.display = "none";
+        $labelResultado.empty();
+    };
+('@Model.mchat_monitor_quest_16.quest2' == "True") ? $("#dt16_quest_2_option1").prop("checked", true) : ('@Model.mchat_monitor_quest_16.quest2' == "False") ? $("#dt16_quest_2_option3").prop("checked", true) : $("#dt16_quest_2_option2").prop("checked", true);
+    if ($("#dt16_quest_2_option1").is(':checked')) {
+        $("#dt16_quest_2_option1").parent().addClass("Activo");
+        $("#dt16_quest_2_option2").parent().removeClass("Activo");
+        $("#dt16_quest_2_option3").parent().removeClass("Activo");
+    } else if ($("#dt16_quest_2_option3").is(':checked')) {
+        $("#dt16_quest_2_option1").parent().removeClass("Activo");
+        $("#dt16_quest_2_option2").parent().removeClass("Activo");
+        $("#dt16_quest_2_option3").parent().addClass("Activo");
+    };
+('@Model.mchat_monitor_quest_16.quest3' == "True") ? $("#dt16_quest_3_option1").prop("checked", true) : ('@Model.mchat_monitor_quest_16.quest3' == "False") ? $("#dt16_quest_3_option3").prop("checked", true) : $("#dt16_quest_3_option2").prop("checked", true);
+    if ($("#dt16_quest_3_option1").is(':checked')) {
+        $("#dt16_quest_3_option1").parent().addClass("Activo");
+        $("#dt16_quest_3_option2").parent().removeClass("Activo");
+        $("#dt16_quest_3_option3").parent().removeClass("Activo");
+    } else if ($("#dt16_quest_3_option3").is(':checked')) {
+        $("#dt16_quest_3_option1").parent().removeClass("Activo");
+        $("#dt16_quest_3_option2").parent().removeClass("Activo");
+        $("#dt16_quest_3_option3").parent().addClass("Activo");
+    };
+('@Model.mchat_monitor_quest_16.quest4' == "True") ? $("#dt16_quest_4_option1").prop("checked", true) : ('@Model.mchat_monitor_quest_16.quest4' == "False") ? $("#dt16_quest_4_option3").prop("checked", true) : $("#dt16_quest_4_option2").prop("checked", true);
+    if ($("#dt16_quest_4_option1").is(':checked')) {
+        $("#dt16_quest_4_option1").parent().addClass("Activo");
+        $("#dt16_quest_4_option2").parent().removeClass("Activo");
+        $("#dt16_quest_4_option3").parent().removeClass("Activo");
+    } else if ($("#dt16_quest_4_option3").is(':checked')) {
+        $("#dt16_quest_4_option1").parent().removeClass("Activo");
+        $("#dt16_quest_4_option2").parent().removeClass("Activo");
+        $("#dt16_quest_4_option3").parent().addClass("Activo");
+    };
+('@Model.mchat_monitor_quest_16.quest5' == "True") ? $("#dt16_quest_5_option1").prop("checked", true) : ('@Model.mchat_monitor_quest_16.quest5' == "False") ? $("#dt16_quest_5_option3").prop("checked", true) : $("#dt16_quest_5_option2").prop("checked", true);
+    if ($("#dt16_quest_5_option1").is(':checked')) {
+        $("#dt16_quest_5_option1").parent().addClass("Activo");
+        $("#dt16_quest_5_option2").parent().removeClass("Activo");
+        $("#dt16_quest_5_option3").parent().removeClass("Activo");
+    } else if ($("#dt16_quest_5_option3").is(':checked')) {
+        $("#dt16_quest_5_option1").parent().removeClass("Activo");
+        $("#dt16_quest_5_option2").parent().removeClass("Activo");
+        $("#dt16_quest_5_option3").parent().addClass("Activo");
+    };
+('@Model.mchat_monitor_quest_16.quest6' == "True") ? $("#dt16_quest_6_option1").prop("checked", true) : ('@Model.mchat_monitor_quest_16.quest6' == "False") ? $("#dt16_quest_6_option3").prop("checked", true) : $("#dt16_quest_6_option2").prop("checked", true);
+    if ($("#dt16_quest_6_option1").is(':checked')) {
+        $("#dt16_quest_6_option1").parent().addClass("Activo");
+        $("#dt16_quest_6_option2").parent().removeClass("Activo");
+        $("#dt16_quest_6_option3").parent().removeClass("Activo");
+    } else if ($("#dt16_quest_6_option3").is(':checked')) {
+        $("#dt16_quest_6_option1").parent().removeClass("Activo");
+        $("#dt16_quest_6_option2").parent().removeClass("Activo");
+        $("#dt16_quest_6_option3").parent().addClass("Activo");
+    };
+
+    $(function () {
+        $("#bodyDetailQuest16").click(function () {
+        var $dt16_quest1 = $('#FrmQuest16 #quest_1');
+        var $dt16_quest2 = $('#FrmQuest16 #quest_2');
+        var $dt16_quest3 = $('#FrmQuest16 #quest_3');
+        var $dt16_quest4 = $('#FrmQuest16 #quest_4');
+        var $dt16_quest5 = $('#FrmQuest16 #quest_5');
+        var $dt16_quest6 = $('#FrmQuest16 #quest_6');
+
+        var $dt16_Resultado = $('#FrmQuest16 #lblResultado');
+        var $dt16_cuestionario = $('#FrmQuest16 #cuestionario');
+
+        var $labelResultado = $('#FrmQuest16 #labelResultado');
+        var $divObservacionResultado = $('#FrmQuest16 #divObservacionResultado')
+
+        function validaResultado() {
+
+            if ($("#dt16_quest_1_option1").parent().hasClass("Activo")) {
+                $labelResultado.empty();
+                $labelResultado.append("Resultado de la Prueba:");
+                Resultado("Pasa");
+            } else if (dt16_SoloSiEjEnPasa() == 3) {
+                document.getElementById("dt16_Observacion").style.display = "block";
+                Resultado("Pasa");
+                if (dt16_SoloSiEjEnFallas() == 2) {
+                    Resultado("Falla");
+                }
+
+                if (dt16_SoloSiEjEnPasa() != 3 || dt16_SoloSiEjEnFallas() != 0) {
+                    $labelResultado.empty();
+                    $labelResultado.append("Resultado de la Prueba:*");
+                    $divObservacionResultado.show();
+                } else {
+                    $labelResultado.empty();
+                    $labelResultado.append("Resultado de la Prueba:");
+                    $divObservacionResultado.hide();
+                }
+            } else if ($("#dt16_quest_1_option2").parent().hasClass("Activo")) {
+                $labelResultado.empty();
+                Resultado("");
+            }
+
+        }
+
+        function Resultado(valor) {
+            $dt16_Resultado.empty();
+            $dt16_Resultado.append(valor);
+        }
+
+
+        function muestraCampos() {
+            if ($("#dt16_quest_1_option3").parent().hasClass("Activo")) {
+                document.getElementById("dt16_Observacion").style.display = "block";
+                $dt16_cuestionario.show();
+            } else if ($("#dt16_quest_1_option1").parent().hasClass("Activo")) {
+                document.getElementById("dt16_Observacion").style.display = "none";
+                $dt16_cuestionario.hide();
+                $labelResultado.append("Resultado de la Prueba:");
+                Resultado("Pasa");
+            } else if ($("#dt16_quest_1_option2").parent().hasClass("Activo")) {
+                document.getElementById("dt16_Observacion").style.display = "none";
+                $dt16_cuestionario.hide();
+                $labelResultado.append("Resultado de la Prueba:");
+                Resultado(" ");
+            }
+
+            validaResultado();
+        }
+
+        muestraCampos();
+
+        function dt16_SoloSiEjEnPasa() {
+            var nfallas = 0;
+
+            if ($("#dt16_quest_2_option1").parent().hasClass("Activo")) nfallas++;
+            if ($("#dt16_quest_3_option1").parent().hasClass("Activo")) nfallas++;
+            if ($("#dt16_quest_4_option1").parent().hasClass("Activo")) nfallas++;
+
+            return nfallas;
+
+        }
+
+
+        function dt16_SoloSiEjEnFallas() {
+            var nfallas = 0;
+
+            if ($("#dt16_quest_5_option1").parent().hasClass("Activo")) nfallas++;
+            if ($("#dt16_quest_6_option1").parent().hasClass("Activo")) nfallas++;
+
+            return nfallas;
+
+        }
+
+        $("#bodyDetailQuest16").click(function () {
+
+            muestraCampos();
+
+        });
+
+
+        $("#btndtq16Save").click(function (e) {
+
+            e.preventDefault();
+
+            var form = $("#FrmQuest16");
+
+
+            var _pasa;
+            if ($dt16_Resultado.text().toLowerCase() == "pasa") {
+                _pasa = true;
+            } else { _pasa = false; }
+
+            var q16datos = {
+                estudioId: $("#estudio_id").val(),
+                quest1: ($("#dt16_quest_1_option1").parent().hasClass("Activo")) ? true : ($("#dt16_quest_1_option3").parent().hasClass("Activo")) ? false : null,
+                quest2: ($("#dt16_quest_2_option1").parent().hasClass("Activo")) ? true : ($("#dt16_quest_2_option3").parent().hasClass("Activo")) ? false : null,
+                quest3: ($("#dt16_quest_3_option1").parent().hasClass("Activo")) ? true : ($("#dt16_quest_3_option3").parent().hasClass("Activo")) ? false : null,
+                quest4: ($("#dt16_quest_4_option1").parent().hasClass("Activo")) ? true : ($("#dt16_quest_4_option3").parent().hasClass("Activo")) ? false : null,
+                quest5: ($("#dt16_quest_5_option1").parent().hasClass("Activo")) ? true : ($("#dt16_quest_5_option3").parent().hasClass("Activo")) ? false : null,
+                quest6: ($("#dt16_quest_6_option1").parent().hasClass("Activo")) ? true : ($("#dt16_quest_6_option3").parent().hasClass("Activo")) ? false : null,
+                //quest1: $dt16_quest1.is(":checked"),
+                //quest2: $dt16_quest2.is(":checked"),
+                //quest3: $dt16_quest3.is(":checked"),
+                //quest4: $dt16_quest4.is(":checked"),
+                //quest5: $dt16_quest5.is(":checked"),
+                //quest6: $dt16_quest6.is(":checked"),
+                pasa: _pasa
+            };
+
+            $.ajax({
+                url: form.attr("action"),
+                method: form.attr("method"),
+                data: q16datos,
+                success: function () { location.reload(true); }
+            });
+
+        });
+    })
+    });
+</script>

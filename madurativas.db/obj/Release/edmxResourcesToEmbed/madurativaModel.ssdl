@@ -1,0 +1,931 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="madurativasModel.Store" Provider="Npgsql" ProviderManifestToken="10.4" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClaimType" Type="varchar" MaxLength="256" />
+    <Property Name="ClaimValue" Type="varchar" MaxLength="256" />
+    <Property Name="UserId" Type="varchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+    </Key>
+    <Property Name="UserId" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="LoginProvider" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="varchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="varchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="PasswordHash" Type="varchar" MaxLength="256" />
+    <Property Name="SecurityStamp" Type="varchar" MaxLength="256" />
+    <Property Name="Email" Type="varchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bool" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="256" />
+    <Property Name="PhoneNumberConfirmed" Type="bool" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bool" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="timestamp" />
+    <Property Name="LockoutEnabled" Type="bool" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="estudio">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="fechaestudio" Type="date" Nullable="false" />
+    <Property Name="digitado" Type="bpchar" MaxLength="80" />
+    <Property Name="activo" Type="bool" Nullable="false" />
+    <Property Name="pacienteid" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="estudioId" Type="int8" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="eval_riesgos">
+    <Key>
+      <PropertyRef Name="estudioid" />
+    </Key>
+    <Property Name="estudioid" Type="int8" Nullable="false" />
+    <Property Name="problema_gpn" Type="bool" />
+    <Property Name="problema_gestacion_enfermedad" Type="bool" />
+    <Property Name="hospitalizado_postnacimiento" Type="bool" />
+    <Property Name="ictericiasevera" Type="bool" />
+    <Property Name="enfermedadgrave" Type="bool" />
+    <Property Name="deficienciamental" Type="bool" />
+    <Property Name="riesgos_ambientales" Type="bool" />
+  </EntityType>
+  <EntityType Name="hitos_area_social">
+    <Key>
+      <PropertyRef Name="hito_social_id" />
+    </Key>
+    <Property Name="hito_social_id" Type="int4" Nullable="false" />
+    <Property Name="descripcion" Type="bpchar" MaxLength="60" Nullable="false" />
+    <Property Name="min" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="max" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hitos_lenguaje">
+    <Key>
+      <PropertyRef Name="lenguaje_id" />
+    </Key>
+    <Property Name="lenguaje_id" Type="int4" Nullable="false" />
+    <Property Name="descripcion" Type="bpchar" MaxLength="60" Nullable="false" />
+    <Property Name="min" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="max" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hitos_motricidad_fina">
+    <Key>
+      <PropertyRef Name="motricidad_fina_id" />
+    </Key>
+    <Property Name="motricidad_fina_id" Type="int4" Nullable="false" />
+    <Property Name="descripcion" Type="bpchar" MaxLength="60" Nullable="false" />
+    <Property Name="min" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="max" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hitos_motricidad_gruesa">
+    <Key>
+      <PropertyRef Name="motricidad_gruesa_id" />
+    </Key>
+    <Property Name="motricidad_gruesa_id" Type="int4" Nullable="false" />
+    <Property Name="descripcion" Type="bpchar" MaxLength="60" Nullable="false" />
+    <Property Name="min" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="max" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mchat">
+    <Key>
+      <PropertyRef Name="estudio_id" />
+    </Key>
+    <Property Name="estudio_id" Type="int8" Nullable="false" />
+    <Property Name="quest_1" Type="bool" />
+    <Property Name="quest_2" Type="bool" />
+    <Property Name="quest_3" Type="bool" />
+    <Property Name="quest_4" Type="bool" />
+    <Property Name="quest_5" Type="bool" />
+    <Property Name="quest_6" Type="bool" />
+    <Property Name="quest_7" Type="bool" />
+    <Property Name="quest_8" Type="bool" />
+    <Property Name="quest_9" Type="bool" />
+    <Property Name="quest_10" Type="bool" />
+    <Property Name="quest_11" Type="bool" />
+    <Property Name="quest_12" Type="bool" />
+    <Property Name="quest_13" Type="bool" />
+    <Property Name="quest_14" Type="bool" />
+    <Property Name="quest_15" Type="bool" />
+    <Property Name="quest_16" Type="bool" />
+    <Property Name="quest_17" Type="bool" />
+    <Property Name="quest_18" Type="bool" />
+    <Property Name="quest_19" Type="bool" />
+    <Property Name="quest_20" Type="bool" />
+    <Property Name="completado" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_1">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="quest8" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_10">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="quest8" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_11">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_12">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="quest8" Type="bool" />
+    <Property Name="quest9" Type="bool" />
+    <Property Name="quest10" Type="bool" />
+    <Property Name="quest11" Type="bool" />
+    <Property Name="quest12" Type="varchar" MaxLength="255" />
+    <Property Name="quest13" Type="bool" />
+    <Property Name="quest14" Type="bool" />
+    <Property Name="quest15" Type="bool" />
+    <Property Name="quest16" Type="bool" />
+    <Property Name="quest17" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_13">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_14">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="quest8" Type="bool" />
+    <Property Name="quest9" Type="bool" />
+    <Property Name="quest10" Type="bool" />
+    <Property Name="quest11" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_15">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="quest8" Type="bool" />
+    <Property Name="quest9" Type="varchar" MaxLength="255" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_16">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_17">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="varchar" MaxLength="255" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_18">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="quest8" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_19">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_2">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bpchar" MaxLength="60" />
+    <Property Name="Pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_20">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="varchar" MaxLength="255" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_3">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="quest8" Type="bool" />
+    <Property Name="quest9" Type="bool" />
+    <Property Name="quest10" Type="bool" />
+    <Property Name="quest11" Type="bool" />
+    <Property Name="quest13" Type="varchar" MaxLength="8000" />
+    <Property Name="quest12" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_4">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_5">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="quest8" Type="bool" />
+    <Property Name="quest9" Type="varchar" MaxLength="8000" />
+    <Property Name="quest10" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_6">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_7">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_8">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="quest8" Type="bool" />
+    <Property Name="quest9" Type="bool" />
+    <Property Name="quest10" Type="bool" />
+    <Property Name="quest11" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <EntityType Name="mchat_monitor_quest_9">
+    <Key>
+      <PropertyRef Name="estudioId" />
+    </Key>
+    <Property Name="estudioId" Type="int8" Nullable="false" />
+    <Property Name="quest1" Type="bool" />
+    <Property Name="quest2" Type="bool" />
+    <Property Name="quest3" Type="bool" />
+    <Property Name="quest4" Type="bool" />
+    <Property Name="quest5" Type="bool" />
+    <Property Name="quest6" Type="bool" />
+    <Property Name="quest7" Type="bool" />
+    <Property Name="quest8" Type="varchar" MaxLength="8000" />
+    <Property Name="quest9" Type="bool" />
+    <Property Name="pasa" Type="bool" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6006: The facet 'Precision' with a value '255' is outside the range 1-29 specified by the facet description.  The column 'edad' in the table 'madurativas.public.Pacientes' was excluded.-->
+  <EntityType Name="Pacientes">
+    <Key>
+      <PropertyRef Name="pacienteId" />
+    </Key>
+    <Property Name="pacienteId" Type="numeric" Precision="19" Scale="4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="bpchar" MaxLength="80" Nullable="false" />
+    <Property Name="apellidos" Type="bpchar" MaxLength="80" Nullable="false" />
+    <Property Name="fechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="EC_antesNacimiento" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="inactivo" Type="bool" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AspNetUserClaims_AspNetUsers_User_Id">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserLogins_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_estudio_Pacientes_1">
+    <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
+    <End Role="estudio" Type="Self.estudio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacientes">
+        <PropertyRef Name="pacienteId" />
+      </Principal>
+      <Dependent Role="estudio">
+        <PropertyRef Name="pacienteid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_eval_riesgos_estudio">
+    <End Role="estudio" Type="Self.estudio" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="eval_riesgos" Type="Self.eval_riesgos" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="estudio">
+        <PropertyRef Name="estudioId" />
+      </Principal>
+      <Dependent Role="eval_riesgos">
+        <PropertyRef Name="estudioid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_estudio_1">
+    <End Role="estudio" Type="Self.estudio" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="mchat" Type="Self.mchat" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="estudio">
+        <PropertyRef Name="estudioId" />
+      </Principal>
+      <Dependent Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_1_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_1" Type="Self.mchat_monitor_quest_1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_1">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_10_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_10" Type="Self.mchat_monitor_quest_10" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_10">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_11_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_11" Type="Self.mchat_monitor_quest_11" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_11">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_12_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_12" Type="Self.mchat_monitor_quest_12" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_12">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_13_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_13" Type="Self.mchat_monitor_quest_13" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_13">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_14_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_14" Type="Self.mchat_monitor_quest_14" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_14">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_15_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_15" Type="Self.mchat_monitor_quest_15" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_15">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_16_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_16" Type="Self.mchat_monitor_quest_16" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_16">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_17_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_17" Type="Self.mchat_monitor_quest_17" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_17">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_18_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_18" Type="Self.mchat_monitor_quest_18" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_18">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_19_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_19" Type="Self.mchat_monitor_quest_19" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_19">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_2_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_2" Type="Self.mchat_monitor_quest_2" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_2">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_20_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_20" Type="Self.mchat_monitor_quest_20" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_20">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_3_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_3" Type="Self.mchat_monitor_quest_3" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_3">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_4_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_4" Type="Self.mchat_monitor_quest_4" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_4">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_5_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_5" Type="Self.mchat_monitor_quest_5" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_5">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_6_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_6" Type="Self.mchat_monitor_quest_6" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_6">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_7_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_7" Type="Self.mchat_monitor_quest_7" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_7">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_8_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_8" Type="Self.mchat_monitor_quest_8" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_8">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mchat_monitor_quest_9_mchat_1">
+    <End Role="mchat" Type="Self.mchat" Multiplicity="1" />
+    <End Role="mchat_monitor_quest_9" Type="Self.mchat_monitor_quest_9" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mchat">
+        <PropertyRef Name="estudio_id" />
+      </Principal>
+      <Dependent Role="mchat_monitor_quest_9">
+        <PropertyRef Name="estudioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="madurativasModelStoreContainer">
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="public" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="public" store:Type="Tables" />
+    <EntitySet Name="estudio" EntityType="Self.estudio" Schema="public" store:Type="Tables" />
+    <EntitySet Name="eval_riesgos" EntityType="Self.eval_riesgos" Schema="public" store:Type="Tables" />
+    <EntitySet Name="hitos_area_social" EntityType="Self.hitos_area_social" Schema="public" store:Type="Tables" />
+    <EntitySet Name="hitos_lenguaje" EntityType="Self.hitos_lenguaje" Schema="public" store:Type="Tables" />
+    <EntitySet Name="hitos_motricidad_fina" EntityType="Self.hitos_motricidad_fina" Schema="public" store:Type="Tables" />
+    <EntitySet Name="hitos_motricidad_gruesa" EntityType="Self.hitos_motricidad_gruesa" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat" EntityType="Self.mchat" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_1" EntityType="Self.mchat_monitor_quest_1" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_10" EntityType="Self.mchat_monitor_quest_10" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_11" EntityType="Self.mchat_monitor_quest_11" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_12" EntityType="Self.mchat_monitor_quest_12" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_13" EntityType="Self.mchat_monitor_quest_13" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_14" EntityType="Self.mchat_monitor_quest_14" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_15" EntityType="Self.mchat_monitor_quest_15" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_16" EntityType="Self.mchat_monitor_quest_16" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_17" EntityType="Self.mchat_monitor_quest_17" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_18" EntityType="Self.mchat_monitor_quest_18" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_19" EntityType="Self.mchat_monitor_quest_19" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_2" EntityType="Self.mchat_monitor_quest_2" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_20" EntityType="Self.mchat_monitor_quest_20" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_3" EntityType="Self.mchat_monitor_quest_3" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_4" EntityType="Self.mchat_monitor_quest_4" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_5" EntityType="Self.mchat_monitor_quest_5" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_6" EntityType="Self.mchat_monitor_quest_6" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_7" EntityType="Self.mchat_monitor_quest_7" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_8" EntityType="Self.mchat_monitor_quest_8" Schema="public" store:Type="Tables" />
+    <EntitySet Name="mchat_monitor_quest_9" EntityType="Self.mchat_monitor_quest_9" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="public" store:Type="Tables" />
+    <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_User_Id" Association="Self.FK_AspNetUserClaims_AspNetUsers_User_Id">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers_UserId" Association="Self.FK_AspNetUserLogins_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles_RoleId" Association="Self.FK_AspNetUserRoles_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers_UserId" Association="Self.FK_AspNetUserRoles_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_estudio_Pacientes_1" Association="Self.fk_estudio_Pacientes_1">
+      <End Role="Pacientes" EntitySet="Pacientes" />
+      <End Role="estudio" EntitySet="estudio" />
+    </AssociationSet>
+    <AssociationSet Name="fk_eval_riesgos_estudio" Association="Self.fk_eval_riesgos_estudio">
+      <End Role="estudio" EntitySet="estudio" />
+      <End Role="eval_riesgos" EntitySet="eval_riesgos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_estudio_1" Association="Self.fk_mchat_estudio_1">
+      <End Role="estudio" EntitySet="estudio" />
+      <End Role="mchat" EntitySet="mchat" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_1_mchat_1" Association="Self.fk_mchat_monitor_quest_1_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_1" EntitySet="mchat_monitor_quest_1" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_10_mchat_1" Association="Self.fk_mchat_monitor_quest_10_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_10" EntitySet="mchat_monitor_quest_10" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_11_mchat_1" Association="Self.fk_mchat_monitor_quest_11_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_11" EntitySet="mchat_monitor_quest_11" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_12_mchat_1" Association="Self.fk_mchat_monitor_quest_12_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_12" EntitySet="mchat_monitor_quest_12" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_13_mchat_1" Association="Self.fk_mchat_monitor_quest_13_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_13" EntitySet="mchat_monitor_quest_13" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_14_mchat_1" Association="Self.fk_mchat_monitor_quest_14_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_14" EntitySet="mchat_monitor_quest_14" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_15_mchat_1" Association="Self.fk_mchat_monitor_quest_15_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_15" EntitySet="mchat_monitor_quest_15" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_16_mchat_1" Association="Self.fk_mchat_monitor_quest_16_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_16" EntitySet="mchat_monitor_quest_16" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_17_mchat_1" Association="Self.fk_mchat_monitor_quest_17_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_17" EntitySet="mchat_monitor_quest_17" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_18_mchat_1" Association="Self.fk_mchat_monitor_quest_18_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_18" EntitySet="mchat_monitor_quest_18" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_19_mchat_1" Association="Self.fk_mchat_monitor_quest_19_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_19" EntitySet="mchat_monitor_quest_19" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_2_mchat_1" Association="Self.fk_mchat_monitor_quest_2_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_2" EntitySet="mchat_monitor_quest_2" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_20_mchat_1" Association="Self.fk_mchat_monitor_quest_20_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_20" EntitySet="mchat_monitor_quest_20" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_3_mchat_1" Association="Self.fk_mchat_monitor_quest_3_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_3" EntitySet="mchat_monitor_quest_3" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_4_mchat_1" Association="Self.fk_mchat_monitor_quest_4_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_4" EntitySet="mchat_monitor_quest_4" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_5_mchat_1" Association="Self.fk_mchat_monitor_quest_5_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_5" EntitySet="mchat_monitor_quest_5" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_6_mchat_1" Association="Self.fk_mchat_monitor_quest_6_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_6" EntitySet="mchat_monitor_quest_6" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_7_mchat_1" Association="Self.fk_mchat_monitor_quest_7_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_7" EntitySet="mchat_monitor_quest_7" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_8_mchat_1" Association="Self.fk_mchat_monitor_quest_8_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_8" EntitySet="mchat_monitor_quest_8" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mchat_monitor_quest_9_mchat_1" Association="Self.fk_mchat_monitor_quest_9_mchat_1">
+      <End Role="mchat" EntitySet="mchat" />
+      <End Role="mchat_monitor_quest_9" EntitySet="mchat_monitor_quest_9" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

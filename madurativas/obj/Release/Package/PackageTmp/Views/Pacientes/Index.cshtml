@@ -1,0 +1,42 @@
+﻿@model IEnumerable<madurativas.db.Paciente>
+
+<br />
+<br />
+
+<p style="margin-top: 3%;">
+    @Html.ActionLink("Nuevo Paciente", "Create", null, htmlAttributes: new { @class = "btn orangeButton" })
+</p>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre Completo")
+        </th>
+
+        <th>
+            @Html.DisplayName("Fecha de Nacimiento")
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaNacimiento)
+            </td>
+
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.pacienteId }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.pacienteId }) |*@
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.pacienteId })
+            </td>
+        </tr>
+    }
+
+</table>

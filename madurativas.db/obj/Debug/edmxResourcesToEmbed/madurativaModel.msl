@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="madurativasModelStoreContainer" CdmEntityContainer="madurativasEntities">
+    <EntitySetMapping Name="estudios">
+      <EntityTypeMapping TypeName="madurativasModel.estudio">
+        <MappingFragment StoreEntitySet="estudio">
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+          <ScalarProperty Name="fechaestudio" ColumnName="fechaestudio" />
+          <ScalarProperty Name="digitado" ColumnName="digitado" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="pacienteid" ColumnName="pacienteid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eval_riesgos">
+      <EntityTypeMapping TypeName="madurativasModel.eval_riesgos">
+        <MappingFragment StoreEntitySet="eval_riesgos">
+          <ScalarProperty Name="estudioid" ColumnName="estudioid" />
+          <ScalarProperty Name="problema_gpn" ColumnName="problema_gpn" />
+          <ScalarProperty Name="problema_gestacion_enfermedad" ColumnName="problema_gestacion_enfermedad" />
+          <ScalarProperty Name="hospitalizado_postnacimiento" ColumnName="hospitalizado_postnacimiento" />
+          <ScalarProperty Name="ictericiasevera" ColumnName="ictericiasevera" />
+          <ScalarProperty Name="enfermedadgrave" ColumnName="enfermedadgrave" />
+          <ScalarProperty Name="deficienciamental" ColumnName="deficienciamental" />
+          <ScalarProperty Name="riesgos_ambientales" ColumnName="riesgos_ambientales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hitos_area_social">
+      <EntityTypeMapping TypeName="madurativasModel.hitos_area_social">
+        <MappingFragment StoreEntitySet="hitos_area_social">
+          <ScalarProperty Name="hito_social_id" ColumnName="hito_social_id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="min" ColumnName="min" />
+          <ScalarProperty Name="max" ColumnName="max" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hitos_lenguaje">
+      <EntityTypeMapping TypeName="madurativasModel.hitos_lenguaje">
+        <MappingFragment StoreEntitySet="hitos_lenguaje">
+          <ScalarProperty Name="lenguaje_id" ColumnName="lenguaje_id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="min" ColumnName="min" />
+          <ScalarProperty Name="max" ColumnName="max" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hitos_motricidad_fina">
+      <EntityTypeMapping TypeName="madurativasModel.hitos_motricidad_fina">
+        <MappingFragment StoreEntitySet="hitos_motricidad_fina">
+          <ScalarProperty Name="motricidad_fina_id" ColumnName="motricidad_fina_id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="min" ColumnName="min" />
+          <ScalarProperty Name="max" ColumnName="max" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hitos_motricidad_gruesa">
+      <EntityTypeMapping TypeName="madurativasModel.hitos_motricidad_gruesa">
+        <MappingFragment StoreEntitySet="hitos_motricidad_gruesa">
+          <ScalarProperty Name="motricidad_gruesa_id" ColumnName="motricidad_gruesa_id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="min" ColumnName="min" />
+          <ScalarProperty Name="max" ColumnName="max" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacientes">
+      <EntityTypeMapping TypeName="madurativasModel.Paciente">
+        <MappingFragment StoreEntitySet="Pacientes">
+          <ScalarProperty Name="pacienteId" ColumnName="pacienteId" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="EC_antesNacimiento" ColumnName="EC_antesNacimiento" />
+          <ScalarProperty Name="inactivo" ColumnName="inactivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="madurativasModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="madurativasModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="madurativasModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="madurativasModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="madurativasModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUser">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRole">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="mchats">
+      <EntityTypeMapping TypeName="madurativasModel.mchat">
+        <MappingFragment StoreEntitySet="mchat">
+          <ScalarProperty Name="completado" ColumnName="completado" />
+          <ScalarProperty Name="quest_20" ColumnName="quest_20" />
+          <ScalarProperty Name="quest_19" ColumnName="quest_19" />
+          <ScalarProperty Name="quest_18" ColumnName="quest_18" />
+          <ScalarProperty Name="quest_17" ColumnName="quest_17" />
+          <ScalarProperty Name="quest_16" ColumnName="quest_16" />
+          <ScalarProperty Name="quest_15" ColumnName="quest_15" />
+          <ScalarProperty Name="quest_14" ColumnName="quest_14" />
+          <ScalarProperty Name="quest_13" ColumnName="quest_13" />
+          <ScalarProperty Name="quest_12" ColumnName="quest_12" />
+          <ScalarProperty Name="quest_11" ColumnName="quest_11" />
+          <ScalarProperty Name="quest_10" ColumnName="quest_10" />
+          <ScalarProperty Name="quest_9" ColumnName="quest_9" />
+          <ScalarProperty Name="quest_8" ColumnName="quest_8" />
+          <ScalarProperty Name="quest_7" ColumnName="quest_7" />
+          <ScalarProperty Name="quest_6" ColumnName="quest_6" />
+          <ScalarProperty Name="quest_5" ColumnName="quest_5" />
+          <ScalarProperty Name="quest_4" ColumnName="quest_4" />
+          <ScalarProperty Name="quest_3" ColumnName="quest_3" />
+          <ScalarProperty Name="quest_2" ColumnName="quest_2" />
+          <ScalarProperty Name="quest_1" ColumnName="quest_1" />
+          <ScalarProperty Name="estudio_id" ColumnName="estudio_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_1">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_1">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_1">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest8" ColumnName="quest8" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_10">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_10">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_10">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest8" ColumnName="quest8" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_11">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_11">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_11">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_12">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_12">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_12">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest17" ColumnName="quest17" />
+          <ScalarProperty Name="quest16" ColumnName="quest16" />
+          <ScalarProperty Name="quest15" ColumnName="quest15" />
+          <ScalarProperty Name="quest14" ColumnName="quest14" />
+          <ScalarProperty Name="quest13" ColumnName="quest13" />
+          <ScalarProperty Name="quest12" ColumnName="quest12" />
+          <ScalarProperty Name="quest11" ColumnName="quest11" />
+          <ScalarProperty Name="quest10" ColumnName="quest10" />
+          <ScalarProperty Name="quest9" ColumnName="quest9" />
+          <ScalarProperty Name="quest8" ColumnName="quest8" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_13">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_13">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_13">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_14">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_14">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_14">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest11" ColumnName="quest11" />
+          <ScalarProperty Name="quest10" ColumnName="quest10" />
+          <ScalarProperty Name="quest9" ColumnName="quest9" />
+          <ScalarProperty Name="quest8" ColumnName="quest8" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_15">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_15">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_15">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest9" ColumnName="quest9" />
+          <ScalarProperty Name="quest8" ColumnName="quest8" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_16">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_16">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_16">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_17">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_17">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_17">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_18">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_18">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_18">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest8" ColumnName="quest8" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_19">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_19">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_19">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_20">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_20">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_20">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_6">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_6">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_6">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_7">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_7">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_7">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_8">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_8">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_8">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest11" ColumnName="quest11" />
+          <ScalarProperty Name="quest10" ColumnName="quest10" />
+          <ScalarProperty Name="quest9" ColumnName="quest9" />
+          <ScalarProperty Name="quest8" ColumnName="quest8" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_9">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_9">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_9">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest9" ColumnName="quest9" />
+          <ScalarProperty Name="quest8" ColumnName="quest8" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_3">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_3">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_3">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest12" ColumnName="quest12" />
+          <ScalarProperty Name="quest13" ColumnName="quest13" />
+          <ScalarProperty Name="quest11" ColumnName="quest11" />
+          <ScalarProperty Name="quest10" ColumnName="quest10" />
+          <ScalarProperty Name="quest9" ColumnName="quest9" />
+          <ScalarProperty Name="quest8" ColumnName="quest8" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_5">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_5">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_5">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest10" ColumnName="quest10" />
+          <ScalarProperty Name="quest9" ColumnName="quest9" />
+          <ScalarProperty Name="quest8" ColumnName="quest8" />
+          <ScalarProperty Name="quest7" ColumnName="quest7" />
+          <ScalarProperty Name="quest6" ColumnName="quest6" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_2">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_2">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_2">
+          <ScalarProperty Name="pasa" ColumnName="Pasa" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mchat_monitor_quest_4">
+      <EntityTypeMapping TypeName="madurativasModel.mchat_monitor_quest_4">
+        <MappingFragment StoreEntitySet="mchat_monitor_quest_4">
+          <ScalarProperty Name="pasa" ColumnName="pasa" />
+          <ScalarProperty Name="quest5" ColumnName="quest5" />
+          <ScalarProperty Name="quest4" ColumnName="quest4" />
+          <ScalarProperty Name="quest3" ColumnName="quest3" />
+          <ScalarProperty Name="quest2" ColumnName="quest2" />
+          <ScalarProperty Name="quest1" ColumnName="quest1" />
+          <ScalarProperty Name="estudioId" ColumnName="estudioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

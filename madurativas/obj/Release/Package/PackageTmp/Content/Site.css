@@ -1,0 +1,245 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/*#panelVigilancia button {
+    width: 10em;
+}*/
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.2em;
+    
+    text-align: center;
+}
+
+.AutisBackground {
+    background: #374248;
+    border-color: #374248;
+    color: white !important
+}
+
+.AutisBackground a{
+    color: white !important;
+}
+
+.menu a:hover {
+    color: #fff !important;
+    background: #006687 !important;
+    border-color: #006687 !important;
+}
+
+
+.modal-header {
+    background-color: #606060 !important;
+    color: white !important;
+}
+
+.orangeButton {
+    background-color: #df691a;
+    margin: 1px;
+    padding: 8px;
+    /*padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 16px;
+    padding-left: 16px;*/
+    font-size: 12px;
+    text-align: center;
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.orangeButton a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.orangeButton:hover {
+  background-color: #DF7F00;
+}
+
+/*Agrego de 3 toggle switch*/
+
+.quest1, .quest2, .quest3, .quest4,
+.quest5, .quest6, .quest7, .quest8,
+.quest9, .quest10, .quest11, .quest12,
+.quest13, .quest14, .quest15, .quest16,
+.quest17, .quest18, .quest19, .quest20,
+.problemagpn, .problemagestacionenfermedad, .hospitalizadopostnacimiento, .ictericiasevera,
+.enfermedadgrave, .deficienciamental, .riesgosambientales, .dt1quest1,
+.dt1quest2, .dt1quest3, .dt1quest4, .dt1quest5, .dt1quest6, .dt1quest7, .dt1quest8,
+.dt2quest1, .dt2quest2, .dt2quest3,
+.dt3quest1, .dt3quest2, .dt3quest3, .dt3quest4, .dt3quest5, .dt3quest6, .dt3quest7, .dt3quest8, .dt3quest9, .dt3quest10, .dt3quest11, .dt3quest12,
+.dt4quest1, .dt4quest2, .dt4quest3, .dt4quest4, .dt4quest5,
+.dt5quest1, .dt5quest2, .dt5quest3, .dt5quest4, .dt5quest5, .dt5quest6, .dt5quest7, .dt5quest8, .dt5quest10,
+.dt6quest1, .dt6quest2, .dt6quest3, .dt6quest4, .dt6quest5, .dt6quest6,
+.dt7quest1, .dt7quest2, .dt7quest3, .dt7quest4, .dt7quest5, .dt7quest6, .dt7quest7,
+.dt8quest1, .dt8quest2, .dt8quest3, .dt8quest4, .dt8quest5, .dt8quest6, .dt8quest7, .dt8quest8, .dt8quest9, .dt8quest10, .dt8quest11,
+.dt9quest1, .dt9quest2, .dt9quest3, .dt9quest4, .dt9quest5, .dt9quest6, .dt9quest7, .dt9quest9,
+.dt10quest1, .dt10quest2, .dt10quest3, .dt10quest4, .dt10quest5, .dt10quest6, .dt10quest7, .dt10quest8,
+.dt11quest1, .dt11quest2, .dt11quest3, .dt11quest4, .dt11quest5, .dt11quest6, .dt11quest7,
+.dt12quest1, .dt12quest2, .dt12quest3, .dt12quest4, .dt12quest5, .dt12quest6, .dt12quest7, .dt12quest8, .dt12quest9, .dt12quest10, .dt12quest11, .dt12quest13, .dt12quest14, .dt12quest15, .dt12quest16, .dt12quest17,
+.dt13quest1, .dt13quest2,
+.dt14quest1, .dt14quest2, .dt14quest3, .dt14quest4, .dt14quest5, .dt14quest6, .dt14quest7, .dt14quest8, .dt14quest9, .dt14quest10, .dt14quest11,
+.dt15quest1, .dt15quest2, .dt15quest3, .dt15quest4, .dt15quest5, .dt15quest6, .dt15quest7, .dt15quest8,
+.dt16quest1, .dt16quest2, .dt16quest3, .dt16quest4, .dt16quest5, .dt16quest6,
+.dt17quest1, .dt17quest2, .dt17quest3, .dt17quest4, .dt17quest5, .dt17quest6,
+.dt18quest1, .dt18quest2, .dt18quest3, .dt18quest4, .dt18quest5, .dt18quest6, .dt18quest7,
+.dt19quest1, .dt19quest2, .dt19quest3, .dt19quest4,
+.dt20quest1, .dt20quest2, .dt20quest3, .dt20quest4, .dt20quest5, .dt20quest6 {
+    background-color: #F3F3F5;
+}
+
+.Activo {
+    border: thin solid #17777F;
+    background-color: lightblue;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    background: #fff;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Sintony);
+
+.switch_3_ways {
+    margin: auto;
+    font-size: 1em;
+    font-family: sintony;
+    height: 2em;
+    line-height: 2em;
+    border-radius: 0.3em;
+    background: #ccc;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.switch.monthly,
+.switch.semester,
+.switch.annual {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0 1em;
+    -webkit-transition: 300ms ease-out;
+    -moz-transition: 300ms ease-out;
+    transition: 300ms ease-out;
+}
+
+.switch.active {
+    color: white;
+    border-radius: 0.3em;
+    -moz-box-shadow: 0px 0px 7px 1px #656565;
+    -webkit-box-shadow: 0px 0px 7px 1px #656565;
+    /*-o-box-shadow: 0px 0px 7px 1px #656565;*/
+    box-shadow: 0px 0px 7px 1px #656565;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=NaN, Strength=7);
+}
+
+.switch.monthly.active {
+    background-color: #777777;
+}
+
+.switch.semester.active {
+    background-color: #418d92;
+}
+
+.switch.annual.active {
+    background-color: #4d7ea9;
+}
+
+
+.switch_3_ways_v2 {
+    margin: auto;
+    font-size: 1em;
+    font-family: sintony;
+    height: 2em;
+    line-height: 2em;
+    border-radius: 0.3em;
+    background: #ccc;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.switch2.monthly,
+.switch2.semester,
+.switch2.annual {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    float: left;
+    -webkit-transition: 300ms ease-out;
+    -moz-transition: 300ms ease-out;
+    transition: 300ms ease-out;
+    padding: 0 1em;    
+}
+
+.selector {
+    text-align: center;
+    position: absolute;
+    width: 0;
+    box-sizing: border-box;
+    -webkit-transition: 300ms ease-out;
+    -moz-transition: 300ms ease-out;
+    transition: 300ms ease-out;
+    border-radius: 0.3em;
+    color: white;
+    -moz-box-shadow: 0px 2px 13px 0px #9b9b9b;
+    -webkit-box-shadow: 0px 2px 13px 0px #9b9b9b;
+    /*-o-box-shadow: 0px 2px 13px 0px #9b9b9b;*/
+    box-shadow: 0px 2px 13px 0px #9b9b9b;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#9b9b9b, Direction=180, Strength=13);
+}
+
+#loading {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;    
+    background: rgba(255,255,255,0.8) url("/Content/images/loading-image.gif") no-repeat center center;
+    z-index: 100000;
+}
+
+/*Agregado de 3 toogle switch*/

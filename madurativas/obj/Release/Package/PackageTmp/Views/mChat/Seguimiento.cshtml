@@ -1,0 +1,688 @@
+﻿@using Newtonsoft.Json
+@model madurativas.db.mchat
+@{
+    ViewBag.Title = "Seguimiento";
+}
+
+<link rel="stylesheet" href="~/Content/bootstrap-switch.min.css" />
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/bootstrap-switch.min.js"></script>
+@*<script src="~/Scripts/madurativas.js"></script>*@
+
+<h2 style="margin-top: 6%">Supervisión de la salud infantil.</h2>
+
+<h4>Vigilancia de pautas madurativas y diagnóstico oportuno de autismo.</h4>
+<hr /> 
+
+<div class="row">
+    <div class="col-md- col-sm-12">
+        @Html.HiddenFor(model => model.estudio_id)
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @*<div class="form-group">*@
+        @Html.LabelFor(model => model.estudio.Paciente.nombre, "Paciente", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-top: 0.5%; width: 7 %;" })
+        <div class="col-md-2">
+            @Html.DropDownList("pacienteid", (IEnumerable<SelectListItem>)ViewBag.Pacientes, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.estudio.pacienteid, "", new { @class = "text-danger" })
+            @*@Html.DisplayFor(model => model.Paciente.FullName, new { @class = "form-control" })*@
+        </div>
+        @*</div>*@
+
+        @*<div class="form-group">*@
+        @Html.Label("Fecha Nacimiento", htmlAttributes: new { @class = "control-label col-md-2", @Id = "Paciente_fechaNacimiento", @style = "margin-top: 0.5%; width: 15%;" })
+        <div class="col-md-2" style="margin-top:0.5%">
+            @{
+                var _fechaNacimiento = Model.estudio.Paciente.fechaNacimiento.ToShortDateString();
+            }
+            @_fechaNacimiento
+            @Html.HiddenFor(model => model.estudio.Paciente.fechaNacimiento)
+
+            <div>
+                @Html.Label("Edad: ")
+                @Html.Label("edad", htmlAttributes: new { id = "edad" })
+            </div>
+        </div>
+        @*</div>*@
+
+        @*<div class="form-group">*@
+        @Html.Label("Fecha Estudio", htmlAttributes: new { @class = "control-label col-md-2", @Id = "fechaestudio", @style = "margin-top: 0.5%; width: 15%;" })
+        <div class="col-md-2" style="margin-top:0.5%">
+            @*@Html.ValueFor(model => model.fechaestudio)*@
+            @{
+                var _fechaestudio = Model.estudio.fechaestudio.ToShortDateString();
+            }
+            @_fechaestudio
+            @Html.HiddenFor(model => model.estudio.fechaestudio)
+        </div>
+    </div>
+</div>
+
+<hr />
+
+
+<h2 style="background-color: #CFF0FF; padding:0.8%; margin-top: 2%; color:#337AB7" class="modal-title">M-CHAT-R Seguimiento (M-CHAT-R/F)TM</h2>
+<div style="background-color:#CFF0FF; padding:0.8%; margin-bottom: 2%;">
+
+    <p style="color:#8e8e8e">
+        El M-CHAT-R/F fue diseñado para ser usado con el M-CHAT-R; el M-CHAT-R es válido para pesquisar deambuladores entre 16 y 30 meses de edad, para evaluar riesgo de trastorno del espectro autista (TEA). Los usuarios deberían tener en cuenta que aun con la entrevista de Seguimiento, un número significativo de niños que fallan el M-CHAT- R no serán diagnosticados con TEA; sin embargo, estos niños están en riesgo de presentar otros trastornos del desarrollo o retrasos en el desarrollo, y por consiguiente, se debe hacer un seguimiento de todo niño que haya sido pesquisado positivamente.
+    </p>
+    <p style="color:#8e8e8e">
+        Una vez que el padre/madre haya completado el M-CHAT-R, puntúe el instrumento siguiendo las instrucciones. Si el niño presenta una pesquisa positiva, seleccione los ítems del Seguimiento basándose en los ítems en los que el niño falló en el M-CHAT- R; solamente aquellos ítems en los que falló son los que necesitan ser administrados en una entrevista completa.
+    </p>
+    <p style="color:#8e8e8e">
+        Cada página de la entrevista de Seguimiento corresponde a un ítem del M-CHAT-R. Siga el formato del diagrama de flujo, haciendo preguntas hasta que obtenga una puntuación de PASA o FALLA. Tenga en cuenta que quizás los padres contestan “no sé” a algunas preguntas durante la entrevista. Cuando un padre contesta “no sé”, pregunte si la respuesta más frecuente sería “sí” o “no” y continúe la entrevista de acuerdo a esa respuesta. En los puntos de la entrevista en donde hay lugar para agregar “otra” respuesta, el entrevistador debe usar su juicio para determinar si es una respuesta que PASA o no. Puntúe las respuestas para cada ítem en la Planilla de Puntajes (que contiene los mismos ítems que el M-CHAT-R, pero los Sí/No han sido reemplazados por Pasa/Falla). La entrevista es considerada una pesquisa positiva si el niño falla 2 ítems en la entrevista de Seguimiento. Si un niño presenta una pesquisa positiva en el M-CHAT-R/F, se recomienda fuertemente que sea derivado a evaluación diagnóstica e intervención temprana lo antes posible. Por favor, tome en cuenta que si un profesional o un padre está preocupado por la posibilidad de un TEA, el niño debería ser derivado a una evaluación, independientemente del resultado del M-CHAT-R o MCHAT- R/F."
+    </p>
+
+</div>
+@{
+
+
+    string Resultado(string _resultado)
+    {
+        bool _res;
+        bool.TryParse(_resultado, out _res);
+
+        return (_res) ? "Pasa" : "Falla";
+    }
+
+
+
+    string BackgroundColor(string _resultado)
+    {
+        //bool _res;
+
+        if(_resultado == "True")
+        {
+            return "green";
+        }else if (_resultado == "False")
+        {
+            return "red";
+        }
+        else if (_resultado == "")
+        {
+            return "white";
+        }
+        else
+        {
+            return "white";
+        }
+        //(_resultado == "True") ? color = "green" : (_resultado == "False") ? color = "red" : color = "white";
+        //bool.TryParse(_resultado, out _res);
+        //return (_res) ? "green" : "red";
+
+        //return color;
+    }
+
+
+}
+
+<div class="form-horizontal">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-horizontal">
+        @Html.HiddenFor(model => model.estudio_id)
+        @if (Model.quest_1 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_1))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">1. Si Ud. señala algo que está del otro lado de la habitación, ¿su hijo o hija mira hacia allí? (POR EJEMPLO: si Ud. señala un juguete o un animal, ¿su hijo o hija mira al juguete o al animal?)</label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        @*@Html.ActionLink("Ver Detalle", null, new { qId = 1 }, new { @data_toggle = "modal", @data_target = "#modalQuest1" })*@
+                        <a href="#" data-toggle="modal" data-target="#modalQuest1">Ver Detalle</a>
+                        <label id="lblQuestValue1" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_1.pasa.ToString()); color: white;  width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_1.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_2 != null)
+        {
+            if (Convert.ToBoolean(Model.quest_2))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">2. ¿Alguna vez se preguntó si su hijo o hija era sordo o sorda?</label>
+                    <div class="col-md-4" style="margin-top: 0.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest2">Ver Detalle</a>
+                        <label id="lblQuestValue2" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_2.pasa.ToString()); color: white;  width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_2.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_3 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_3))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">3. ¿Su hijo o hija juega a simular, hacer “como si”, o juegos de imaginación? (POR EJEMPLO: simula que toma de una taza vacía, finge hablar por teléfono, o hace como que le da de comer a una muñeca o a un peluche?)</label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest3">Ver Detalle</a>
+                        <label id="lblQuestValue3" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_3.pasa.ToString()); color: white;  width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_3.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_4 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_4))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        4. ¿A su hijo o hija le gusta treparse a las cosas? (POR EJEMPLO: muebles, juegos de la plaza, o escaleras)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 0.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest4">Ver Detalle</a>
+                        <label id="lblQuestValue4" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_4.pasa.ToString()); color: white;  width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_4.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_5 != null)
+        {
+            if (Convert.ToBoolean(Model.quest_5))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        5. ¿Su hijo o hija hace movimientos raros con los dedos cerca de sus ojos? (POR EJEMPLO: ¿mueve o agita los dedos cerca de sus ojos de manera rara?)
+                    </label>
+                    <div class="col-md-4" style="margin-top:1%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest5">Ver Detalle</a>
+                        <label id="lblQuestValue5" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_5.pasa.ToString()); color: white;  width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_5.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_6 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_6))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        6. ¿Su hijo o hija señala con el dedo cuando quiere pedir algo o buscar ayuda? (POR EJEMPLO: señala algún alimento o juguete que está fuera de su alcance)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest6">Ver Detalle</a>
+                        <label id="lblQuestValue6" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_6.pasa.ToString()); color: white;  width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_6.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_7 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_7))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        7. ¿Su hijo o hija señala con el dedo cuando quiere mostrarle algo interesante? (POR EJEMPLO: señala un avión en el cielo o un camión muy grande en la calle)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest7">Ver Detalle</a>
+                        <label id="lblQuestValue7" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_7.pasa.ToString()); color: white;  width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_7.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_8 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_8))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        8. ¿Su hijo o hija se interesa por otros niños? (POR EJEMPLO: ¿mira a otros niños, les sonríe, se acerca a ellos?)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest8">Ver Detalle</a>
+                        <label id="lblQuestValue8" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_8.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_8.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_9 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_9))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        9. ¿Su hijo o hija le muestra cosas, trayéndoselas o alzándolas para que Ud. las vea – no para buscar ayuda sino simplemente para compartirlas con Ud.? (POR EJEMPLO: le muestra una flor, un peluche, o un camión de juguete)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 2%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest9">Ver Detalle</a>
+                        <label id="lblQuestValue9" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_9.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_9.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_10 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_10))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        10. ¿Su hijo o hija responde cuando lo/la llama por su nombre? (POR EJEMPLO: ¿su hijo o hija lo mira o la mira, habla o balbucea, o interrumpe lo que está haciendo cuando lo/la llama por su nombre?)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest10">Ver Detalle</a>
+                        <label id="lblQuestValue10" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_10.pasa.ToString()); color: white;  width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_10.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_11 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_11))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        11. ¿Cuando le sonríe a su hijo o hija, ¿le devuelve la sonrisa?
+                    </label>
+                    <div class="col-md-4" style="margin-top: 0.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest11">Ver Detalle</a>
+                        <label id="lblQuestValue11" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_11.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_11.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_12 != null)
+        {
+            if (Convert.ToBoolean(Model.quest_12))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        12. ¿A su hijo o hija le molestan los ruidos comunes de todos los días? (POR EJEMPLO: ¿su hijo o hija grita o llora cuando escucha una aspiradora, una licuadora, una moto, la radio, música fuerte u otro ruido común?)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest12">Ver Detalle</a>
+                        <label id="lblQuestValue12" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_12.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_12.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_13 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_13))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        13. ¿Su hijo o hija camina?
+                    </label>
+                    <div class="col-md-4" style="margin-top: 0.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest13">Ver Detalle</a>
+                        <label id="lblQuestValue13" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_13.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_13.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }}
+        @if (Model.quest_14 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_14))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        14. ¿Su hijo o hija lo/la mira a los ojos cuando le está hablando, jugando con él/ella, o cuando lo/la está vistiendo?
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest14">Ver Detalle</a>
+                        <label id="lblQuestValue14" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_14.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_14.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }
+        }
+        @if (Model.quest_15 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_15))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        15. ¿Su hijo o hija trata de copiar lo que Ud. hace? (POR EJEMPLO: decir adiós con la mano, aplaudir, o hacer un ruido gracioso cuando Ud. lo hace)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest15">Ver Detalle</a>
+                        <label id="lblQuestValue15" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_15.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_15.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }
+        }
+        @if (Model.quest_16 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_16))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        16. Si Ud. se da vuelta para mirar algo, ¿su hijo o hija gira la cabeza para ver lo que Ud. está mirando?
+                    </label>
+                    <div class="col-md-4" style="margin-top: 0.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest16">Ver Detalle</a>
+                        <label id="lblQuestValue16" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_16.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_16.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }
+        }
+        @if (Model.quest_17 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_17))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        17. ¿Su hijo o hija intenta hacer que Ud. lo/la mire? (POR EJEMPLO: ¿su hijo o hija lo/la mira para que lo/la felicite, o dice “mirá” o “mirame”?)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest17">Ver Detalle</a>
+                        <label id="lblQuestValue17" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_17.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_17.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }
+        }
+        @if (Model.quest_18 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_18))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        18. ¿Su hijo o hija entiende cuando Ud. le dice que haga algo? (POR EJEMPLO: si Ud. no se lo señala, ¿su hijo o hija entiende cuando le pide “poné el libro sobre la silla” o “traeme la frazadita”?)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest18">Ver Detalle</a>
+                        <label id="lblQuestValue18" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_18.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_18.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }
+        }
+        @if (Model.quest_19 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_19))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        19. Si pasa algo nuevo, ¿su hijo o hija lo/la mira a la cara para ver qué hace Ud.? (POR EJEMPLO: si su hijo o hija escucha un ruido raro o gracioso, o ve un juguete nuevo, ¿lo/la mira a la cara?)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest19">Ver Detalle</a>
+                        <label id="lblQuestValue19" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_19.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_19.pasa.ToString())</label>
+                    </div>
+                </div>
+            }
+        }
+        @if (Model.quest_20 != null)
+        {
+            if (!Convert.ToBoolean(Model.quest_20))
+            {
+                <div class="form-group">
+                    <label class="control-label col-md-8">
+                        20. ¿A su hijo o hija le gustan las actividades de movimiento? (POR EJEMPLO: hamacarse o jugar al “caballito” sobre sus rodillas)
+                    </label>
+                    <div class="col-md-4" style="margin-top: 1.5%">
+                        <a href="#" data-toggle="modal" data-target="#modalQuest20">Ver Detalle</a>
+                        <label id="lblQuestValue20" style="background-color: @BackgroundColor(Model.mchat_monitor_quest_20.pasa.ToString()); color: white; width: 100px; text-align: center;">@Resultado(Model.mchat_monitor_quest_20.pasa.ToString())</label>
+                    </div>
+
+                </div>
+            }
+        }
+            <div class="form-group">
+
+                <hr />
+                <h4 class="control-label col-md-4"><strong>RESULTADO: </strong></h4>
+                <label id="lblResultado" class="control-label col-md-8 " style="text-align: left;"></label>
+            </div>
+
+        </div>
+    <hr />
+</div>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "FrmMChatMonitor" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @*@Html.ActionLink("Editar Cuestionario", "Editar", new { id = Model.estudio_id }, new { @class = "btn btn-primary " })*@
+        @Html.ActionLink("Volver al Inicio", "Edit", "Home", new { id = Model.estudio_id }, new { @class = "btn btn-primary " })
+    </div>
+}
+
+@********************         Aqui Inician los Popup          *************************@
+<div id="modalQuest1" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_1", Model)
+    </div>
+</div>
+
+<div id="modalQuest2" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_2", Model)
+    </div>
+</div>
+<div id="modalQuest3" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_3", Model)
+    </div>
+</div>
+<div id="modalQuest4" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_4", Model)
+    </div>
+</div>
+<div id="modalQuest5" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_5", Model)
+    </div>
+</div>
+<div id="modalQuest6" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_6", Model)
+    </div>
+</div>
+<div id="modalQuest7" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_7", Model)
+    </div>
+</div>
+<div id="modalQuest8" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_8", Model)
+    </div>
+</div>
+<div id="modalQuest9" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_9", Model)
+    </div>
+</div>
+<div id="modalQuest10" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_10", Model)
+    </div>
+</div>
+<div id="modalQuest11" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_11", Model)
+    </div>
+</div>
+<div id="modalQuest12" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_12", Model)
+    </div>
+</div>
+<div id="modalQuest13" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" >
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_13", Model)
+    </div>
+</div>
+<div id="modalQuest14" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_14", Model)
+    </div>
+</div>
+<div id="modalQuest15" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_15", Model)
+    </div>
+</div>
+<div id="modalQuest16" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_16", Model)
+    </div>
+</div>
+<div id="modalQuest17" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_17", Model)
+    </div>
+</div>
+<div id="modalQuest18" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_18", Model)
+    </div>
+</div>
+<div id="modalQuest19" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_19", Model)
+    </div>
+</div>
+<div id="modalQuest20" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @Html.Partial("PartialView/m-chat/details/_detailQuest_20", Model)
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modalCancel" style="height:20%">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div>
+                    <p style="margin-top:10px">
+                        Usted tiene datos ingresados para otro paciente. Si presiona aceptar, los perderá
+                    </p>
+                    <div>
+                        <button class="cancelButton" id="cancelar" data-dismiss="modal" onclick="rollback()">Cancelar</button>
+                        <button class="greenButton" id="aceptar" onclick="volver()">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+    $(".switch").bootstrapSwitch();
+
+    var $dt1_quest1 = $('#lblQuestValue1');
+    var $dt1_quest2 = $('#lblQuestValue2');
+    var $dt1_quest3 = $('#lblQuestValue3');
+    var $dt1_quest4 = $('#lblQuestValue4');
+    var $dt1_quest5 = $('#lblQuestValue5');
+    var $dt1_quest6 = $('#lblQuestValue6');
+    var $dt1_quest7 = $('#lblQuestValue7');
+    var $dt1_quest8 = $('#lblQuestValue8');
+    var $dt1_quest9 = $('#lblQuestValue9');
+    var $dt1_quest10 = $('#lblQuestValue10');
+    var $dt1_quest11 = $('#lblQuestValue11');
+    var $dt1_quest12 = $('#lblQuestValue12');
+    var $dt1_quest13 = $('#lblQuestValue13');
+    var $dt1_quest14 = $('#lblQuestValue14');
+    var $dt1_quest15 = $('#lblQuestValue15');
+    var $dt1_quest16 = $('#lblQuestValue16');
+    var $dt1_quest17 = $('#lblQuestValue17');
+    var $dt1_quest18 = $('#lblQuestValue18');
+    var $dt1_quest19 = $('#lblQuestValue19');
+    var $dt1_quest20 = $('#lblQuestValue20');
+
+    var $lbl_Resultado = $('#lblResultado');
+
+    MuestraResultado();
+
+    function MuestraResultado() {
+        if (EvaluaResultado() > 2) {
+            $lbl_Resultado.empty();
+            $lbl_Resultado.append(
+                "Se considera como pesquisa positiva. Si un niño presenta una pesquisa positiva en el M-CHAT-R/F, se recomienda fuertemente que sea derivado a evaluación diagnóstica e intervención temprana lo antes posible.");
+        } else {
+            $lbl_Resultado.empty();
+            $lbl_Resultado.append(
+                "Pesquisa negativa. Por favor, tome en cuenta que si un profesional o un padre está preocupado por la posibilidad de un TEA, el niño debería ser derivado a una evaluación, independientemente del resultado del M-CHAT-R o MCHAT- R/F.");
+        }
+    }
+
+    function EvaluaResultado() {
+        var _falla = 0;
+        if ($dt1_quest1.text() == "Falla") _falla++;
+        if ($dt1_quest2.text() == "Falla") _falla++;
+        if ($dt1_quest3.text() == "Falla") _falla++;
+        if ($dt1_quest4.text() == "Falla") _falla++;
+        if ($dt1_quest5.text() == "Falla") _falla++;
+        if ($dt1_quest6.text() == "Falla") _falla++;
+        if ($dt1_quest7.text() == "Falla") _falla++;
+        if ($dt1_quest8.text() == "Falla") _falla++;
+        if ($dt1_quest9.text() == "Falla") _falla++;
+        if ($dt1_quest10.text() == "Falla") _falla++;
+        if ($dt1_quest11.text() == "Falla") _falla++;
+        if ($dt1_quest12.text() == "Falla") _falla++;
+        if ($dt1_quest13.text() == "Falla") _falla++;
+        if ($dt1_quest14.text() == "Falla") _falla++;
+        if ($dt1_quest15.text() == "Falla") _falla++;
+        if ($dt1_quest16.text() == "Falla") _falla++;
+        if ($dt1_quest17.text() == "Falla") _falla++;
+        if ($dt1_quest18.text() == "Falla") _falla++;
+        if ($dt1_quest19.text() == "Falla") _falla++;
+        if ($dt1_quest20.text() == "Falla") _falla++;
+
+        return _falla;
+    }
+
+</script>
+
+<script>
+
+        
+
+        var oldValue = localStorage.paciente;
+
+        $(function () {
+
+            document.getElementById("pacienteid").value = localStorage.getItem("pacienteid");
+            
+            $('#edad').html(localStorage.getItem("edadPaciente"));
+
+        });
+
+    $('#pacienteid').change(function () {
+            $('#modalCancel').modal('show');
+        })
+
+        function rollback() {
+            event.preventDefault();
+            document.getElementById("pacienteid").value = oldValue;
+        }
+
+        function volver() {
+            event.preventDefault();
+
+            var getInput = $('#pacienteid').find(":selected").val();
+            localStorage.setItem("paciente", getInput);
+
+            location.href = '@Url.Action("Index", "Home")'
+        }
+
+</script>
+<script>
+
+    function Selectable(v) {
+
+        var clase = "." + v.classList.value.substring(v.classList.value.indexOf("dt"), (v.classList.value.indexOf("dt")) + 11);
+        (clase.includes(" ")) ? clase = clase.split(" ")[0] : clase;
+
+        document.querySelectorAll(clase.trim()).forEach((e) => {
+            if (e.classList.value.includes("Activo")) {
+                e.classList.toggle("Activo");
+                e.checked = false;
+            }
+        });
+        v.classList.toggle("Activo");
+        v.checked = true;
+    }
+
+</script>

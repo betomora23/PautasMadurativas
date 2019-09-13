@@ -1,0 +1,31 @@
+﻿@model IEnumerable<madurativas.db.estudio>
+@{
+    ViewBag.Title = "EstudioDelDia";
+}
+
+<h2>Estudio Del Dia</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Estudio</th>
+            <th>Fecha</th>
+            <th>Paciente</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink($"{item.estudioId}", "Edit", "Home", new { id = item.estudioId }, null)</td>
+                <td>@item.fechaestudio</td>
+                <td>@item.Paciente.FullName</td>
+                <td></td>
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>

@@ -1,0 +1,598 @@
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\madurativas.db.dll.config
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\madurativas.db.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\madurativas.db.pdb
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\netstandard.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.AppContext.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Collections.Concurrent.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Collections.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Collections.Specialized.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.ComponentModel.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Console.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Data.Common.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Diagnostics.Contracts.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Diagnostics.Debug.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Diagnostics.Process.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Diagnostics.Tools.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Drawing.Primitives.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Dynamic.Runtime.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Globalization.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.Compression.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.FileSystem.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.IsolatedStorage.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.Pipes.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Linq.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Linq.Expressions.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Linq.Parallel.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Linq.Queryable.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.Http.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.NameResolution.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.Ping.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.Primitives.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.Requests.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.Security.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.Sockets.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Net.WebSockets.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.ObjectModel.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Reflection.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Reflection.Extensions.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Reflection.Primitives.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Resources.Reader.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Resources.ResourceManager.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Resources.Writer.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.Extensions.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.Handles.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.InteropServices.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.Numerics.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Security.Claims.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Security.Principal.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Security.SecureString.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Text.Encoding.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Text.RegularExpressions.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Threading.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Threading.Tasks.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Threading.Thread.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Threading.ThreadPool.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Threading.Timer.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Xml.XDocument.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Xml.XmlSerializer.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Xml.XPath.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\EntityFramework.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\EntityFramework6.Npgsql.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\Npgsql.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.ValueTuple.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\EntityFramework.xml
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\EntityFramework6.Npgsql.xml
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\Npgsql.pdb
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\Npgsql.xml
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\bin\Debug\System.ValueTuple.xml
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\obj\Debug\madurativas.db.csproj.CoreCompileInputs.cache
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\obj\Debug\madurativas.db.csproj.CopyComplete
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\obj\Debug\madurativas.db.dll
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\obj\Debug\madurativas.db.pdb
+C:\Users\rrangoni.ALFA\Desktop\madurativas-v0.15 - Arranco\madurativas.db\obj\Debug\madurativas.db.csprojAssemblyReference.cache
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\madurativas.db.dll.config
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\madurativas.db.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\madurativas.db.pdb
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\Microsoft.Win32.Primitives.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\netstandard.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.AppContext.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Collections.Concurrent.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Collections.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Collections.NonGeneric.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Collections.Specialized.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.ComponentModel.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.ComponentModel.Primitives.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.ComponentModel.TypeConverter.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Console.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Data.Common.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Diagnostics.Contracts.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Diagnostics.Debug.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Diagnostics.Process.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Diagnostics.StackTrace.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Diagnostics.Tools.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Diagnostics.TraceSource.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Diagnostics.Tracing.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Drawing.Primitives.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Dynamic.Runtime.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Globalization.Calendars.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Globalization.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Globalization.Extensions.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.Compression.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.Compression.ZipFile.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.FileSystem.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.FileSystem.Watcher.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.IsolatedStorage.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.MemoryMappedFiles.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.Pipes.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Linq.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Linq.Expressions.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Linq.Parallel.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Linq.Queryable.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.Http.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.NameResolution.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.NetworkInformation.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.Ping.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.Primitives.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.Requests.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.Security.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.Sockets.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.WebHeaderCollection.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.WebSockets.Client.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Net.WebSockets.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.ObjectModel.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Reflection.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Reflection.Extensions.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Reflection.Primitives.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Resources.Reader.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Resources.ResourceManager.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Resources.Writer.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.Extensions.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.Handles.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.InteropServices.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.Numerics.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.Serialization.Formatters.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.Serialization.Json.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.Serialization.Primitives.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.Serialization.Xml.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Security.Claims.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Security.Cryptography.Csp.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Security.Principal.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Security.SecureString.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Text.Encoding.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Text.Encoding.Extensions.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Text.RegularExpressions.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Threading.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Threading.Overlapped.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Threading.Tasks.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Threading.Tasks.Parallel.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Threading.Thread.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Threading.ThreadPool.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Threading.Timer.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Xml.ReaderWriter.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Xml.XDocument.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Xml.XmlDocument.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Xml.XmlSerializer.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Xml.XPath.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Xml.XPath.XDocument.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\EntityFramework.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\EntityFramework.SqlServer.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\EntityFramework6.Npgsql.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\Npgsql.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.ValueTuple.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\EntityFramework.xml
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\EntityFramework.SqlServer.xml
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\EntityFramework6.Npgsql.xml
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\Npgsql.pdb
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\Npgsql.xml
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\bin\Debug\System.ValueTuple.xml
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\obj\Debug\madurativas.db.csprojAssemblyReference.cache
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\obj\Debug\madurativas.db.csproj.CoreCompileInputs.cache
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\obj\Debug\madurativas.db.csproj.CopyComplete
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\obj\Debug\madurativas.db.dll
+D:\Fuentes\Freelancer\Argentina\Pautas Madurativas\madurativas\madurativas.db\obj\Debug\madurativas.db.pdb
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\madurativas.db.dll.config
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\madurativas.db.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\madurativas.db.pdb
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\netstandard.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.AppContext.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Collections.Concurrent.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Collections.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Collections.Specialized.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.ComponentModel.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Console.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Data.Common.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Diagnostics.Contracts.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Diagnostics.Debug.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Diagnostics.Process.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Diagnostics.Tools.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Drawing.Primitives.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Dynamic.Runtime.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Globalization.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.Compression.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.FileSystem.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.IsolatedStorage.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.Pipes.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Linq.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Linq.Expressions.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Linq.Parallel.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Linq.Queryable.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.Http.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.NameResolution.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.Ping.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.Primitives.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.Requests.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.Security.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.Sockets.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Net.WebSockets.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.ObjectModel.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Reflection.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Reflection.Extensions.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Reflection.Primitives.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Resources.Reader.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Resources.ResourceManager.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Resources.Writer.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.Extensions.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.Handles.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.InteropServices.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.Numerics.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Security.Claims.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Security.Principal.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Security.SecureString.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Text.Encoding.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Text.RegularExpressions.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Threading.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Threading.Tasks.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Threading.Thread.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Threading.ThreadPool.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Threading.Timer.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Xml.XDocument.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Xml.XmlSerializer.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Xml.XPath.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\EntityFramework.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\EntityFramework6.Npgsql.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\Npgsql.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.ValueTuple.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\EntityFramework.xml
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\EntityFramework6.Npgsql.xml
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\Npgsql.pdb
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\Npgsql.xml
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\bin\Debug\System.ValueTuple.xml
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\obj\Debug\madurativas.db.csproj.CoreCompileInputs.cache
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\obj\Debug\madurativas.db.csproj.CopyComplete
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\obj\Debug\madurativas.db.dll
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\obj\Debug\madurativas.db.pdb
+C:\Users\rrangoni\Desktop\madurativas (1)\madurativas.db\obj\Debug\madurativas.db.csprojAssemblyReference.cache
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\madurativas.db.dll.config
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\madurativas.db.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\madurativas.db.pdb
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\netstandard.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.AppContext.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Collections.Concurrent.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Collections.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Collections.Specialized.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.ComponentModel.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Console.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Data.Common.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Diagnostics.Contracts.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Diagnostics.Debug.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Diagnostics.Process.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Diagnostics.Tools.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Drawing.Primitives.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Dynamic.Runtime.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Globalization.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.Compression.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.FileSystem.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.IsolatedStorage.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.Pipes.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Linq.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Linq.Expressions.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Linq.Parallel.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Linq.Queryable.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.Http.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.NameResolution.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.Ping.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.Primitives.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.Requests.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.Security.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.Sockets.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Net.WebSockets.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.ObjectModel.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Reflection.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Reflection.Extensions.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Reflection.Primitives.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Resources.Reader.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Resources.ResourceManager.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Resources.Writer.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.Extensions.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.Handles.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.InteropServices.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.Numerics.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Security.Claims.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Security.Principal.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Security.SecureString.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Text.Encoding.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Text.RegularExpressions.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Threading.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Threading.Tasks.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Threading.Thread.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Threading.ThreadPool.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Threading.Timer.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Xml.XDocument.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Xml.XmlSerializer.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Xml.XPath.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\EntityFramework.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\EntityFramework6.Npgsql.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\Npgsql.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.ValueTuple.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\EntityFramework.xml
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\EntityFramework6.Npgsql.xml
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\Npgsql.pdb
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\Npgsql.xml
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\bin\Debug\System.ValueTuple.xml
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\obj\Debug\madurativas.db.csproj.CoreCompileInputs.cache
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\obj\Debug\madurativas.db.csproj.CopyComplete
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\obj\Debug\madurativas.db.dll
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\obj\Debug\madurativas.db.pdb
+C:\Users\rrangoni\Documents\PROYECTOS\MADURATIVAS\madurativas v0.18\madurativas.db\obj\Debug\madurativas.db.csprojAssemblyReference.cache
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\obj\Debug\madurativas.db.csproj.CoreCompileInputs.cache
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\obj\Debug\madurativas.db.csprojAssemblyReference.cache
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\madurativas.db.dll.config
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\madurativas.db.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\madurativas.db.pdb
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\netstandard.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.AppContext.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Collections.Concurrent.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Collections.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Collections.Specialized.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.ComponentModel.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Console.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Data.Common.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Diagnostics.Contracts.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Diagnostics.Debug.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Diagnostics.Process.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Diagnostics.Tools.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Drawing.Primitives.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Dynamic.Runtime.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Globalization.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.Compression.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.FileSystem.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.IsolatedStorage.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.Pipes.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Linq.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Linq.Expressions.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Linq.Parallel.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Linq.Queryable.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.Http.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.NameResolution.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.Ping.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.Primitives.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.Requests.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.Security.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.Sockets.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Net.WebSockets.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.ObjectModel.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Reflection.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Reflection.Extensions.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Reflection.Primitives.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Resources.Reader.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Resources.ResourceManager.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Resources.Writer.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.Extensions.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.Handles.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.InteropServices.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.Numerics.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Security.Claims.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Security.Principal.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Security.SecureString.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Text.Encoding.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Text.RegularExpressions.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Threading.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Threading.Tasks.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Threading.Thread.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Threading.ThreadPool.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Threading.Timer.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Xml.XDocument.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Xml.XmlSerializer.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Xml.XPath.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\DDEX-Deserialiser.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\EntityFramework.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\EntityFramework6.Npgsql.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\Npgsql.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Buffers.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Memory.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.ValueTuple.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\DDEX-Deserialiser.pdb
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\EntityFramework.xml
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\EntityFramework6.Npgsql.xml
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\Npgsql.pdb
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\Npgsql.xml
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Buffers.xml
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Memory.xml
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\bin\Debug\System.ValueTuple.xml
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\obj\Debug\madurativas.db.csproj.CopyComplete
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\obj\Debug\madurativas.db.dll
+C:\Users\dario\Documents\MEGA\Innovamed\Digidoc\Pautas madurativas\pautasMadurativas\madurativas.db\obj\Debug\madurativas.db.pdb

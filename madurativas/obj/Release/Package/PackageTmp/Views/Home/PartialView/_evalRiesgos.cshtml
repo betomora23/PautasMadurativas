@@ -1,0 +1,452 @@
+﻿@model madurativas.db.eval_riesgos
+<link rel="stylesheet" href="~/Content/bootstrap-switch.min.css" />
+
+@*<div class="alert alert-success" role="alert" id="successMessage" style="display: none; z-index:1000; position:relative;">El estudio se ha guardado con exito</div>*@
+
+<div id="evalRiesgosSuccess" class="myAlert-top alert alert-success" style="border-color:#239B56; position:fixed; top:7%; left:14%; width:72%; display:none; z-index:9999; background-color:#28B463; color:white">
+    <strong>La evaluacion se ha guardado correctamente.</strong>
+</div>
+
+<div class="modal-content">
+    <div class="modal-header">
+        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+        <h2 class="modal-title">Evaluación - Anamnesis para descartar riesgos</h2>
+    </div>
+
+    @*@using (Html.BeginForm("evalRiesgos", null, FormMethod.Post, new { id = "FrmEvalRiesgo" }))
+    {*@
+        @Html.AntiForgeryToken()
+        <div class="modal-body" id="bodyEvalRiesgo">
+
+            <div class="form-horizontal">
+                @*<h4>Paciente: @ViewBag.px</h4>
+        <h5>Fecha Nacimiento: @ViewBag.fnacimiento </h5>
+        <hr />*@
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @Html.HiddenFor(model => model.estudioid)
+                <div class="form-group">
+                    @Html.Label("¿Hubo algún problema durante la gestación, parto o nacimiento del niño?", htmlAttributes: new { @class = "control-label col-md-8" })
+                    <div id="problema_gpn" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label onclick="SelectableER(this)" class="btn btn-secondary problemagpn">
+                            <input type="radio" name="options" id="problema_gpn_option1">Si
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary Activo problemagpn">
+                            <input type="radio" name="options" id="problema_gpn_option2" checked> &nbsp
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary problemagpn">
+                            <input type="radio" name="options" id="problema_gpn_option3">No
+                        </label>
+                    </div>
+                    @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("problema_gpn", Convert.ToBoolean(Model.problema_gpn), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.problema_gpn, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-8">Problemas durante la gestación como hipertensión diabetes, eclampsia, infecciones intrauterinas (Ej: rubéola, toxoplasmosis, VIH/sida) o en el momento del nacimiento como asfixia intrauterina, hemorragia, fiebre materna, etc. </label>
+                    <div id="problema_gestacion_enfermedad" style="margin-top:2%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label onclick="SelectableER(this)" class="btn btn-secondary problemagestacionenfermedad">
+                            <input type="radio" name="options" id="problema_gestacion_enfermedad_option1">Si
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary Activo problemagestacionenfermedad">
+                            <input type="radio" name="options" id="problema_gestacion_enfermedad_option2" checked> &nbsp
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary problemagestacionenfermedad">
+                            <input type="radio" name="options" id="problema_gestacion_enfermedad_option3">No
+                        </label>
+                    </div>
+                    @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("problema_gestacion_enfermedad", Convert.ToBoolean(Model.problema_gestacion_enfermedad), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.problema_gestacion_enfermedad, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("¿El niño estuvo hospitalizado después de nacer? ", htmlAttributes: new { @class = "control-label col-md-8" })
+                    <div id="hospitalizado_postnacimiento" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label onclick="SelectableER(this)" class="btn btn-secondary hospitalizadopostnacimiento">
+                            <input type="radio" name="options" id="hospitalizado_postnacimiento_option1">Si
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary Activo hospitalizadopostnacimiento">
+                            <input type="radio" name="options" id="hospitalizado_postnacimiento_option2" checked> &nbsp
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary hospitalizadopostnacimiento">
+                            <input type="radio" name="options" id="hospitalizado_postnacimiento_option3">No
+                        </label>
+                    </div>
+                    @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("hospitalizado_postnacimiento", Convert.ToBoolean(Model.hospitalizado_postnacimiento), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.hospitalizado_postnacimiento, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("¿Ha padecido ictericia severa?", htmlAttributes: new { @class = "control-label col-md-8 col-xs-10" })
+                    <div id="ictericiasevera" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label onclick="SelectableER(this)" class="btn btn-secondary ictericiasevera">
+                            <input type="radio" name="options" id="ictericiasevera_option1">Si
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary Activo ictericiasevera">
+                            <input type="radio" name="options" id="ictericiasevera_option2" checked> &nbsp
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary ictericiasevera">
+                            <input type="radio" name="options" id="ictericiasevera_option3">No
+                        </label>
+                    </div>
+                    @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("ictericiasevera", Convert.ToBoolean(Model.ictericiasevera), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.ictericiasevera, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("¿Ha padecido alguna enfermedad grave? ", htmlAttributes: new { @class = "control-label col-md-8" })
+                    <div id="enfermedadgrave" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label onclick="SelectableER(this)" class="btn btn-secondary enfermedadgrave">
+                            <input type="radio" name="options" id="enfermedadgrave_option1">Si
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary Activo enfermedadgrave">
+                            <input type="radio" name="options" id="enfermedadgrave_option2" checked> &nbsp
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary enfermedadgrave">
+                            <input type="radio" name="options" id="enfermedadgrave_option3">No
+                        </label>
+                    </div>
+                    @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("enfermedadgrave", Convert.ToBoolean(Model.enfermedadgrave), new { @class = "form-control  switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.enfermedadgrave, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-8">Casos de deficiencia mental u otro disturbio mental en la familia.</label>
+                    <div id="deficienciamental" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label onclick="SelectableER(this)" class="btn btn-secondary deficienciamental">
+                            <input type="radio" name="options" id="deficienciamental_option1">Si
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary Activo deficienciamental">
+                            <input type="radio" name="options" id="deficienciamental_option2" checked> &nbsp
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary deficienciamental">
+                            <input type="radio" name="options" id="deficienciamental_option3">No
+                        </label>
+                    </div>
+                    @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("deficienciamental", Convert.ToBoolean(Model.deficienciamental), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.deficienciamental, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-8">Factores de riesgos ambientales como violencia familiar, depresión materna, drogas o alcoholismo, sospecha de abuso sexual, etc.</label>
+                    <div id="riesgos_ambientales" style="margin-top:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label onclick="SelectableER(this)" class="btn btn-secondary riesgosambientales">
+                            <input type="radio" name="options" id="riesgos_ambientales_option1">Si
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary Activo riesgosambientales">
+                            <input type="radio" name="options" id="riesgos_ambientales_option2" checked> &nbsp
+                        </label>
+                        <label onclick="SelectableER(this)" class="btn btn-secondary riesgosambientales">
+                            <input type="radio" name="options" id="riesgos_ambientales_option3">No
+                        </label>
+                    </div>
+                    @*<div class="col-md-4">
+            <div class="checkbox">
+                @Html.CheckBox("riesgos_ambientales", Convert.ToBoolean(Model.riesgos_ambientales), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                @Html.ValidationMessageFor(model => model.riesgos_ambientales, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                </div>
+
+                <div class="form-group" style="color: red; display:none;" id="divAlerta">
+                    <div class="col-md-offset-2 col-md-6">
+                        <label>
+                            ATENCIÓN: PACIENTE EN RIESGO DE ALTERACIONES DEL DESARROLLO
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group" style="color: green; display:none;" id="divAlertaSinAlteraciones">
+                    <div class="col-md-offset-2 col-md-6">
+                        <label>
+                            SIN ALTERACIONES DE DESARROLLO
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button id="btnEvalRiesgos" onclick="SaveERiesgo();" @*type="submit"*@ class="btn orangeButton" @*data-dismiss="modal"*@>Guardar</button>                    
+                </div>
+            </div>
+        </div>
+    @*}*@
+</div>
+<hr />
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/bootstrap-switch.min.js"></script>
+<script>
+
+('@Model.problema_gpn' == "True") ? $("#problema_gpn_option1").prop("checked", true) : ('@Model.problema_gpn' == "False") ? $("#problema_gpn_option3").prop("checked", true) : $("#problema_gpn_option2").prop("checked", true);
+    if ($("#problema_gpn_option1").is(':checked')) {
+        $("#problema_gpn_option1").parent().addClass("Activo");
+        $("#problema_gpn_option2").parent().removeClass("Activo")
+        $("#problema_gpn_option3").parent().removeClass("Activo")
+    } else if ($("#problema_gpn_option3").is(':checked')) {
+        $("#problema_gpn_option1").parent().removeClass("Activo");
+        $("#problema_gpn_option2").parent().removeClass("Activo")
+        $("#problema_gpn_option3").parent().addClass("Activo")
+    };
+
+('@Model.problema_gestacion_enfermedad' == "True") ? $("#problema_gestacion_enfermedad_option1").prop("checked", true) : ('@Model.problema_gestacion_enfermedad' == "False") ? $("#problema_gestacion_enfermedad_option3").prop("checked", true) : $("#problema_gestacion_enfermedad_option2").prop("checked", true);
+    if ($("#problema_gestacion_enfermedad_option1").is(':checked')) {
+        $("#problema_gestacion_enfermedad_option1").parent().addClass("Activo");
+        $("#problema_gestacion_enfermedad_option2").parent().removeClass("Activo");
+        $("#problema_gestacion_enfermedad_option3").parent().removeClass("Activo");
+    } else if ($("#problema_gestacion_enfermedad_option3").is(':checked')) {
+        $("#problema_gestacion_enfermedad_option1").parent().removeClass("Activo");
+        $("#problema_gestacion_enfermedad_option2").parent().removeClass("Activo");
+        $("#problema_gestacion_enfermedad_option3").parent().addClass("Activo");
+    };
+
+('@Model.hospitalizado_postnacimiento' == "True") ? $("#hospitalizado_postnacimiento_option1").prop("checked", true) : ('@Model.hospitalizado_postnacimiento' == "False") ? $("#hospitalizado_postnacimiento_option3").prop("checked", true) : $("#hospitalizado_postnacimiento_option2").prop("checked", true);
+    if ($("#hospitalizado_postnacimiento_option1").is(':checked')) {
+        $("#hospitalizado_postnacimiento_option1").parent().addClass("Activo");
+        $("#hospitalizado_postnacimiento_option2").parent().removeClass("Activo");
+        $("#hospitalizado_postnacimiento_option3").parent().removeClass("Activo");
+    } else if ($("#hospitalizado_postnacimiento_option3").is(':checked')) {
+        $("#hospitalizado_postnacimiento_option1").parent().removeClass("Activo");
+        $("#hospitalizado_postnacimiento_option2").parent().removeClass("Activo");
+        $("#hospitalizado_postnacimiento_option3").parent().addClass("Activo");
+    };
+
+('@Model.ictericiasevera' == "True") ? $("#ictericiasevera_option1").prop("checked", true) : ('@Model.ictericiasevera' == "False") ? $("#ictericiasevera_option3").prop("checked", true) : $("#ictericiasevera_option2").prop("checked", true);
+    if ($("#ictericiasevera_option1").is(':checked')) {
+        $("#ictericiasevera_option1").parent().addClass("Activo");
+        $("#ictericiasevera_option2").parent().removeClass("Activo");
+        $("#ictericiasevera_option3").parent().removeClass("Activo");
+    } else if ($("#ictericiasevera_option3").is(':checked')) {
+        $("#ictericiasevera_option1").parent().removeClass("Activo");
+        $("#ictericiasevera_option2").parent().removeClass("Activo");
+        $("#ictericiasevera_option3").parent().addClass("Activo");
+    };
+
+('@Model.enfermedadgrave' == "True") ? $("#enfermedadgrave_option1").prop("checked", true) : ('@Model.enfermedadgrave' == "False") ? $("#enfermedadgrave_option3").prop("checked", true) : $("#enfermedadgrave_option2").prop("checked", true);
+    if ($("#enfermedadgrave_option1").is(':checked')) {
+        $("#enfermedadgrave_option1").parent().addClass("Activo");
+        $("#enfermedadgrave_option2").parent().removeClass("Activo");
+        $("#enfermedadgrave_option3").parent().removeClass("Activo");
+    } else if ($("#enfermedadgrave_option3").is(':checked')) {
+        $("#enfermedadgrave_option1").parent().removeClass("Activo");
+        $("#enfermedadgrave_option2").parent().removeClass("Activo");
+        $("#enfermedadgrave_option3").parent().addClass("Activo");
+    };
+
+('@Model.deficienciamental' == "True") ? $("#deficienciamental_option1").prop("checked", true) : ('@Model.deficienciamental' == "False") ? $("#deficienciamental_option3").prop("checked", true) : $("#deficienciamental_option2").prop("checked", true);
+    if ($("#deficienciamental_option1").is(':checked')) {
+        $("#deficienciamental_option1").parent().addClass("Activo");
+        $("#deficienciamental_option2").parent().removeClass("Activo");
+        $("#deficienciamental_option3").parent().removeClass("Activo");
+    } else if ($("#deficienciamental_option3").is(':checked')) {
+        $("#deficienciamental_option1").parent().removeClass("Activo");
+        $("#deficienciamental_option2").parent().removeClass("Activo");
+        $("#deficienciamental_option3").parent().addClass("Activo");
+    };
+
+    ('@Model.riesgos_ambientales' == "True") ? $("#riesgos_ambientales_option1").prop("checked", true) : ('@Model.riesgos_ambientales' == "False") ? $("#riesgos_ambientales_option3").prop("checked", true) : $("#riesgos_ambientales_option2").prop("checked", true);
+    if ($("#riesgos_ambientales_option1").is(':checked')) {
+        $("#riesgos_ambientales_option1").parent().addClass("Activo");
+        $("#riesgos_ambientales_option2").parent().removeClass("Activo");
+        $("#riesgos_ambientales_option3").parent().removeClass("Activo");
+    } else if ($("#riesgos_ambientales_option3").is(':checked')) {
+        $("#riesgos_ambientales_option1").parent().removeClass("Activo");
+        $("#riesgos_ambientales_option2").parent().removeClass("Activo");
+        $("#riesgos_ambientales_option3").parent().addClass("Activo");
+    };
+
+    $(function () {
+
+        var $eval_quest1 = $('#problema_gpn');
+        var $eval_quest2 = $('#problema_gestacion_enfermedad');
+        var $eval_quest3 = $('#hospitalizado_postnacimiento');
+        var $eval_quest4 = $('#ictericiasevera');
+        var $eval_quest5 = $('#enfermedadgrave');
+        var $eval_quest6 = $('#deficienciamental');
+        var $eval_quest7 = $('#riesgos_ambientales');
+        var $divAlerta = $('#divAlerta');
+
+
+
+        function EvalCuentaRepuestasNo() {
+            var nfallas = 0;
+
+            if ($("#problema_gpn_option3").parent().hasClass("Activo") || $("#problema_gpn_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#problema_gestacion_enfermedad_option3").parent().hasClass("Activo") || $("#problema_gestacion_enfermedad_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#hospitalizado_postnacimiento_option3").parent().hasClass("Activo") || $("#hospitalizado_postnacimiento_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#ictericiasevera_option3").parent().hasClass("Activo") || $("#ictericiasevera_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#enfermedadgrave_option3").parent().hasClass("Activo") || $("#enfermedadgrave_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#deficienciamental_option3").parent().hasClass("Activo") || $("#deficienciamental_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#riesgos_ambientales_option3").parent().hasClass("Activo") || $("#riesgos_ambientales_option2").parent().hasClass("Activo")) nfallas++;
+
+            return nfallas;
+
+        }
+
+
+        function validaResultado() {
+
+            if (EvalCuentaRepuestasNo() != 7) {
+                var divAlertaSinAlteraciones = document.getElementById("divAlertaSinAlteraciones");
+                divAlertaSinAlteraciones.style.display = "none"
+                $divAlerta.show();
+
+            } else {
+                $divAlerta.hide();
+            }
+        }
+
+        validaResultado();
+
+        $("#bodyEvalRiesgo").click(function () {
+
+            validaResultado();
+
+        });
+    });
+
+</script>
+
+<script>
+
+    function SaveERiesgo() {     
+
+        var $eval_quest1 = $('#problema_gpn');
+        var $eval_quest2 = $('#problema_gestacion_enfermedad');
+        var $eval_quest3 = $('#hospitalizado_postnacimiento');
+        var $eval_quest4 = $('#ictericiasevera');
+        var $eval_quest5 = $('#enfermedadgrave');
+        var $eval_quest6 = $('#deficienciamental');
+        var $eval_quest7 = $('#riesgos_ambientales');
+
+        function EvalCuentaRepuestasNo() {
+            var nfallas = 0;
+
+            //if (!$eval_quest1.is(':checked')) nfallas++;
+            if ($("#problema_gpn_option3").parent().hasClass("Activo") || $("#problema_gpn_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#problema_gestacion_enfermedad_option3").parent().hasClass("Activo") || $("#problema_gestacion_enfermedad_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#hospitalizado_postnacimiento_option3").parent().hasClass("Activo") || $("#hospitalizado_postnacimiento_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#ictericiasevera_option3").parent().hasClass("Activo") || $("#ictericiasevera_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#enfermedadgrave_option3").parent().hasClass("Activo") || $("#enfermedadgrave_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#deficienciamental_option3").parent().hasClass("Activo") || $("#deficienciamental_option2").parent().hasClass("Activo")) nfallas++;
+            if ($("#riesgos_ambientales_option3").parent().hasClass("Activo") || $("#riesgos_ambientales_option2").parent().hasClass("Activo")) nfallas++;
+            //if (!$eval_quest2.is(':checked')) nfallas++;
+            //if (!$eval_quest3.is(':checked')) nfallas++;
+            //if (!$eval_quest4.is(':checked')) nfallas++;
+            //if (!$eval_quest5.is(':checked')) nfallas++;
+            //if (!$eval_quest6.is(':checked')) nfallas++;
+            //if (!$eval_quest7.is(':checked')) nfallas++;
+
+            return nfallas;
+
+        }
+
+        var divAlertaSinAlteraciones = document.getElementById("divAlertaSinAlteraciones");
+        if (EvalCuentaRepuestasNo() == 7) {
+            divAlertaSinAlteraciones.style.display = "block";
+            document.getElementById("divAlerta").style.display = "none";
+        } else {
+            divAlertaSinAlteraciones.style.display = "none";
+            document.getElementById("divAlerta").style.display = "block";
+        }
+
+
+
+        var info = {
+            estudioid: @Model.estudioid,
+            //problema_gpn: $('#problema_gpn')[0].checked,
+            problema_gpn: ($("#problema_gpn_option1").parent().hasClass("Activo")) ? true : ($("#problema_gpn_option3").parent().hasClass("Activo")) ? false : null,
+            //problema_gestacion_enfermedad: $('#problema_gestacion_enfermedad')[0].checked,
+            problema_gestacion_enfermedad: ($("#problema_gestacion_enfermedad_option1").parent().hasClass("Activo")) ? true : ($("#problema_gestacion_enfermedad_option3").parent().hasClass("Activo")) ? false : null,
+            //hospitalizado_postnacimiento: $('#hospitalizado_postnacimiento')[0].checked,
+            hospitalizado_postnacimiento: ($("#hospitalizado_postnacimiento_option1").parent().hasClass("Activo")) ? true : ($("#hospitalizado_postnacimiento_option3").parent().hasClass("Activo")) ? false : null,
+            //ictericiasevera:  $('#ictericiasevera')[0].checked,
+            ictericiasevera: ($("#ictericiasevera_option1").parent().hasClass("Activo")) ? true : ($("#ictericiasevera_option3").parent().hasClass("Activo")) ? false : null,
+            //enfermedadgrave:  $('#enfermedadgrave')[0].checked,
+            enfermedadgrave: ($("#enfermedadgrave_option1").parent().hasClass("Activo")) ? true : ($("#enfermedadgrave_option3").parent().hasClass("Activo")) ? false : null,
+            //deficienciamental:  $('#deficienciamental')[0].checked,
+            deficienciamental: ($("#deficienciamental_option1").parent().hasClass("Activo")) ? true : ($("#deficienciamental_option3").parent().hasClass("Activo")) ? false : null,
+            //riesgos_ambientales: $('#riesgos_ambientales')[0].checked
+            riesgos_ambientales: ($("#riesgos_ambientales_option1").parent().hasClass("Activo")) ? true : ($("#riesgos_ambientales_option3").parent().hasClass("Activo")) ? false : null,
+        };
+
+            $.ajax({
+                type: "POST",
+                url: "/Home/SaveEvalRiesgos/",
+                cache: false,
+                data: { evalRiesgos: info },
+                success: function () {                    
+                    $('#evalRiesgosSuccess').fadeOut(5000); // 5 seconds x 1000 milisec = 5000 milisec
+            }
+        });
+
+    };    
+
+</script>
+<script>
+
+    function SelectableER(v) {
+
+        switch (v.classList.value.substring(18)) {
+
+            case "problemagpn":
+                var clase = "." + v.classList.value.substring(v.classList.value.indexOf("p"), (v.classList.value.indexOf("p") + 11));
+                break;
+            case "problemagestacionenfermedad":
+                var clase = "." + v.classList.value.substring(v.classList.value.indexOf("p"), (v.classList.value.indexOf("p") + 27));
+                break;
+            case "hospitalizadopostnacimiento":
+                var clase = "." + v.classList.value.substring(v.classList.value.indexOf("h"), (v.classList.value.indexOf("h") + 27));
+                break;
+            case "ictericiasevera":
+                var clase = "." + v.classList.value.substring(v.classList.value.indexOf("i"), (v.classList.value.indexOf("i") + 15));
+                break;
+            case "enfermedadgrave":
+                var clase = "." + v.classList.value.substring(v.classList.value.indexOf("enf"), (v.classList.value.indexOf("enf") + 15));
+                break;
+            case "deficienciamental":
+                var clase = "." + v.classList.value.substring(v.classList.value.indexOf("def"), (v.classList.value.indexOf("def") + 17));
+                break;
+            case "riesgosambientales":
+                var clase = "." + v.classList.value.substring(v.classList.value.indexOf("rie"), (v.classList.value.indexOf("rie") + 18));
+                break;
+            }
+
+        document.querySelectorAll(clase.trim()).forEach((e) => {
+            if (e.classList.value.includes("Activo")) {
+                e.classList.toggle("Activo");
+                e.checked = false;
+            }
+        });
+        v.classList.toggle("Activo");
+        v.checked = true;
+    }
+
+</script>

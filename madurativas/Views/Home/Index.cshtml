@@ -1,0 +1,232 @@
+﻿<link rel="icon" type="image/png" href="~/Madurativas.ico" />
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+<style>
+
+    #apptitle {
+        margin-top: 8%;
+    }
+
+    @@media screen and (max-width: 450px) {
+        #apptitle {
+            margin-top: 25%;
+            margin-left: 5%;
+        }
+
+        .row {
+            margin-left: 15%;
+        }
+
+        #pream {
+            margin-left: 5%;
+        }
+    }
+</style>
+
+@model madurativas.db.Paciente
+@*@model madurativas.db.estudio*@
+
+@{
+    //ViewBag.Title = "Home Page";
+}
+
+<div id="loading"></div>
+
+<h2 id="apptitle">Supervisión de la salud infantil.</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4 id="pream">Vigilancia de pautas madurativas y diagnóstico oportuno de autismo.</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <div class="row">
+
+        <div class="form-group">
+            @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @if (ViewBag.FaltaNombre != null)
+                {
+                    @Html.ValidationMessageFor(model => model.nombre, "Debe Ingresar Nombre", new { @class = "text-danger", id = "Validation_msj_nombre" })
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Apellidos", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.apellidos, new { htmlAttributes = new { @class = "form-control" } })
+                @if (ViewBag.FaltaApellido != null)
+                {
+                    @Html.ValidationMessageFor(model => model.apellidos, "Debe Ingresar Fecha de Apellido", new { @class = "text-danger", id = "Validation_msj_apellido" })
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Fecha De Nacimiento", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fechaNacimiento, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                @if (ViewBag.FaltaFNac != null)
+                {
+                    @Html.ValidationMessageFor(model => model.fechaNacimiento, "Debe Ingresar Fecha de Nacimiento", new { @class = "text-danger", id = "Validation_msj_FechaNac" })
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("EG al Nacimiento", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EC_antesNacimiento, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "20", @max = "42", @step = "1" } })
+                @Html.ValidationMessageFor(model => model.EC_antesNacimiento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*
+    <div class="form-group">
+        @Html.Label("Fecha de Estudio", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.fechaestudio, new { htmlAttributes = new { @class = "form-control", @type = "date", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.fechaestudio, "", new { @class = "text-danger" })
+        </div>
+    </div>
+        *@
+
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-8 col-xs-12">
+                <input type="submit" onclick="Iniciar()" value="Iniciar" class="orangeButton col-md-3 col-xs-6" />
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <div>
+        <hr />
+        <p class="form-horizontal" align="justify" style="background-color:#CFF0FF; padding:0.8%;margin:2%; width:96%; color:#8e8e8e">
+            El Comité de la Infancia de la Academia Americana de Pediatría (AAP) recomienda que las visitas de supervisión de la salud antes de los 5 años incluyan la vigilancia del desarrollo estructurada y sistemática, con el uso de herramientas estandarizadas para realizar un cribado del desarrollo, al menos, en tres edades (9, 18 y 24 o 30 meses) y, adicionalmente, administrar pruebas de detección de autismo a los 18 y 36 meses.  Se basan en diversos estudios que han demostrado que el juicio clínico del pediatra no es suficiente para identificar retrasos en el control del salud, puesto que no logra detectar para la intervención temprana menos del 30-50% de los déficits en el desarrollo psicomotor. Cuestionario ASQ-3
+        </p>
+    </div>
+
+}
+@section scripts
+{
+    <script src="~/Scripts/moment.js"></script>
+    <script>
+
+        setTimeout(function () {
+            if (localStorage.disclaimer == undefined || localStorage.disclaimer == false) {
+                $('.hover_bkgr_fricc').show();
+                localStorage.disclaimer = true;
+            }
+        }, 1000);
+
+        var today = new Date();
+        $('#fechaestudio').val(today);
+        $('#fechaestudio').val(moment().format('YYYY-MM-DD'));
+
+        if (localStorage.getItem("paciente")) {
+            document.getElementById("pacienteid").value = localStorage.getItem("paciente");
+        } else {
+            $("#pacienteid").val('');
+        }
+
+        function Iniciar() {
+            $('#loading').fadeIn();
+
+            if ($('#nombre').val() != "" && $('#apellidos').val() != "" && $('#fechaNacimiento').val() != "" && $('#fechaestudio').val() != "") {
+
+                localStorage.setItem("Nombre_Paciente", $('#nombre').val());
+                localStorage.setItem("Apellidos_Paciente", $('#apellidos').val());
+                localStorage.setItem("Paciente_fechaNacimiento", $('#fechaNacimiento').val());
+                localStorage.setItem("Paciente_EC_antesNacimiento", ($('#EC_antesNacimiento').val() == "") ? 0 : $('#EC_antesNacimiento').val());
+                localStorage.setItem("Paciente_fechaEstudio", $('#fechaestudio').val());
+
+                var Paciente = {
+                    pacienteId: 0,
+                    nombre: $('#nombre').val(),
+                    apellidos: $('#apellidos').val(),
+                    fechaNacimiento: $('#fechaNacimiento').val(),
+                    EC_antesNacimiento: ($('#EC_antesNacimiento').val() == "") ? 0 : $('#EC_antesNacimiento').val(),
+                    fechaestudio: $('#fechaestudio').val(),
+                    inactivo: true
+                }
+
+                var Paciente_fechaNacimiento = $('#Paciente_fechaNacimiento').val();
+                localStorage.setItem("Paciente_fechaNacimiento", Paciente_fechaNacimiento);
+
+                var fechaestudio = $('#fechaestudio').val();
+                localStorage.setItem("fechaestudio", fechaestudio);
+
+                var date = new Date();
+                var aaaa = date.getUTCFullYear();
+                var gg = date.getUTCDate();
+                var mm = (date.getUTCMonth() + 1);
+
+                if (gg < 10)
+                    gg = "0" + gg;
+
+                if (mm < 10)
+                    mm = "0" + mm;
+
+                var cur_day = aaaa + "-" + mm + "-" + gg;
+
+                var hours = date.getUTCHours() - 3
+                var minutes = date.getUTCMinutes()
+                var seconds = date.getUTCSeconds();
+
+                if (hours < 10)
+                    hours = "0" + hours;
+
+                if (minutes < 10)
+                    minutes = "0" + minutes;
+
+                if (seconds < 10)
+                    seconds = "0" + seconds;
+
+                var finalDate = cur_day + " " + hours + ":" + minutes + ":" + seconds;
+
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://backenddigitalfarma.portalcorp.com.ar/api/stage-analytics',
+                    data: {
+                        app_token: 'RR35972464GB29038392',
+                        analytics: [
+                            {
+                                app_version: '1',
+                                intramed_id: '',
+                                user_internal_id: '',
+                                society_id: '',
+                                name: '',
+                                surname: '',
+                                mail: '',
+                                category: 'LOGIN',
+                                action: 'INICIO',
+                                label: 'BOTON',
+                                platform: 'Web',
+                                device: '',
+                                date: finalDate,
+                                observations: '',
+                                location: ''
+                            }
+                        ]
+                    },
+                    dataType: 'json'
+                });
+
+
+            } else {
+                $('#loading').fadeOut();
+                $('#Validation_msj_nombre').show();
+                $('#Validation_msj_apellido').show();
+                $('#Validation_msj_FechaNac').show();
+            }
+
+        }
+    </script>
+}

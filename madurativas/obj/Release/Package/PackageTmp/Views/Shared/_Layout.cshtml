@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    .headerimg {
+        margin-top: 1%;
+        margin-left: 5%;
+        float: left;
+    }
+
+    .logos {
+        margin-top: 1%;
+        /*margin-left: 150px;*/
+        float: right;
+        width : 190px;
+    }
+
+    .headertxt {
+        margin-top: 1.5%;        
+    }
+
+@@media screen and (max-width: 450px) {
+    .headerimg {
+        margin-top: 5%;
+        margin-left: 5%;
+        float: left;
+    }
+
+    .headertxt {
+        margin-top: 6%;
+        padding-left: 5px;
+    }
+
+    .logos {
+        float: right;
+        width: 150px;
+        margin-top: 5%;
+    }
+}
+
+
+    /* Popup box BEGIN */
+    .hover_bkgr_fricc {
+        background: rgba(0,0,0,.4);
+        cursor: pointer;
+        display: none;
+        height: 100%;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        z-index: 10000;
+    }
+
+        .hover_bkgr_fricc .helper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        .hover_bkgr_fricc > div {
+            background-color: #fff;
+            box-shadow: 10px 10px 60px #555;
+            display: inline-block;
+            height: auto;
+            max-width: 551px;
+            min-height: 100px;
+            vertical-align: middle;
+            width: 60%;
+            position: relative;
+            border-radius: 8px;
+            padding: 15px 5%;
+        }
+
+    .popupCloseButton {
+        background-color: #fff;
+        border: 3px solid #999;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-block;
+        font-family: arial;
+        font-weight: bold;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        font-size: 25px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+    }
+
+        .popupCloseButton:hover {
+            background-color: #ccc;
+        }
+
+    .trigger_popup_fricc {
+        cursor: pointer;
+        font-size: 20px;
+        margin: 20px;
+        display: inline-block;
+        font-weight: bold;
+    }
+    /* Popup box BEGIN */
+</style>
+
+
+    <title>@ViewBag.Title Pautas Madurativas</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div style="height: 10%;" class="navbar navbar-inverse navbar-fixed-top AutisBackground">
+        <div class="container">
+            <div class="navbar-header col-md-12">
+                <span><a href="/" class="brand"> <img class="headerimg" src="@Url.Content("/favicon-32x32.png")" width="45"><span style="padding-left:7px" class="col-md-1 col-xs-3 headertxt">Pautas Madurativas</span></a></span>
+                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>*@
+                @*@Html.ActionLink("Pautas Madurativas", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                <span><img class="logos" src="~/Content/images/logos.png" /></span>
+            </div>
+            @*<div class="navbar-collapse collapse menu">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Estudios", "EstudioDelDia", "Home")</li>
+                        <li>@Html.ActionLink("Pacientes", "Index", "Pacientes")</li>
+                    </ul>
+                    @*Html.Partial("_LoginPartial")
+                </div>*@
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/bootstrap-switch.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+
+    <h5 align="center" style="margin-left:10%; width:80%; background-color: #606060; color:white; padding:0.5%;">
+        <p style="margin: auto 0;">Este aplicativo <strong>No es una prueba diagnóstica</strong>.</p>
+    </h5>    
+
+    @*<div class="hover_bkgr_fricc">
+        <span class="helper"></span>
+        <div>            
+            <h3 style="text-align:left">Importante</h3>
+            <p>Este sitio esta destinado a favorecer la tarea del medico en aspectos relacionados en el desarrollo infantil.<br />Su utilizacion es exclusiva para medicos u otro personal relacionado a la salud.<br /><button class="btn btn-primary" style="margin-top:5%">Aceptar</button></p>
+        </div>
+    </div>*@
+
+</body>
+
+</html>
+<script>
+
+    $('.hover_bkgr_fricc').click(function () {
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function () {
+        $('.hover_bkgr_fricc').hide();
+    });
+
+</script>

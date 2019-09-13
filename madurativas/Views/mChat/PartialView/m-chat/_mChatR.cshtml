@@ -1,0 +1,265 @@
+﻿@using System.Linq
+@model madurativas.db.mchat
+
+<link rel="stylesheet" href="~/Content/bootstrap-switch.min.css" />
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h2 class="modal-title">Cuestionario para la detección oportuna de Autismo en la Infancia (M-CHAT-R)*</h2>
+    <h4>No es una prueba diagnóstica</h4>
+</div>
+
+
+@using (Html.BeginForm("mChat_monitor", "home", FormMethod.Post, new { id = "FrmMChat" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="modal-body" id="bodyMCHAT">
+
+
+
+        <div class="form-horizontal">
+            @*<h4>Paciente: @ViewBag.px</h4>
+                <h5>Fecha Nacimiento: @ViewBag.fnacimiento </h5>
+                <hr />*@
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.HiddenFor(model => model.estudio_id)
+            <div class="form-group">
+                @Html.Label("Si Ud. señala algo que está del otro lado de la habitación, ¿su hijo o hija mira hacia allí? (POR EJEMPLO: si Ud. señala un juguete o un animal, ¿su hijo o hija mira al juguete o al animal?)", htmlAttributes: new { @class = "control-label col-md-8" })
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("quest_1", Convert.ToBoolean(Model.quest_1), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_1, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-8">¿Alguna vez se preguntó si su hijo o hija era sordo o sorda?</label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("quest_2", Convert.ToBoolean(Model.quest_2), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_2, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("¿Su hijo o hija juega a simular, hacer “como si”, o juegos de imaginación? (POR EJEMPLO: simula que toma de una taza vacía, finge hablar por teléfono, o hace como que le da de comer a una muñeca o a un peluche?)", htmlAttributes: new { @class = "control-label col-md-8" })
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("quest_3", Convert.ToBoolean(Model.quest_3), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_3, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("¿A su hijo o hija le gusta treparse a las cosas? (POR EJEMPLO: muebles, juegos de la plaza, o escaleras)", htmlAttributes: new { @class = "control-label col-md-8" })
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("quest_4", Convert.ToBoolean(Model.quest_4), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_4, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("¿Su hijo o hija hace movimientos raros con los dedos cerca de sus ojos? (POR EJEMPLO: ¿mueve o agita los dedos cerca de sus ojos de manera rara?)", htmlAttributes: new { @class = "control-label col-md-8" })
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("quest_5", Convert.ToBoolean(Model.quest_5), new { @class = "form-control  switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_5, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Su hijo o hija señala con el dedo cuando quiere pedir algo o buscar ayuda? (POR EJEMPLO: señala algún alimento o juguete que está fuera de su alcance)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("quest_6", Convert.ToBoolean(Model.quest_6), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_6, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Su hijo o hija señala con el dedo cuando quiere mostrarle algo interesante? (POR EJEMPLO: señala un avión en el cielo o un camión muy grande en la calle)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("quest_7", Convert.ToBoolean(Model.quest_7), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_7, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Su hijo o hija se interesa por otros niños? (POR EJEMPLO: ¿mira a otros niños, les sonríe, se acerca a ellos?)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("quest_8", Convert.ToBoolean(Model.quest_8), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_8, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Su hijo o hija le muestra cosas, trayéndoselas o alzándolas para que Ud. las vea – no para buscar ayuda sino simplemente para compartirlas con Ud.? (POR EJEMPLO: le muestra una flor, un peluche, o un camión de juguete)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("quest_9", Convert.ToBoolean(Model.quest_9), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_9, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Su hijo o hija responde cuando lo/la llama por su nombre? (POR EJEMPLO: ¿su hijo o hija lo mira o la mira, habla o balbucea, o interrumpe lo que está haciendo cuando lo/la llama por su nombre?)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("deficienciamental", Convert.ToBoolean(Model.quest_10), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_10, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Cuando le sonríe a su hijo o hija, ¿le devuelve la sonrisa?
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("riesgos_ambientales", Convert.ToBoolean(Model.quest_11), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_11, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿A su hijo o hija le molestan los ruidos comunes de todos los días? (POR EJEMPLO: ¿su hijo o hija grita o llora cuando escucha una aspiradora, una licuadora, una moto, la radio, música fuerte u otro ruido común?)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("deficienciamental", Convert.ToBoolean(Model.quest_12), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_12, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Su hijo o hija camina?
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("riesgos_ambientales", Convert.ToBoolean(Model.quest_13), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_13, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Su hijo o hija lo/la mira a los ojos cuando le está hablando, jugando con él/ella, o cuando lo/la está vistiendo?
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("deficienciamental", Convert.ToBoolean(Model.quest_14), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_14, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Su hijo o hija trata de copiar lo que Ud. hace? (POR EJEMPLO: decir adiós con la mano, aplaudir, o hacer un ruido gracioso cuando Ud. lo hace)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("riesgos_ambientales", Convert.ToBoolean(Model.quest_15), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_15, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    Si Ud. se da vuelta para mirar algo, ¿su hijo o hija gira la cabeza para ver lo que Ud. está mirando?
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("riesgos_ambientales", Convert.ToBoolean(Model.quest_16), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_16, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Su hijo o hija intenta hacer que Ud. lo/la mire? (POR EJEMPLO: ¿su hijo o hija lo/la mira para que lo/la felicite, o dice “mirá” o “mirame”?)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("deficienciamental", Convert.ToBoolean(Model.quest_17), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_17, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿Su hijo o hija entiende cuando Ud. le dice que haga algo? (POR EJEMPLO: si Ud. no se lo señala, ¿su hijo o hija entiende cuando le pide “poné el libro sobre la silla” o “traeme la frazadita”?)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("riesgos_ambientales", Convert.ToBoolean(Model.quest_18), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_18, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    Si pasa algo nuevo, ¿su hijo o hija lo/la mira a la cara para ver qué hace Ud.? (POR EJEMPLO: si su hijo o hija escucha un ruido raro o gracioso, o ve un juguete nuevo, ¿lo/la mira a la cara?)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("riesgos_ambientales", Convert.ToBoolean(Model.quest_19), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_19, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-8">
+                    ¿A su hijo o hija le gustan las actividades de movimiento? (POR EJEMPLO: hamacarse o jugar al “caballito” sobre sus rodillas)
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        @Html.CheckBox("riesgos_ambientales", Convert.ToBoolean(Model.quest_20), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
+                        @Html.ValidationMessageFor(model => model.quest_20, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/bootstrap-switch.min.js"></script>
+<div class="modal-footer">
+    <div>
+        <button id="btnMchat" type="submit">Guardar e ir a monitoreo</button>
+    </div>
+
+    <a href="http://www.panaacea.org/wp-content/uploads/2015/12/M-CHAT-R_F_Spanish_Argentina_Uruguay.pdf">http://www.panaacea.org/wp-content/uploads/2015/12/M-CHAT-R_F_Spanish_Argentina_Uruguay.pdf</a>
+</div>
+<script>
+    $(".switch").bootstrapSwitch();
+</script>
