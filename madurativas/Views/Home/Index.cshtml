@@ -42,6 +42,10 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+        @if(ViewBag.fromDD == true)
+        {
+            <input type="hidden" value="@ViewBag.ddPacienteId"/>
+        }
 
     <div class="row">
 
@@ -105,14 +109,17 @@
 
     </div>
 
+    if (ViewBag.fromDD != true)
+    {
     <div>
         <hr />
         <p class="form-horizontal" align="justify" style="background-color:#CFF0FF; padding:0.8%;margin:2%; width:96%; color:#8e8e8e">
             El Comité de la Infancia de la Academia Americana de Pediatría (AAP) recomienda que las visitas de supervisión de la salud antes de los 5 años incluyan la vigilancia del desarrollo estructurada y sistemática, con el uso de herramientas estandarizadas para realizar un cribado del desarrollo, al menos, en tres edades (9, 18 y 24 o 30 meses) y, adicionalmente, administrar pruebas de detección de autismo a los 18 y 36 meses.  Se basan en diversos estudios que han demostrado que el juicio clínico del pediatra no es suficiente para identificar retrasos en el control del salud, puesto que no logra detectar para la intervención temprana menos del 30-50% de los déficits en el desarrollo psicomotor. Cuestionario ASQ-3
         </p>
     </div>
+    }
 
-}
+    }
 @section scripts
 {
     <script src="~/Scripts/moment.js"></script>

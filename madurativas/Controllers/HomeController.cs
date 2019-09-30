@@ -15,10 +15,28 @@ namespace madurativas.Controllers
         public ActionResult Index()
 
         {
-            //var pacientesLst = db.Pacientes.Where(p => p.inactivo == false).ToList();
+            // Recibo los parametros desde DigiDoc con la info del paciente
+            var source = Request.QueryString["src"];
+            var apellido = Request.QueryString["apellido"];
+            var nombre = Request.QueryString["nombre"];
+            var fnac = Request.QueryString["fnac"];
+            var ddPacienteId = Request.QueryString["pacienteId"];
 
-            //var pacientesSelectList = new SelectList(pacientesLst, "pacienteId", "FullName");
-            //ViewBag.Pacientes = pacientesSelectList;
+            if(source == "dd")
+            {
+                ViewBag.fromDD = true;
+                Session["fromDD"] = true;
+
+                var paciente = new Paciente()
+                {
+                    apellidos = apellido,
+                    nombre = nombre,
+                    fechaNacimiento = DateTime.Parse(fnac)
+                };
+
+                ViewBag.ddPacienteId = ddPacienteId;
+                return View(paciente);
+            }
 
             return View();
         }
@@ -30,11 +48,25 @@ namespace madurativas.Controllers
             return Json(pacientesLst.Select(x => new {id= x.pacienteId, nombre = x.FullName, fechaNac = x.fechaNacimiento.ToString("dd/MM/yyyy") }), JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
+        public JsonResult getEstudiosToDD(string pid)
+        {
+            var res = db.estudios.Where(e => e.Paciente.pacienteIdDigidoc == pid).ToList();
+
+            return Json(res.Select(x => new { id = x.estudioId, fecha = x.fechaestudio, idPacienteDD = x.Paciente.pacienteIdDigidoc }), JsonRequestBehavior.AllowGet);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         //public ActionResult Index([Bind(Include = "pacienteId,fechaestudio,digitado")] estudio estudio)
         public ActionResult Index(Paciente Paciente)
         {
+
+            if(Session["fromDD"] != null)
+            {
+                ViewBag.fromDD = Boolean.Parse(Session["fromDD"].ToString());
+            }
+
             if(Paciente.fechaNacimiento.Year == 1)
             {
                 ViewBag.FaltaNombre = true;
@@ -89,7 +121,14 @@ namespace madurativas.Controllers
 
         public ActionResult Edit(int id)
         {
-            estudio _estudio = db.estudios.FirstOrDefault(e => e.estudioId == id);            
+            estudio _estudio = db.estudios.FirstOrDefault(e => e.estudioId == id);
+
+            var source = Request.QueryString["src"];
+            if(source == "dd" || Session["fromDD"] != null)
+            {
+                ViewBag.fromDD = true;
+                Session["fromDD"] = true;
+            }
 
             //var pacientesLst = db.Pacientes.Where(p => p.inactivo == false).ToList();            
 

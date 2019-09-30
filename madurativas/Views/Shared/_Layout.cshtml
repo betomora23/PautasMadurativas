@@ -114,35 +114,25 @@
     }
     /* Popup box BEGIN */
 </style>
-
-
     <title>@ViewBag.Title Pautas Madurativas</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div style="height: 10%;" class="navbar navbar-inverse navbar-fixed-top AutisBackground">
-        <div class="container">
-            <div class="navbar-header col-md-12">
-                <span><a href="/" class="brand"> <img class="headerimg" src="@Url.Content("/favicon-32x32.png")" width="45"><span style="padding-left:7px" class="col-md-1 col-xs-3 headertxt">Pautas Madurativas</span></a></span>
-                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>*@
-                @*@Html.ActionLink("Pautas Madurativas", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                <span><img class="logos" src="~/Content/images/logos.png" /></span>
+
+    @* Si el origen no es DigiDoc muestro el menú en la parte superior *@
+    @if (ViewBag.fromDD != true)
+    {
+        <div style="height: 10%;" class="navbar navbar-inverse navbar-fixed-top AutisBackground">
+            <div class="container">
+                <div class="navbar-header col-md-12">
+                    <span><a href="/" class="brand"> <img class="headerimg" src="@Url.Content("/favicon-32x32.png")" width="45"><span style="padding-left:7px" class="col-md-1 col-xs-3 headertxt">Pautas Madurativas</span></a></span>
+                    <span><img class="logos" src="~/Content/images/logos.png" /></span>
+                </div>
+
             </div>
-            @*<div class="navbar-collapse collapse menu">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Estudios", "EstudioDelDia", "Home")</li>
-                        <li>@Html.ActionLink("Pacientes", "Index", "Pacientes")</li>
-                    </ul>
-                    @*Html.Partial("_LoginPartial")
-                </div>*@
         </div>
-    </div>
+    }
     <div class="container body-content">
         @RenderBody()
     </div>
@@ -153,18 +143,12 @@
 
     @RenderSection("scripts", required: false)
 
-
+    @if (ViewBag.fromDD != true)
+    {
     <h5 align="center" style="margin-left:10%; width:80%; background-color: #606060; color:white; padding:0.5%;">
         <p style="margin: auto 0;">Este aplicativo <strong>No es una prueba diagnóstica</strong>.</p>
-    </h5>    
-
-    @*<div class="hover_bkgr_fricc">
-        <span class="helper"></span>
-        <div>            
-            <h3 style="text-align:left">Importante</h3>
-            <p>Este sitio esta destinado a favorecer la tarea del medico en aspectos relacionados en el desarrollo infantil.<br />Su utilizacion es exclusiva para medicos u otro personal relacionado a la salud.<br /><button class="btn btn-primary" style="margin-top:5%">Aceptar</button></p>
-        </div>
-    </div>*@
+    </h5>
+    }
 
 </body>
 

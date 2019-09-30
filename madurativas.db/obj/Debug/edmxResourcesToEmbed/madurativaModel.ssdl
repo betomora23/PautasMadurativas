@@ -447,6 +447,7 @@ warning 6006: The facet 'Precision' with a value '255' is outside the range 1-29
     <Property Name="apellidos" Type="bpchar" MaxLength="80" Nullable="false" />
     <Property Name="fechaNacimiento" Type="date" Nullable="false" />
     <Property Name="EC_antesNacimiento" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="pacienteIdDigidoc" Type="varchar" MaxLength="100" Nullable="true" />
     <Property Name="inactivo" Type="bool" Nullable="false" />
   </EntityType>
   <Association Name="FK_AspNetUserClaims_AspNetUsers_User_Id">

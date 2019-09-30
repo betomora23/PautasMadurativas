@@ -74,6 +74,7 @@
           <ScalarProperty Name="apellidos" ColumnName="apellidos" />
           <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
           <ScalarProperty Name="EC_antesNacimiento" ColumnName="EC_antesNacimiento" />
+          <ScalarProperty Name="pacienteIdDigidoc" ColumnName="pacienteIdDigidoc" />
           <ScalarProperty Name="inactivo" ColumnName="inactivo" />
         </MappingFragment>
       </EntityTypeMapping>
