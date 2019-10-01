@@ -27,14 +27,24 @@ namespace madurativas.Controllers
                 ViewBag.fromDD = true;
                 Session["fromDD"] = true;
 
-                var paciente = new Paciente()
-                {
-                    apellidos = apellido,
-                    nombre = nombre,
-                    fechaNacimiento = DateTime.Parse(fnac)
-                };
+                var pacienteDD = db.Pacientes.Where(p => p.pacienteIdDigidoc == ddPacienteId).FirstOrDefault();
+                Paciente paciente;
 
-                ViewBag.ddPacienteId = ddPacienteId;
+                if(pacienteDD != null)
+                {
+                    paciente = pacienteDD;
+                } 
+                else
+                {
+                    paciente = new Paciente()
+                    {
+                        apellidos = apellido,
+                        nombre = nombre,
+                        fechaNacimiento = DateTime.Parse(fnac),
+                        pacienteIdDigidoc = ddPacienteId
+                    };
+                }
+
                 return View(paciente);
             }
 
@@ -53,13 +63,13 @@ namespace madurativas.Controllers
         {
             var res = db.estudios.Where(e => e.Paciente.pacienteIdDigidoc == pid).ToList();
 
-            return Json(res.Select(x => new { id = x.estudioId, fecha = x.fechaestudio, idPacienteDD = x.Paciente.pacienteIdDigidoc }), JsonRequestBehavior.AllowGet);
+            return Json(res.Select(x => new { id = x.estudioId, fecha = x.fechaestudio.ToString("dd-MM-yyyy"), idPacienteDD = x.Paciente.pacienteIdDigidoc }), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         //public ActionResult Index([Bind(Include = "pacienteId,fechaestudio,digitado")] estudio estudio)
-        public ActionResult Index(Paciente Paciente)
+        public ActionResult Index(Paciente paciente)
         {
 
             if(Session["fromDD"] != null)
@@ -67,7 +77,7 @@ namespace madurativas.Controllers
                 ViewBag.fromDD = Boolean.Parse(Session["fromDD"].ToString());
             }
 
-            if(Paciente.fechaNacimiento.Year == 1)
+            if(paciente.fechaNacimiento.Year == 1)
             {
                 ViewBag.FaltaNombre = true;
                 ViewBag.FaltaApellido = true;
@@ -75,9 +85,21 @@ namespace madurativas.Controllers
                 ViewBag.FaltaFNac = true;
                 return View();
             }
+
+            if(paciente.pacienteId != 0)
+            {
+                var ec = paciente.EC_antesNacimiento;
+                var id = paciente.pacienteId;
+                var aux = db.Pacientes.Where(p => p.pacienteId == id).FirstOrDefault();
+                if (aux.EC_antesNacimiento != ec) aux.EC_antesNacimiento = ec;
+
+                paciente = aux;
+            }
             
+
+
             estudio estudio = new estudio();
-            estudio.Paciente = Paciente;
+            estudio.Paciente = paciente;
             //TODO: Lo saco porque no esta en la db
             //estudio.fechaestudio = Paciente.fechaestudio;
             estudio.fechaestudio = DateTime.Now;
