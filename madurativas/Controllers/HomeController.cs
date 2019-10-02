@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
+using System.Web.Configuration;
 
 namespace madurativas.Controllers
 {
@@ -20,7 +21,7 @@ namespace madurativas.Controllers
             var apellido = Request.QueryString["apellido"];
             var nombre = Request.QueryString["nombre"];
             var fnac = Request.QueryString["fnac"];
-            var ddPacienteId = Request.QueryString["pacienteId"];
+            var ddPacienteId = Request.QueryString["ddPacienteId"];
 
             if(source == "dd")
             {
@@ -28,27 +29,27 @@ namespace madurativas.Controllers
                 Session["fromDD"] = true;
 
                 var pacienteDD = db.Pacientes.Where(p => p.pacienteIdDigidoc == ddPacienteId).FirstOrDefault();
-                Paciente paciente;
 
                 if(pacienteDD != null)
                 {
-                    paciente = pacienteDD;
+                    return View(pacienteDD);
                 } 
                 else
                 {
-                    paciente = new Paciente()
+                    var paciente = new Paciente()
                     {
                         apellidos = apellido,
                         nombre = nombre,
                         fechaNacimiento = DateTime.Parse(fnac),
                         pacienteIdDigidoc = ddPacienteId
                     };
+                    return View(paciente);
                 }
 
-                return View(paciente);
             }
 
-            return View();
+            var nuevoPaciente = new Paciente();
+            return View(nuevoPaciente);
         }
 
         public JsonResult getPacientesJson()
@@ -59,9 +60,9 @@ namespace madurativas.Controllers
         }
 
         [HttpGet]
-        public JsonResult getEstudiosToDD(string pid)
+        public JsonResult getEstudiosToDD(string ddPacienteId)
         {
-            var res = db.estudios.Where(e => e.Paciente.pacienteIdDigidoc == pid).ToList();
+            var res = db.estudios.Where(e => e.Paciente.pacienteIdDigidoc == ddPacienteId).ToList();
 
             return Json(res.Select(x => new { id = x.estudioId, fecha = x.fechaestudio.ToString("dd-MM-yyyy"), idPacienteDD = x.Paciente.pacienteIdDigidoc }), JsonRequestBehavior.AllowGet);
         }
@@ -107,28 +108,29 @@ namespace madurativas.Controllers
             if (ModelState.IsValid)
             {              
                 estudio.eval_riesgos = new eval_riesgos();
-                estudio.mchat = new mchat();
-
-                estudio.mchat.mchat_monitor_quest_1 = new mchat_monitor_quest_1();
-                estudio.mchat.mchat_monitor_quest_2 = new mchat_monitor_quest_2();
-                estudio.mchat.mchat_monitor_quest_3 = new mchat_monitor_quest_3();
-                estudio.mchat.mchat_monitor_quest_4 = new mchat_monitor_quest_4();
-                estudio.mchat.mchat_monitor_quest_5 = new mchat_monitor_quest_5();
-                estudio.mchat.mchat_monitor_quest_6 = new mchat_monitor_quest_6();
-                estudio.mchat.mchat_monitor_quest_7 = new mchat_monitor_quest_7();
-                estudio.mchat.mchat_monitor_quest_8 = new mchat_monitor_quest_8();
-                estudio.mchat.mchat_monitor_quest_9 = new mchat_monitor_quest_9();
-                estudio.mchat.mchat_monitor_quest_10 = new mchat_monitor_quest_10();
-                estudio.mchat.mchat_monitor_quest_11 = new mchat_monitor_quest_11();
-                estudio.mchat.mchat_monitor_quest_12 = new mchat_monitor_quest_12();
-                estudio.mchat.mchat_monitor_quest_13 = new mchat_monitor_quest_13();
-                estudio.mchat.mchat_monitor_quest_14 = new mchat_monitor_quest_14();
-                estudio.mchat.mchat_monitor_quest_15 = new mchat_monitor_quest_15();
-                estudio.mchat.mchat_monitor_quest_16 = new mchat_monitor_quest_16();
-                estudio.mchat.mchat_monitor_quest_17 = new mchat_monitor_quest_17();
-                estudio.mchat.mchat_monitor_quest_18 = new mchat_monitor_quest_18();
-                estudio.mchat.mchat_monitor_quest_19 = new mchat_monitor_quest_19();
-                estudio.mchat.mchat_monitor_quest_20 = new mchat_monitor_quest_20();
+                estudio.mchat = new mchat
+                {
+                    mchat_monitor_quest_1 = new mchat_monitor_quest_1(),
+                    mchat_monitor_quest_2 = new mchat_monitor_quest_2(),
+                    mchat_monitor_quest_3 = new mchat_monitor_quest_3(),
+                    mchat_monitor_quest_4 = new mchat_monitor_quest_4(),
+                    mchat_monitor_quest_5 = new mchat_monitor_quest_5(),
+                    mchat_monitor_quest_6 = new mchat_monitor_quest_6(),
+                    mchat_monitor_quest_7 = new mchat_monitor_quest_7(),
+                    mchat_monitor_quest_8 = new mchat_monitor_quest_8(),
+                    mchat_monitor_quest_9 = new mchat_monitor_quest_9(),
+                    mchat_monitor_quest_10 = new mchat_monitor_quest_10(),
+                    mchat_monitor_quest_11 = new mchat_monitor_quest_11(),
+                    mchat_monitor_quest_12 = new mchat_monitor_quest_12(),
+                    mchat_monitor_quest_13 = new mchat_monitor_quest_13(),
+                    mchat_monitor_quest_14 = new mchat_monitor_quest_14(),
+                    mchat_monitor_quest_15 = new mchat_monitor_quest_15(),
+                    mchat_monitor_quest_16 = new mchat_monitor_quest_16(),
+                    mchat_monitor_quest_17 = new mchat_monitor_quest_17(),
+                    mchat_monitor_quest_18 = new mchat_monitor_quest_18(),
+                    mchat_monitor_quest_19 = new mchat_monitor_quest_19(),
+                    mchat_monitor_quest_20 = new mchat_monitor_quest_20()
+                };
 
                 db.estudios.Add(estudio);
                 db.SaveChanges();
