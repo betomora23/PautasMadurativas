@@ -73,6 +73,7 @@
     <Property Name="fechaNacimiento" Type="DateTime" Precision="0" Nullable="false" />
     <Property Name="EC_antesNacimiento" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="pacienteIdDigidoc" Type="String" MaxLength="100" Nullable="true" />
+    <Property Name="edad" Type="Decimal" Nullable="true" />
     <Property Name="inactivo" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="estudios" Relationship="madurativasModel.fk_estudio_Pacientes_1" FromRole="Paciente" ToRole="estudio" />
   </EntityType>

@@ -453,6 +453,7 @@ warning 6006: The facet 'Precision' with a value '255' is outside the range 1-29
           <Property Name="fechaNacimiento" Type="date" Nullable="false" />
           <Property Name="EC_antesNacimiento" Type="numeric" Precision="19" Scale="4" />
           <Property Name="pacienteIdDigidoc" Type="varchar" MaxLength="100" Nullable="true" />
+          <Property Name="edad" Type="numeric" Precision="19" Scale="4" Nullable="true" />
           <Property Name="inactivo" Type="bool" Nullable="false" />
         </EntityType>
         <Association Name="FK_AspNetUserClaims_AspNetUsers_User_Id">
@@ -1011,6 +1012,7 @@ warning 6006: The facet 'Precision' with a value '255' is outside the range 1-29
           <Property Name="fechaNacimiento" Type="DateTime" Precision="0" Nullable="false" />
           <Property Name="EC_antesNacimiento" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="pacienteIdDigidoc" Type="String" MaxLength="100" Nullable="true" />
+          <Property Name="edad" Type="Decimal" Nullable="true" />
           <Property Name="inactivo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="estudios" Relationship="madurativasModel.fk_estudio_Pacientes_1" FromRole="Paciente" ToRole="estudio" />
         </EntityType>
@@ -1960,6 +1962,7 @@ warning 6006: The facet 'Precision' with a value '255' is outside the range 1-29
                 <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
                 <ScalarProperty Name="EC_antesNacimiento" ColumnName="EC_antesNacimiento" />
                 <ScalarProperty Name="pacienteIdDigidoc" ColumnName="pacienteIdDigidoc" />
+                <ScalarProperty Name="edad" ColumnName="edad"/>
                 <ScalarProperty Name="inactivo" ColumnName="inactivo" />
               </MappingFragment>
             </EntityTypeMapping>

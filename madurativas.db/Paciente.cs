@@ -27,6 +27,7 @@ namespace madurativas.db
         public Nullable<decimal> EC_antesNacimiento { get; set; }
         public string pacienteIdDigidoc { get; set; }
         public bool inactivo { get; set; }
+        public Nullable<decimal> edad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<estudio> estudios { get; set; }

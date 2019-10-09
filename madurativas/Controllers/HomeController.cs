@@ -22,6 +22,7 @@ namespace madurativas.Controllers
             var nombre = Request.QueryString["nombre"];
             var fnac = Request.QueryString["fnac"];
             var ddPacienteId = Request.QueryString["ddPacienteId"];
+            var edad = Request.QueryString["edad"];
 
             if(source == "dd")
             {
@@ -62,7 +63,7 @@ namespace madurativas.Controllers
         [HttpGet]
         public JsonResult getEstudiosToDD(string ddPacienteId)
         {
-            var res = db.estudios.Where(e => e.Paciente.pacienteIdDigidoc == ddPacienteId).ToList();
+            var res = db.estudios.Where(e => e.Paciente.pacienteIdDigidoc == ddPacienteId).OrderByDescending(e => e.fechaestudio).ToList();
 
             return Json(res.Select(x => new { id = x.estudioId, fecha = x.fechaestudio.ToString("dd-MM-yyyy"), idPacienteDD = x.Paciente.pacienteIdDigidoc }), JsonRequestBehavior.AllowGet);
         }
