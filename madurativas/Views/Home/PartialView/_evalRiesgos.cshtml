@@ -1,27 +1,19 @@
 ﻿@model madurativas.db.eval_riesgos
 <link rel="stylesheet" href="~/Content/bootstrap-switch.min.css" />
 
-@*<div class="alert alert-success" role="alert" id="successMessage" style="display: none; z-index:1000; position:relative;">El estudio se ha guardado con exito</div>*@
-
 <div id="evalRiesgosSuccess" class="myAlert-top alert alert-success" style="border-color:#239B56; position:fixed; top:7%; left:14%; width:72%; display:none; z-index:9999; background-color:#28B463; color:white">
     <strong>La evaluacion se ha guardado correctamente.</strong>
 </div>
 
 <div class="modal-content">
     <div class="modal-header">
-        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
-        <h2 class="modal-title">Evaluación - Anamnesis para descartar riesgos</h2>
+        <h5 class="panel-title form-label">Evaluación - Anamnesis para descartar riesgos</h5>
     </div>
 
-    @*@using (Html.BeginForm("evalRiesgos", null, FormMethod.Post, new { id = "FrmEvalRiesgo" }))
-    {*@
         @Html.AntiForgeryToken()
         <div class="modal-body" id="bodyEvalRiesgo">
 
             <div class="form-horizontal">
-                @*<h4>Paciente: @ViewBag.px</h4>
-        <h5>Fecha Nacimiento: @ViewBag.fnacimiento </h5>
-        <hr />*@
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                 @Html.HiddenFor(model => model.estudioid)
@@ -38,12 +30,6 @@
                             <input type="radio" name="options" id="problema_gpn_option3">No
                         </label>
                     </div>
-                    @*<div class="col-md-4">
-            <div class="checkbox">
-                @Html.CheckBox("problema_gpn", Convert.ToBoolean(Model.problema_gpn), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
-                @Html.ValidationMessageFor(model => model.problema_gpn, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
                 </div>
 
                 <div class="form-group">
@@ -59,12 +45,6 @@
                             <input type="radio" name="options" id="problema_gestacion_enfermedad_option3">No
                         </label>
                     </div>
-                    @*<div class="col-md-4">
-            <div class="checkbox">
-                @Html.CheckBox("problema_gestacion_enfermedad", Convert.ToBoolean(Model.problema_gestacion_enfermedad), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
-                @Html.ValidationMessageFor(model => model.problema_gestacion_enfermedad, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
                 </div>
 
                 <div class="form-group">
@@ -80,12 +60,6 @@
                             <input type="radio" name="options" id="hospitalizado_postnacimiento_option3">No
                         </label>
                     </div>
-                    @*<div class="col-md-4">
-            <div class="checkbox">
-                @Html.CheckBox("hospitalizado_postnacimiento", Convert.ToBoolean(Model.hospitalizado_postnacimiento), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
-                @Html.ValidationMessageFor(model => model.hospitalizado_postnacimiento, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
                 </div>
 
                 <div class="form-group">
@@ -101,12 +75,6 @@
                             <input type="radio" name="options" id="ictericiasevera_option3">No
                         </label>
                     </div>
-                    @*<div class="col-md-4">
-            <div class="checkbox">
-                @Html.CheckBox("ictericiasevera", Convert.ToBoolean(Model.ictericiasevera), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
-                @Html.ValidationMessageFor(model => model.ictericiasevera, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
                 </div>
 
                 <div class="form-group">
@@ -122,12 +90,6 @@
                             <input type="radio" name="options" id="enfermedadgrave_option3">No
                         </label>
                     </div>
-                    @*<div class="col-md-4">
-            <div class="checkbox">
-                @Html.CheckBox("enfermedadgrave", Convert.ToBoolean(Model.enfermedadgrave), new { @class = "form-control  switch", @data_on_text = "Si", @data_off_text = "No" })
-                @Html.ValidationMessageFor(model => model.enfermedadgrave, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
                 </div>
 
                 <div class="form-group">
@@ -143,12 +105,6 @@
                             <input type="radio" name="options" id="deficienciamental_option3">No
                         </label>
                     </div>
-                    @*<div class="col-md-4">
-            <div class="checkbox">
-                @Html.CheckBox("deficienciamental", Convert.ToBoolean(Model.deficienciamental), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
-                @Html.ValidationMessageFor(model => model.deficienciamental, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
                 </div>
 
                 <div class="form-group">
@@ -164,12 +120,6 @@
                             <input type="radio" name="options" id="riesgos_ambientales_option3">No
                         </label>
                     </div>
-                    @*<div class="col-md-4">
-            <div class="checkbox">
-                @Html.CheckBox("riesgos_ambientales", Convert.ToBoolean(Model.riesgos_ambientales), new { @class = "form-control switch", @data_on_text = "Si", @data_off_text = "No" })
-                @Html.ValidationMessageFor(model => model.riesgos_ambientales, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
                 </div>
 
                 <div class="form-group" style="color: red; display:none;" id="divAlerta">
@@ -193,11 +143,10 @@
         <div class="modal-footer">
             <div class="form-group">
                 <div class="col-md-12">
-                    <button id="btnEvalRiesgos" onclick="SaveERiesgo();" @*type="submit"*@ class="btn orangeButton" @*data-dismiss="modal"*@>Guardar</button>                    
+                    <button id="btnEvalRiesgos" onclick="SaveERiesgo();" class="btn btn-sm btn-primary" >Guardar</button>                    
                 </div>
             </div>
         </div>
-    @*}*@
 </div>
 <hr />
 

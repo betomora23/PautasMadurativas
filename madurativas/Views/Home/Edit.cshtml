@@ -1,15 +1,14 @@
 ﻿@model madurativas.db.estudio
-@*@model madurativas.db.EstudioCompuesto*@
-
 @{
     ViewBag.Title = "Estudio";
 }
 
 <style>
-    #linkBiblio{
-        margin-right:15%;
-        margin-top:0%;
+    #linkBiblio {
+        margin-right: 15%;
+        margin-top: 0%;
     }
+
     .buttonCenter {
         margin-left: 18%;
     }
@@ -22,6 +21,7 @@
         margin-top: 0.6%;
         margin-bottom: 0%;
     }
+
     .col-xs-9 {
         margin-left: 0%;
     }
@@ -35,186 +35,158 @@
             margin-right: 5%;
             margin-top: 7%;
         }
+
         #apptitle {
             margin-top: 25%;
         }
+
         .alinear {
             margin-top: 0%;
             margin-bottom: 5%;
-            padding-left:0%;
+            padding-left: 0%;
         }
-        .col-xs-4{
-            padding-right:0px;
+
+        .col-xs-4 {
+            padding-right: 0px;
         }
+
         .col-xs-9 {
             margin-left: 8%;
         }
+
         .centrar {
             margin-top: 2%;
         }
+
         .buttonCenter {
             margin-left: 0%;
         }
     }
 </style>
 
-@*<link href="~/Content/Site.css" rel="stylesheet" />*@
+ @if (ViewBag.fromDD == null || ViewBag.fromDD == false)
+ {
 <h2 id="apptitle">Supervisión de la salud infantil.</h2>
+ }
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "FrmEstudio" }))
 {
 
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.estudioId)
 
-    <div class="form-horizontal">
-        <h4>Vigilancia de pautas madurativas y diagnóstico oportuno de autismo.</h4>
-        <hr />
+    if (ViewBag.fromDD == null || ViewBag.fromDD == false)
+    {
+        <div class="form-horizontal">
+            <h4>Vigilancia de pautas madurativas y diagnóstico oportuno de autismo.</h4>
+            <hr />
 
-        <div class="row">
-            @*Empieza la Row de los datos del paciente*@
-        <div class="col-md-12 col-sm-12">
-            @Html.HiddenFor(model => model.estudioId)
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                @*Empieza la Row de los datos del paciente*@
+                <div class="col-md-12 col-sm-12">
 
-            @*<div class="form-group">*@
-            @Html.LabelFor(model => model.Paciente.nombre, "Paciente:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-2" })
-            <div class="col-md-2 col-xs-9 alinear">
-                @Model.Paciente.FullName
-                @*@Html.DropDownList("pacienteid", (IEnumerable<SelectListItem>)ViewBag.Pacientes, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.pacienteid, "", new { @class = "text-danger" })*@
-                @*@Html.DisplayFor(model => model.Paciente.FullName, new { @class = "form-control" })*@
-            </div>
-            @*</div>*@
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-            @*<div class="form-group">*@
-            @Html.Label("Fecha Nacimiento:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-6 centrar" })
-            <div class="col-md-2 col-xs-6 alinear">
-                @{
-                    var _fechaNacimiento = Model.Paciente.fechaNacimiento.ToShortDateString();
-                }
-                @_fechaNacimiento
-                @Html.HiddenFor(model => model.Paciente.fechaNacimiento)
-
-                <div>
-                    @Html.Label("Edad Cronologica: ")
-                    @Html.Label("edad", htmlAttributes: new { id = "edad" })
-                </div>
-                <div id="div_edadCorregida" style="display:none">
-                    @Html.Label("Edad Corregida: ")
-                    @Html.Label("edadCorregida", htmlAttributes: new { id = "edadCorregida" })
-                </div>
-            </div>
-            @*</div>*@
-
-            @*<div class="form-group">*@
-            @Html.Label("Fecha Estudio:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-5" })
-            <div class="col-md-2 col-xs-3 alinear">
-                @*@Html.ValueFor(model => model.fechaestudio)*@
-                @{
-                    var _fechaestudio = Model.fechaestudio.ToShortDateString();
-                }
-                @_fechaestudio
-                @Html.HiddenFor(model => model.fechaestudio)
-            </div>
-            @*</div>*@
-
-            @*<div class="form-group">
-                    @Html.LabelFor(model => model.digitado, htmlAttributes: new { @class = "control-label col-md-3" })
-                    <div class="col-md-8">
-                        @Html.EditorFor(model => model.digitado, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.Paciente.nombre, "Paciente:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-2" })
+                    <div class="col-md-2 col-xs-9 alinear">
+                        @Model.Paciente.FullName
                     </div>
-                </div>*@
 
-            @*<div class="form-group">
-                    <div class="col-md-offset-4 col-md-9">
-                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                    @Html.Label("Fecha Nacimiento:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-6 centrar" })
+                    <div class="col-md-2 col-xs-6 alinear">
+                        @{
+                            var _fechaNacimiento = Model.Paciente.fechaNacimiento.ToShortDateString();
+                        }
+                        @_fechaNacimiento
+                        @Html.HiddenFor(model => model.Paciente.fechaNacimiento)
+
+                        <div>
+                            @Html.Label("Edad Cronologica: ")
+                            @Html.Label("edad", htmlAttributes: new { id = "edad" })
+                        </div>
+                        <div id="div_edadCorregida" style="display:none">
+                            @Html.Label("Edad Corregida: ")
+                            @Html.Label("edadCorregida", htmlAttributes: new { id = "edadCorregida" })
+                        </div>
                     </div>
-                </div>*@
-        </div>
-    </div>@*Termina la Row*@
 
-    <br />
+                    @Html.Label("Fecha Estudio:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-5" })
+                    <div class="col-md-2 col-xs-3 alinear">
+                        @{
+                            var _fechaestudio = Model.fechaestudio.ToShortDateString();
+                        }
+                        @_fechaestudio
+                        @Html.HiddenFor(model => model.fechaestudio)
+                    </div>
+                </div>
+            </div>
+        </div>@*Termina la Row*@
+
+        <br />
+    }
+    else
+    {
+    <div style="height: 200px;">
+        @Html.HiddenFor(model => model.Paciente.fechaNacimiento)
+        @Html.HiddenFor(model => model.fechaestudio)
+    </div>
+    }
 
     <div class="row">
         @*Empieza Row de los botones*@
-        <div @*style="margin-left:9%"*@ class="col-md-12 col-xs-12 buttonCenter">
+        <div class="col-md-12 col-xs-12 buttonCenter">
             <div>
                 <div class="col-md-12">
-                    @*<div class="row">*@
-                    <button id="evalRiesgos" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-primary" onclick="HabilitarEvalRiesgos()" @*data-toggle="modal" data-target="#modalEvalRiesgos"*@>Evaluación de Riesgos</button>
-                    @*</div>
-                <br />
-                <div class="row">*@
-                    @*@Html.ActionLink("M-CHAT test de pesquisa de Autismo", "Index", "mChat", new { id = Model.estudioId }, new { @class = "btn btn-primary col-md-3 col-sm-8 col-xs-10", @style = "margin-right:1%; margin-bottom:1%;" })*@
-                    <button id="vigilancia" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-primary" onclick="HabilitarVigilancia()">Vigilancia del Desarrollo</button>
-                    @*</div>
-                <br />*@
-                    @*<div class="row ">*@
-                    <button id="mChat" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-3 col-sm-8 col-xs-12 btn btn-primary" onclick="HabilitarmChat()">M-CHAT test de pesquisa de Autismo</button>
-
-                    @*</div>*@
-                    @*<br />*@
-                    @*<div class="row ">*@
-                    @*<a style="margin-right:1%; margin-bottom:1%; border: none;" data-toggle="modal" data-target="#modalBibliografia">Consultar Bibliografia</a>*@
-
-                    @*</div>*@
+                    <button id="evalRiesgos" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarEvalRiesgos()">Evaluación de Riesgos</button>
+                    <button id="vigilancia" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarVigilancia()">Vigilancia del Desarrollo</button>
+                    <button id="mChat" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-3 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarmChat()">M-CHAT test de pesquisa de Autismo</button>
                 </div>
 
+    
                 <a id="linkBiblio" style="cursor: pointer; float: right;" data-toggle="modal" data-target="#modalBibliografia">Consultar Bibliografia</a>
 
             </div>
-
-            @*<br />
-        <hr />*@
         </div>
-</div> @*Termina la Row*@
-@*<br />*@
-<hr />
-@*<br />*@
-
-<div id="vigilanciaDesarrollo" class="row" style="display:none">
-    <div class="modal-content" id="panelVigilancia" style="border:0px solid transparent">
-        <div class="modal-header" style="border:1px solid #ddd; text-align:center;"><h4>Vigilancia del Desarrollo</h4></div>
-        <div class="panel-body" style="border:1px solid #ddd">
-            <div class="container col-md-12">
-                <div class="row ">
-                    <button type="button" class="col-md-3 btn btn-primary" data-toggle="modal" data-target="#modalPersonalSocial">Area - Personal - Social</button>
-
-                    <button type="button" class="col-md-offset-1 col-md-3 btn btn-primary " data-toggle="modal" data-target="#modalMotricidadFina">Motricidad Fina</button>
+    </div> @*Termina la Row*@
+    <hr />
+    <div id="vigilanciaDesarrollo" class="row" style="display:none">
+        <div class="modal-content" id="panelVigilancia" style="border:0px solid transparent">
+            <div class="modal-header" style="border:1px solid #ddd; text-align:center;">
+                <h5 class="panel-title form-label">Vigilancia del Desarrollo</h5>
+            </div>
+            <div class="panel-body" style="border:1px solid #ddd">
+                <div class="container col-md-12" style="align-content: center;">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 centrado"><button type="button" class="btn btn-sm btn-primary btn-wide" data-toggle="modal" data-target="#modalPersonalSocial">Area - Personal - Social</button></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 centrado"><button type="button" class="btn btn-sm btn-primary btn-wide" data-toggle="modal" data-target="#modalMotricidadFina">Motricidad Fina</button></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <br />
+                    <div class="row ">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 centrado"><button type="button" class="btn btn-sm btn-primary btn-wide" data-toggle="modal" data-target="#modalLenguaje">Lenguaje</button></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 centrado"><button type="button" class="btn btn-sm btn-primary btn-wide" data-toggle="modal" data-target="#modalMotricidadGruesa">Motricidad Gruesa</button></div>
+                        <div class="col-md-1"></div>
+                    </div>
 
                 </div>
-                <br />
-                <div class="row ">
-                    <button type="button" class="col-md-3 btn btn-primary" data-toggle="modal" data-target="#modalLenguaje">Lenguaje</button>
-
-                    <button type="button" class="col-md-offset-1 col-md-3 btn btn-primary" data-toggle="modal" data-target="#modalMotricidadGruesa">Motricidad Gruesa</button>
-                </div>
-
             </div>
         </div>
-        @*<br />
-            <div class="panel-footer" style="background-color:#CFF0FF; border:0px solid transparent">
+
+        <br />
+
+        <div style="background-color:#CFF0FF; padding:0.8%;">
             <p style="color:#8e8e8e">Escalas de cribado para los TD: Existen numerosas escalas de primer nivel para el cribado de los TD (trastornos del desarrollo). Sin embargo, ninguna de ellas tiene el suficiente nivel de sensibilidad y especificidad como para ser recomendada de forma preferente. Deben tenerse en cuenta los hitos del desarrollo. Hay pruebas de que muchos de los niños con resultados positivos en los test se beneficiarán de su derivación a servicios de atención temprana, tengan o no un diagnóstico de TD.*</p>
             <hr />
             <p style="color:#8e8e8e">
                 * Galbe Sánchez-Ventura, J. Detección precoz de los trastornos del desarrollo. En Recomendaciones PrevInfad/PAPPS [en línea]. Actualizado marzo de 2017 [consultado 13-07-2018]. Disponible en <a href="http://previnfad.aepap.org/monografia/trastornos-desarrollo">http://previnfad.aepap.org/monografia/trastornos-desarrollo</a>
             </p>
-            </div>*@
+        </div>
+
     </div>
-
-    <br />
-
-    <div style="background-color:#CFF0FF; padding:0.8%;">
-        <p style="color:#8e8e8e">Escalas de cribado para los TD: Existen numerosas escalas de primer nivel para el cribado de los TD (trastornos del desarrollo). Sin embargo, ninguna de ellas tiene el suficiente nivel de sensibilidad y especificidad como para ser recomendada de forma preferente. Deben tenerse en cuenta los hitos del desarrollo. Hay pruebas de que muchos de los niños con resultados positivos en los test se beneficiarán de su derivación a servicios de atención temprana, tengan o no un diagnóstico de TD.*</p>
-        <hr />
-        <p style="color:#8e8e8e">
-            * Galbe Sánchez-Ventura, J. Detección precoz de los trastornos del desarrollo. En Recomendaciones PrevInfad/PAPPS [en línea]. Actualizado marzo de 2017 [consultado 13-07-2018]. Disponible en <a href="http://previnfad.aepap.org/monografia/trastornos-desarrollo">http://previnfad.aepap.org/monografia/trastornos-desarrollo</a>
-        </p>
-    </div>
-
-</div>
-
-</div>
 }
 
 <div id="modalEvalRiesgos" style="display:none">
@@ -359,7 +331,7 @@
 
         var guardadomChat = document.getElementById("btnMchat");
         guardadomChat.addEventListener("click", () => {
-            if (document.getElementById("modalmChat").style.display == "block") {   
+            if (document.getElementById("modalmChat").style.display == "block") {
             }
         })
 

@@ -23,106 +23,92 @@
 </style>
 
 @model madurativas.db.Paciente
-@*@model madurativas.db.estudio*@
-
-@{
-    //ViewBag.Title = "Home Page";
-}
 
 <div id="loading"></div>
 
+@if (ViewBag.fromDD == null || ViewBag.fromDD == false)
+{
 <h2 id="apptitle">Supervisión de la salud infantil.</h2>
+}
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4 id="pream">Vigilancia de pautas madurativas y diagnóstico oportuno de autismo.</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    
-        <div class="row">
+<div class="form-horizontal">
 
+    @if (ViewBag.fromDD == null || ViewBag.fromDD == false)
+    {
+    <h4 id="pream">Vigilancia de pautas madurativas y diagnóstico oportuno de autismo.</h4>
+    <hr />
+    }
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<div class="row">
+
+    @if (ViewBag.fromDD == null || ViewBag.fromDD == false)
+    {
         <div class="form-group">
             @Html.Label("Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @if (ViewBag.fromDD != null && ViewBag.fromDD)
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                if (ViewBag.FaltaNombre != null)
                 {
-                    @Html.TextBoxFor(model => model.nombre, new { @class="form-control", @readonly="readonly" })
-                }
-                else
-                {
-                    @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
-                    if (ViewBag.FaltaNombre != null)
-                    {
-                        @Html.ValidationMessageFor(model => model.nombre, "Debe Ingresar Nombre", new { @class = "text-danger", id = "Validation_msj_nombre" })
-                    }
+                    @Html.ValidationMessageFor(model => model.nombre, "Debe Ingresar Nombre", new { @class = "text-danger", id = "Validation_msj_nombre" })
                 }
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.Label("Apellidos", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @if (ViewBag.fromDD == true)
-                {
-                    @Html.TextBoxFor(model => model.apellidos, new { @class = "form-control", @readonly="readonly" })
-                }
-                else
-                {
-                    @Html.EditorFor(model => model.apellidos, new { htmlAttributes = new { @class = "form-control" } })
-                    if (ViewBag.FaltaApellido != null)
-                    {
-                        @Html.ValidationMessageFor(model => model.apellidos, "Debe Ingresar Fecha de Apellido", new { @class = "text-danger", id = "Validation_msj_apellido" })
-                    }
-                }
-            </div>
+    <div class="form-group">
+        @Html.Label("Apellidos", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.apellidos, new { htmlAttributes = new { @class = "form-control" } })
+            if (ViewBag.FaltaApellido != null)
+            {
+                @Html.ValidationMessageFor(model => model.apellidos, "Debe Ingresar Fecha de Apellido", new { @class = "text-danger", id = "Validation_msj_apellido" })
+            }
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.Label("Fecha De Nacimiento", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @if (ViewBag.fromDD == true)
-                {
-                    @Html.TextBoxFor(Model => Model.fechaNacimiento,"{0:dd/MM/yyyy}", new { @class="form-control", @readonly="readonly" })
-                }
-                else
-                {
-                    @Html.EditorFor(model => model.fechaNacimiento, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                    if (ViewBag.FaltaFNac != null)
-                    {
-                        @Html.ValidationMessageFor(model => model.fechaNacimiento, "Debe Ingresar Fecha de Nacimiento", new { @class = "text-danger", id = "Validation_msj_FechaNac" })
-                    }
-                }
-
-
-            </div>
+    <div class="form-group">
+        @Html.Label("Fecha De Nacimiento", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.fechaNacimiento, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+            if (ViewBag.FaltaFNac != null)
+            {
+                @Html.ValidationMessageFor(model => model.fechaNacimiento, "Debe Ingresar Fecha de Nacimiento", new { @class = "text-danger", id = "Validation_msj_FechaNac" })
+            }
         </div>
-
-        <div class="form-group">
-            @Html.Label("EG al Nacimiento", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(Model => Model.EC_antesNacimiento, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "20", @max = "42", @step = "1", Value=@Model.EC_antesNacimiento } })
-                @Html.ValidationMessageFor(model => model.EC_antesNacimiento, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    </div>
+    }
     
-         @if (ViewBag.fromDD == true)
-         { 
-            @Html.HiddenFor(Model => Model.pacienteIdDigidoc)
-            @Html.HiddenFor(Model => Model.pacienteId)
-         }
 
-        <div class="form-group">
-            <div class="col-md-offset-4 col-md-8 col-xs-12">
-                <input type="submit" onclick="Iniciar()" value="Iniciar" class="orangeButton col-md-3 col-xs-6" />
-            </div>
+    <div class="form-group">
+        @Html.Label("EG al Nacimiento", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(Model => Model.EC_antesNacimiento, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "20", @max = "42", @step = "1", Value = @Model.EC_antesNacimiento } })
+            @Html.ValidationMessageFor(model => model.EC_antesNacimiento, "", new { @class = "text-danger" })
         </div>
     </div>
 
+    @if (ViewBag.fromDD == true)
+    {
+        @Html.HiddenFor(Model => Model.apellidos)
+        @Html.HiddenFor(Model => Model.nombre)
+        @Html.HiddenFor(Model => Model.fechaNacimiento)
+        @Html.HiddenFor(Model => Model.pacienteIdDigidoc)
+        @Html.HiddenFor(Model => Model.pacienteId)
+    }
 
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-8 col-xs-12">
+            <input type="submit" onclick="Iniciar()" value="Iniciar" class="btn btn-sm btn-primary btn-wide" />
+        </div>
     </div>
+</div>
+
+
+</div>
 
     if (ViewBag.fromDD != true)
     {
