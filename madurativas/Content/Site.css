@@ -21,8 +21,19 @@ input,
 select,
 textarea {
     max-width: 280px;
+    height: 27px;
+    border-radius: 0;
 }
 
+.form-control {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    height: 27px;
+    border-radius: 0;
+    border: 1px solid #cccccc;
+    color: #6f6f6f;
+    font-size: 15px;
+}
 
 /*#panelVigilancia button {
     width: 10em;

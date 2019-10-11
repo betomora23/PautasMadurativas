@@ -83,50 +83,48 @@
 
             <div class="row">
                 @*Empieza la Row de los datos del paciente*@
-                <div class="col-md-12 col-sm-12">
 
+                <div class="col-md-4 col-sm-4">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.LabelFor(model => model.Paciente.nombre, "Paciente:", htmlAttributes: new { @class = "control-label" })
+                    @Model.Paciente.FullName
+                </div>
+                <div class="col-md-4 col-sm-4">
 
-                    @Html.LabelFor(model => model.Paciente.nombre, "Paciente:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-2" })
-                    <div class="col-md-2 col-xs-9 alinear">
-                        @Model.Paciente.FullName
-                    </div>
-
-                    @Html.Label("Fecha Nacimiento:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-6 centrar" })
-                    <div class="col-md-2 col-xs-6 alinear">
-                        @{
-                            var _fechaNacimiento = Model.Paciente.fechaNacimiento.ToShortDateString();
-                        }
-                        @_fechaNacimiento
-                        @Html.HiddenFor(model => model.Paciente.fechaNacimiento)
-
-                        <div>
-                            @Html.Label("Edad Cronologica: ")
-                            @Html.Label("edad", htmlAttributes: new { id = "edad" })
-                        </div>
-                        <div id="div_edadCorregida" style="display:none">
-                            @Html.Label("Edad Corregida: ")
-                            @Html.Label("edadCorregida", htmlAttributes: new { id = "edadCorregida" })
-                        </div>
-                    </div>
-
-                    @Html.Label("Fecha Estudio:", htmlAttributes: new { @class = "control-label col-md-2 col-xs-5" })
-                    <div class="col-md-2 col-xs-3 alinear">
-                        @{
-                            var _fechaestudio = Model.fechaestudio.ToShortDateString();
-                        }
-                        @_fechaestudio
-                        @Html.HiddenFor(model => model.fechaestudio)
-                    </div>
+                    @Html.Label("Fecha Nacimiento:", htmlAttributes: new { @class = "control-label" })
+                    @{
+                        var _fechaNacimiento = Model.Paciente.fechaNacimiento.ToShortDateString();
+                    }
+                    @_fechaNacimiento
+                    @Html.HiddenFor(model => model.Paciente.fechaNacimiento)
+                </div>
+              
+                <div class="col-md-4 col-sm-4">
+                    @Html.Label("Fecha Estudio:", htmlAttributes: new { @class = "control-label" })
+                    @{
+                        var _fechaestudio = Model.fechaestudio.ToShortDateString();
+                    }
+                    @_fechaestudio
+                    @Html.HiddenFor(model => model.fechaestudio)
                 </div>
             </div>
-        </div>@*Termina la Row*@
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                @Html.Label("Edad Cronológica: ")
+                @Html.Label("edad", htmlAttributes: new { id = "edad" })
+            </div>
+            <div id="div_edadCorregida" class="col-md-4 col-sm-4" style="display:none">
+                @Html.Label("Edad Corregida: ")
+                @Html.Label("edadCorregida", htmlAttributes: new { id = "edadCorregida" })
+            </div>
+        </div>
 
         <br />
     }
     else
     {
-    <div style="height: 200px;">
+    <div style="height: 100px;">
         @Html.HiddenFor(model => model.Paciente.fechaNacimiento)
         @Html.HiddenFor(model => model.fechaestudio)
     </div>
@@ -135,23 +133,16 @@
     <div class="row">
         @*Empieza Row de los botones*@
         <div class="col-md-12 col-xs-12 buttonCenter">
-            <div>
-                <div class="col-md-12">
-                    <button id="evalRiesgos" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarEvalRiesgos()">Evaluación de Riesgos</button>
-                    <button id="vigilancia" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarVigilancia()">Vigilancia del Desarrollo</button>
-                    <button id="mChat" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-3 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarmChat()">M-CHAT test de pesquisa de Autismo</button>
-                </div>
-
-    
-                <a id="linkBiblio" style="cursor: pointer; float: right;" data-toggle="modal" data-target="#modalBibliografia">Consultar Bibliografia</a>
-
-            </div>
+            <button id="evalRiesgos" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarEvalRiesgos()">Evaluación de Riesgos</button>
+            <button id="vigilancia" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarVigilancia()">Vigilancia del Desarrollo</button>
+            <button id="mChat" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-3 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarmChat()">M-CHAT test de pesquisa de Autismo</button>
+            <a href="#" id="linkBiblio" class="btn btn-sm" style="cursor: pointer; float: right;" data-toggle="modal" data-target="#modalBibliografia">Consultar Bibliografia</a>
         </div>
     </div> @*Termina la Row*@
     <hr />
     <div id="vigilanciaDesarrollo" class="row" style="display:none">
         <div class="modal-content" id="panelVigilancia" style="border:0px solid transparent">
-            <div class="modal-header" style="border:1px solid #ddd; text-align:center;">
+            <div class="modal-header" style="border:1px solid #ddd;">
                 <h5 class="panel-title form-label">Vigilancia del Desarrollo</h5>
             </div>
             <div class="panel-body" style="border:1px solid #ddd">
