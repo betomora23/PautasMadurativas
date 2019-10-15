@@ -46,7 +46,7 @@
                             <label class="control-label col-md-6">
                                 ¿ignora sonidos?
                             </label>
-                            <div id="dt2_quest_1" class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <div id="dt2_quest_1" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                                 <label onclick="Selectable(this)" class="btn btn-secondary dt2quest1">
                                     <input type="radio" name="options" id="dt2_quest_1_option1">Si
                                 </label>
@@ -68,7 +68,7 @@
                             <label class="control-label col-md-6">
                                 ¿ignora a otras personas?
                             </label>
-                            <div id="dt2_quest_2" class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <div id="dt2_quest_2" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                                 <label onclick="Selectable(this)" class="btn btn-secondary dt2quest2">
                                     <input type="radio" name="options" id="dt2_quest_2_option1">Si
                                 </label>
@@ -101,7 +101,7 @@
                             <label class="control-label col-md-6">
                                 ¿La audición de @Model.estudio.Paciente.nombre fue evaluada?
                             </label>
-                            <div id="dt2_quest_3" class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <div id="dt2_quest_3" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                                 <label onclick="Selectable(this)" class="btn btn-secondary dt2quest3">
                                     <input type="radio" name="options" id="dt2_quest_3_option1">Si
                                 </label>
@@ -152,7 +152,7 @@
     <div class="modal-footer">
         <div class="form-group">
             <div class="col-md-12">
-                <button id="btndtq2Save" @*onclick="location.reload(true);"*@ type="submit" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+                <button id="btndtq2Save" @*onclick="location.reload(true);"*@ type="submit" class="btn btn-primary btn-fixed" data-dismiss="modal">Guardar</button>
             </div>
         </div>
     </div>

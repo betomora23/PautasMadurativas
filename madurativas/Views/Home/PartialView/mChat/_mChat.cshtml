@@ -14,12 +14,12 @@
 
 <div class="modal-content">
 
-    <div class="modal-header" style="padding:1%">
-        <h5 class="modal-title">Cuestionario para la detección oportuna de Autismo en la Infancia (M-CHAT-R)*</h5>
+    <div class="modal-header panel-heading">
+        <h5 class="modal-title panel-title">Cuestionario para la detección oportuna de Autismo en la Infancia (M-CHAT-R)*</h5>
     </div>
 
     <div id="formMChat" class="modal-body">
-        <p style="color:#8e8e8e; background-color:#CFF0FF; padding:0.8%;">Ante cada pregunta, responde SÍ o NO de acuerdo a la conducta diaria que presenta su hijo. En caso de que ese comportamiento sea poco frecuente (si lo apreciaste entre una y tres veces), consigna una respuesta negativa. Test para realizar <strong style="color: red;">entre los 16 y los 30 meses de vida del niño</strong>. Si el comportamiento es infrecuente (usted sólo lo ha observado una o dos veces) conteste que el niño no lo manifiesta</p>
+        <p class="panel-celeste" style="padding: 0.8%;">Ante cada pregunta, responde SÍ o NO de acuerdo a la conducta diaria que presenta su hijo. En caso de que ese comportamiento sea poco frecuente (si lo apreciaste entre una y tres veces), consigna una respuesta negativa. Test para realizar <strong style="color: red;">entre los 16 y los 30 meses de vida del niño</strong>. Si el comportamiento es infrecuente (usted sólo lo ha observado una o dos veces) conteste que el niño no lo manifiesta</p>
         <hr />
         @{
             var _Caledad = DateTime.Now.Subtract(Model.estudio.Paciente.fechaNacimiento);
@@ -28,7 +28,7 @@
         }
         <p style="font-weight: bold;">Edad del Paciente: @_edad Meses</p>
         <hr />
-        <p style="color:#8e8e8e; background-color:#CFF0FF; padding:0.8%;">La Lista de Chequeo Modificada para Autismo en Deambuladores, Revisada con Seguimiento (Modified Checklist for Autism in Toddlers, Revised with Follow-Up, M-CHAT-R/F; Robins, Fein, & Barton, 2009) es una herramienta de pesquisa en 2 etapas completada por padres que sirve para evaluar el riesgo de Trastorno del Espectro Autista (TEA). </p>
+        <p class="panel-celeste" style="padding: 0.8%;">La Lista de Chequeo Modificada para Autismo en Deambuladores, Revisada con Seguimiento (Modified Checklist for Autism in Toddlers, Revised with Follow-Up, M-CHAT-R/F; Robins, Fein, & Barton, 2009) es una herramienta de pesquisa en 2 etapas completada por padres que sirve para evaluar el riesgo de Trastorno del Espectro Autista (TEA). </p>
         <hr />
         @if (_edad < 16)
         {
@@ -66,7 +66,7 @@
                         1. Si Ud. señala algo que está del otro lado de la habitación, ¿su hijo o hija mira hacia allí? (POR EJEMPLO: si Ud. señala un juguete o un animal, ¿su hijo o hija mira al juguete o al animal?)
                     </label>
                     @*Boton de a tres inicio*@
-                    <div id="quest_1" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_1" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest1">
                             <input type="radio" name="options" id="quest1_option1">Si
                         </label>
@@ -82,7 +82,7 @@
 
                 <div class="form-group">
                     <label class="control-label col-md-8">2. ¿Alguna vez se preguntó si su hijo o hija era sordo o sorda?</label>
-                    <div id="quest_2" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_2" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest2">
                             <input type="radio" name="options" id="quest2_option1">Si
                         </label>
@@ -99,7 +99,7 @@
                     <label class="control-label col-md-8">
                         3. ¿Su hijo o hija juega a simular, hacer “como si”, o juegos de imaginación? (POR EJEMPLO: simula que toma de una taza vacía, finge hablar por teléfono, o hace como que le da de comer a una muñeca o a un peluche?)
                     </label>
-                    <div id="quest_3" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_3" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest3">
                             <input type="radio" name="options" id="quest3_option1">Si
                         </label>
@@ -116,7 +116,7 @@
                     <label class="control-label col-md-8">
                         4. ¿A su hijo o hija le gusta treparse a las cosas? (POR EJEMPLO: muebles, juegos de la plaza, o escaleras)
                     </label>
-                    <div id="quest_4" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_4" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest4">
                             <input type="radio" name="options" id="quest4_option1">Si
                         </label>
@@ -133,7 +133,7 @@
                     <label class="control-label col-md-8">
                         5. ¿Su hijo o hija hace movimientos raros con los dedos cerca de sus ojos? (POR EJEMPLO: ¿mueve o agita los dedos cerca de sus ojos de manera rara?)
                     </label>
-                    <div id="quest_5" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_5" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest5">
                             <input type="radio" name="options" id="quest5_option1">Si
                         </label>
@@ -150,7 +150,7 @@
                     <label class="control-label col-md-8">
                         6. ¿Su hijo o hija señala con el dedo cuando quiere pedir algo o buscar ayuda? (POR EJEMPLO: señala algún alimento o juguete que está fuera de su alcance)
                     </label>
-                    <div id="quest_6" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_6" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest6">
                             <input type="radio" name="options" id="quest6_option1">Si
                         </label>
@@ -167,7 +167,7 @@
                     <label class="control-label col-md-8">
                         7. ¿Su hijo o hija señala con el dedo cuando quiere mostrarle algo interesante? (POR EJEMPLO: señala un avión en el cielo o un camión muy grande en la calle)
                     </label>
-                    <div id="quest_7" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_7" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest7">
                             <input type="radio" name="options" id="quest7_option1">Si
                         </label>
@@ -183,7 +183,7 @@
                     <label class="control-label col-md-8">
                         8. ¿Su hijo o hija se interesa por otros niños? (POR EJEMPLO: ¿mira a otros niños, les sonríe, se acerca a ellos?)
                     </label>
-                    <div id="quest_8" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_8" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest8">
                             <input type="radio" name="options" id="quest8_option1">Si
                         </label>
@@ -200,7 +200,7 @@
                     <label class="control-label col-md-8">
                         9. ¿Su hijo o hija le muestra cosas, trayéndoselas o alzándolas para que Ud. las vea – no para buscar ayuda sino simplemente para compartirlas con Ud.? (POR EJEMPLO: le muestra una flor, un peluche, o un camión de juguete)
                     </label>
-                    <div id="quest_9" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_9" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest9">
                             <input type="radio" name="options" id="quest9_option1">Si
                         </label>
@@ -216,7 +216,7 @@
                     <label class="control-label col-md-8">
                         10. ¿Su hijo o hija responde cuando lo/la llama por su nombre? (POR EJEMPLO: ¿su hijo o hija lo mira o la mira, habla o balbucea, o interrumpe lo que está haciendo cuando lo/la llama por su nombre?)
                     </label>
-                    <div id="quest_10" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_10" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest10">
                             <input type="radio" name="options" id="quest10_option1">Si
                         </label>
@@ -233,7 +233,7 @@
                     <label class="control-label col-md-8">
                         11. ¿Cuando le sonríe a su hijo o hija, ¿le devuelve la sonrisa?
                     </label>
-                    <div id="quest_11" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_11" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest11">
                             <input type="radio" name="options" id="quest11_option1">Si
                         </label>
@@ -249,7 +249,7 @@
                     <label class="control-label col-md-8">
                         12. ¿A su hijo o hija le molestan los ruidos comunes de todos los días? (POR EJEMPLO: ¿su hijo o hija grita o llora cuando escucha una aspiradora, una licuadora, una moto, la radio, música fuerte u otro ruido común?)
                     </label>
-                    <div id="quest_12" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_12" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest12">
                             <input type="radio" name="options" id="quest12_option1">Si
                         </label>
@@ -266,7 +266,7 @@
                     <label class="control-label col-md-8 col-xs-10">
                         13. ¿Su hijo o hija camina?
                     </label>
-                    <div id="quest_13" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_13" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest13">
                             <input type="radio" name="options" id="quest13_option1">Si
                         </label>
@@ -282,7 +282,7 @@
                     <label class="control-label col-md-8">
                         14. ¿Su hijo o hija lo/la mira a los ojos cuando le está hablando, jugando con él/ella, o cuando lo/la está vistiendo?
                     </label>
-                    <div id="quest_14" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_14" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest14">
                             <input type="radio" name="options" id="quest14_option1">Si
                         </label>
@@ -299,7 +299,7 @@
                     <label class="control-label col-md-8">
                         15. ¿Su hijo o hija trata de copiar lo que Ud. hace? (POR EJEMPLO: decir adiós con la mano, aplaudir, o hacer un ruido gracioso cuando Ud. lo hace)
                     </label>
-                    <div id="quest_15" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_15" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest15">
                             <input type="radio" name="options" id="quest15_option1">Si
                         </label>
@@ -315,7 +315,7 @@
                     <label class="control-label col-md-8">
                         16. Si Ud. se da vuelta para mirar algo, ¿su hijo o hija gira la cabeza para ver lo que Ud. está mirando?
                     </label>
-                    <div id="quest_16" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_16" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest16">
                             <input type="radio" name="options" id="quest16_option1">Si
                         </label>
@@ -331,7 +331,7 @@
                     <label class="control-label col-md-8">
                         17. ¿Su hijo o hija intenta hacer que Ud. lo/la mire? (POR EJEMPLO: ¿su hijo o hija lo/la mira para que lo/la felicite, o dice “mirá” o “mirame”?)
                     </label>
-                    <div id="quest_17" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_17" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest17">
                             <input type="radio" name="options" id="quest17_option1">Si
                         </label>
@@ -348,7 +348,7 @@
                     <label class="control-label col-md-8">
                         18. ¿Su hijo o hija entiende cuando Ud. le dice que haga algo? (POR EJEMPLO: si Ud. no se lo señala, ¿su hijo o hija entiende cuando le pide “poné el libro sobre la silla” o “traeme la frazadita”?)
                     </label>
-                    <div id="quest_18" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_18" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest18">
                             <input type="radio" name="options" id="quest18_option1">Si
                         </label>
@@ -364,7 +364,7 @@
                     <label class="control-label col-md-8">
                         19. Si pasa algo nuevo, ¿su hijo o hija lo/la mira a la cara para ver qué hace Ud.? (POR EJEMPLO: si su hijo o hija escucha un ruido raro o gracioso, o ve un juguete nuevo, ¿lo/la mira a la cara?)
                     </label>
-                    <div id="quest_19" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_19" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest19">
                             <input type="radio" name="options" id="quest19_option1">Si
                         </label>
@@ -380,7 +380,7 @@
                     <label class="control-label col-md-8">
                         20. ¿A su hijo o hija le gustan las actividades de movimiento? (POR EJEMPLO: hamacarse o jugar al “caballito” sobre sus rodillas)
                     </label>
-                    <div id="quest_20" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div id="quest_20" style="margin-top:1%; margin-left:1%" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                         <label onclick="Selectable(this)" class="btn btn-secondary quest20">
                             <input type="radio" name="options" id="quest20_option1">Si
                         </label>
@@ -401,7 +401,7 @@
             </div>
             <p style="background-color:#CFF0FF; padding:0.8%; width:100%"><a href="http://www.panaacea.org/wp-content/uploads/2015/12/M-CHAT-R_F_Spanish_Argentina_Uruguay.pdf">http://www.panaacea.org/wp-content/uploads/2015/12/M-CHAT-R_F_Spanish_Argentina_Uruguay.pdf</a></p>
             <div class="modal-footer">
-                <button id="btnMchat" onclick="SaveMChat();" type="submit" class="btn btn-primary btn-sm">Guardar</button>
+                <button id="btnMchat" onclick="SaveMChat();" type="submit" class="btn btn-primary btn-sm btn-fixed">Guardar</button>
                 <div class="col-md-6" style="width:100%; display:none" id="todoMchat">
                 </div>
             </div>

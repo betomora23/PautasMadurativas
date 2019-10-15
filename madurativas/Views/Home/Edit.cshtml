@@ -136,7 +136,7 @@
             <button id="evalRiesgos" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarEvalRiesgos()">Evaluación de Riesgos</button>
             <button id="vigilancia" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-2 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarVigilancia()">Vigilancia del Desarrollo</button>
             <button id="mChat" style="margin-right:1%; margin-bottom:1%" type="button" class="col-md-3 col-sm-8 col-xs-12 btn btn-sm btn-primary" onclick="HabilitarmChat()">M-CHAT test de pesquisa de Autismo</button>
-            <a href="#" id="linkBiblio" class="btn btn-sm" style="cursor: pointer; float: right;" data-toggle="modal" data-target="#modalBibliografia">Consultar Bibliografia</a>
+            <button id="linkBiblio" class="btn btn-sm btn-secundario" type="button" style="float: right;" onclick="HabilitarBiblio()" >Consultar Bibliografia</button>
         </div>
     </div> @*Termina la Row*@
     <hr />
@@ -149,7 +149,7 @@
                 <div class="container col-md-12" style="align-content: center;">
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <div class="col-md-4 centrado"><button type="button" class="btn btn-sm btn-primary btn-wide" data-toggle="modal" data-target="#modalPersonalSocial">Area - Personal - Social</button></div>
+                        <div class="col-md-4 centrado"><button type="button" class="btn btn-sm btn-primary btn-wide" data-toggle="modal" data-target="#modalPersonalSocial">Área - Personal - Social</button></div>
                         <div class="col-md-2"></div>
                         <div class="col-md-4 centrado"><button type="button" class="btn btn-sm btn-primary btn-wide" data-toggle="modal" data-target="#modalMotricidadFina">Motricidad Fina</button></div>
                         <div class="col-md-1"></div>
@@ -210,8 +210,8 @@
     </div>
 </div>
 
-<div id="modalBibliografia" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
+<div id="modalBibliografia" style="display:none">
+    <div>
         @Html.Partial("PartialView/_bibliografia")
     </div>
 </div>
@@ -342,6 +342,7 @@
                 document.getElementById("modalEvalRiesgos").style.display = "block";
                 document.getElementById("vigilanciaDesarrollo").style.display = "none";
                 document.getElementById("modalmChat").style.display = "none";
+                document.getElementById("modalBibliografia").style.display = "none";
                 Acomodar();
             } else if (document.getElementById("modalEvalRiesgos").style.display == "block") {
                 document.getElementById("modalEvalRiesgos").style.display = "none";
@@ -353,9 +354,22 @@
                 document.getElementById("modalmChat").style.display = "block";
                 document.getElementById("vigilanciaDesarrollo").style.display = "none";
                 document.getElementById("modalEvalRiesgos").style.display = "none";
+                document.getElementById("modalBibliografia").style.display = "none";
                 Acomodar()
             } else if (document.getElementById("modalmChat").style.display == "block") {
                 document.getElementById("modalmChat").style.display = "none";
+            }
+        }
+
+        function HabilitarBiblio() {
+            if (document.getElementById("modalBibliografia").style.display == "none") {
+                document.getElementById("modalBibliografia").style.display = "block"
+                document.getElementById("vigilanciaDesarrollo").style.display = "none";
+                document.getElementById("modalEvalRiesgos").style.display = "none";
+                document.getElementById("modalmChat").style.display = "none";
+                Acomodar()
+            } else if (document.getElementById("modalBibliografia").style.display == "block") {
+                document.getElementById("modalBibliografia").style.display = "none";
             }
         }
 

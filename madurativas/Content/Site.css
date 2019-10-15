@@ -71,6 +71,14 @@ textarea {
     color: white !important;
 }
 
+.modal-content {
+    border-radius: 0;
+}
+
+.panel-heading {
+    border-radius: 0;
+}
+
 .orangeButton {
     background-color: #df691a;
     margin: 1px;
@@ -281,5 +289,33 @@ body {
     text-align: center;
 }
 
+.panel-title {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+}
 
+.btn-secundario {
+    background: #999999;
+    border: 1px solid #999999;
+    color: #fff;
+}
+
+.panel-celeste {
+    color: #656565;
+    background-color: #CFF0FF;
+}
+
+.btn-group-sm > .btn {
+    border-radius: 0;
+}
+
+.btn-fixed {
+    width: 120px;
+}
+
+.margen-parrafo {
+    margin-top: 3px;
+    margin-bottom: 0px;
+}
 

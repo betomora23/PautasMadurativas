@@ -31,7 +31,7 @@
                         <label class="control-label col-md-8">
                             13. ¿@Model.estudio.Paciente.nombre camina?
                         </label>
-                        <div id="dt13_quest_1" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <div id="dt13_quest_1" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                             <label onclick="Selectable(this)" class="btn btn-secondary dt13quest1">
                                 <input type="radio" name="options" id="dt13_quest_1_option1">Si
                             </label>
@@ -54,7 +54,7 @@
                         <label class="control-label col-md-8">
                             ¿camina sin agararse?
                         </label>
-                        <div id="dt13_quest_2" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <div id="dt13_quest_2" class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
                             <label onclick="Selectable(this)" class="btn btn-secondary dt13quest2">
                                 <input type="radio" name="options" id="dt13_quest_2_option1">Si
                             </label>
@@ -94,7 +94,7 @@
     <div class="modal-footer">
         <div class="form-group">
             <div class="col-md-12">
-                <button id="btndtq13Save" @*onclick="location.reload(true);"*@ type="submit" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+                <button id="btndtq13Save" @*onclick="location.reload(true);"*@ type="submit" class="btn btn-primary btn-fixed" data-dismiss="modal">Guardar</button>
             </div>
         </div>
     </div>

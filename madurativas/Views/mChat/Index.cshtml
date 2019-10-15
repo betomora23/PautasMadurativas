@@ -312,7 +312,7 @@ else
     <div>
         @if (!Model.completado)
                     {
-                        <button id="btnMchat" type="submit" class="btn btn-primary">Guardar</button>
+                        <button id="btnMchat" type="submit" class="btn btn-primary btn-fixed">Guardar</button>
                         @Html.ActionLink("Volver al Inicio", "Edit", "Home", new { id = Model.estudio_id }, new { @class = "btn btn-primary " })
         }
         else
